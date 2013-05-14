@@ -18,4 +18,5 @@
 -->
 <resources>
     <integer name="def_data_stall_alarm_non_aggressive_delay">36000000</integer>
+    <bool name="def_install_non_market_apps">true</bool>
 </resources>

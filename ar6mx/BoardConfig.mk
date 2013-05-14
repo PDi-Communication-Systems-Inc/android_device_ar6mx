@@ -15,6 +15,6 @@ BOARD_KERNEL_CMDLINE := console=ttymxc0,115200 init=/init video=mxcfb0 video=mxc
 endif
 
 
-TARGET_BOOTLOADER_CONFIG := 6q:mx6q_sabresd_android_config 6solo:mx6solo_sabresd_android_config
+TARGET_BOOTLOADER_CONFIG := 6q:mx6q_ar6mxq_android_config 6solo:mx6solo_ar6mxs_android_config
 
 
