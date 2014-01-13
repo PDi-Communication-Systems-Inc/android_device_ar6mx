@@ -15,8 +15,11 @@ PRODUCT_COPY_FILES += \
 	device/bcm/ar6mx/init.rc:root/init.freescale.rc \
 	device/bcm/ar6mx/fstab.bcm:root/fstab.freescale \
 	device/bcm/ar6mx/gpsreset.sh:system/etc/gpsreset.sh \
-	device/fsl/sabresd_6dq/audio_policy.conf:system/etc/audio_policy.conf \
-	device/fsl/sabresd_6dq/audio_effects.conf:system/vendor/etc/audio_effects.conf
+	device/bcm/ar6mx/audio_policy.conf:system/etc/audio_policy.conf \
+	device/bcm/ar6mx/audio_effects.conf:system/vendor/etc/audio_effects.conf \
+	device/bcm/EETI/eGalaxTouch_VirtualDevice.idc:system/usr/idc/eGalaxTouch_VirtualDevice.idc \
+        device/bcm/EETI/eGTouchA.ini:data/eGTouchA.ini \
+        device/bcm/EETI/eGTouchD:system/bin/eGTouchD
 
 # GPU files
 

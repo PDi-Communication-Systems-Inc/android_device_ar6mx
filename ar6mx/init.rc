@@ -145,6 +145,12 @@ service ing /system/bin/ingsvcd -c /system/etc/gps/Orion.ini
     group gps
     oneshot
 
+service eGTouchD /system/bin/eGTouchD
+    class main
+    user root
+    group root
+    oneshot
+
 on fs
 # mount ext4 partitions
     mount_all /fstab.freescale
