@@ -70,3 +70,22 @@ PRODUCT_COPY_FILES += \
 		   vendor/atheros/wifi/wpa_supplicant.conf:/system/etc/wifi/wpa_supplicant.conf \
 		   vendor/atheros/wifi/wpa_supplicant.conf:/data/misc/wifi/wpa_supplicant.conf \
 		   vendor/atmel/touchscreen/touchscreen.xcfg:/system/etc/touchscreen.xcfg
+PRODUCT_PACKAGES += 		\
+com.adobe.reader_10.6.1                 \
+org.jtb.alogcat_43                      \
+org.petero.droidfish_54                 \
+com.pdiarm.clone                        \
+com.pdiarm.clonemaster                  \
+com.pdiarm.cloneslave                   \
+com.davidgoemans.simpleClockWidget      \
+net.micode.fileexplorer_1               \
+org.jfedor.frozenbubble_13              \
+com.pdiarm.newuserconfirmation          \
+OpenSudoku-1.1.5-01                     \
+com.mobilepearls.sokoban                \
+jackpal.androidterm_53                  \
+org.androidappdev.wifiwidget            \
+caa-2.1.2-597-us_zeebox                 \
+com.pdiarm.systembackupandrestore 	\
+BackupRestoreConfirmationPDi		\
+ethernet				
