@@ -47,13 +47,24 @@ PRODUCT_COPY_FILES += \
 	packages/wallpapers/LivePicker/android.software.live_wallpaper.xml:system/etc/permissions/android.software.live_wallpaper.xml
 endif
 
-PRODUCT_PACKAGES += AudioRoute \
+PRODUCT_PACKAGES += \
+		    AudioRoute \
 		    libhardware_legacy \
 		    libnetcmdiface \
+		    libcrypto \
+		    libnetcmdiface
+
+# Atmel Touchscreen packages
+PRODUCT_PACKAGES += \
 		    libusb \
-		    libmaxtouch \
-		    libmaxtouch-jni \
-		    mxt-app
+ 		    libmaxtouch \
+ 		    libmaxtouch-jni \
+ 		    mxt-app
+ 
+# Extra WPA Packages
+PRODUCT_PACKAGES += \
+		   wpa_cli \
+		   rtl_wpa_supplicant
 
 PRODUCT_COPY_FILES += \
 		   vendor/atheros/wifi/wpa_supplicant.conf:/system/etc/wifi/wpa_supplicant.conf \
