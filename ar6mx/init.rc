@@ -206,3 +206,11 @@ on post-fs-data
     #add to restore wifi data
     chown wifi wifi /data/misc/wifi	
     chown wifi wifi /data/misc/wifi/wpa_supplicant.conf
+
+    #P2P supplicant changes
+    chmod 0660 /data/misc/wifi/p2p_supplicant.conf
+    chown wifi wifi /data/misc/wifi/p2p_supplicant.conf
+
+   #HOSTAPD changes
+   chmod 0660 /data/misc/wifi/hostapd.conf
+   chown wifi wifi /data/misc/wifi/hostapd.conf
