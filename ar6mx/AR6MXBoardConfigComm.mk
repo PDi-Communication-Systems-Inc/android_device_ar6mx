@@ -9,8 +9,8 @@ TARGET_BOOTLOADER_BOARD_NAME := AR6MX
 PRODUCT_MODEL := AR6MX 
 
 # Wifi
-BOARD_WLAN_VENDOR 			 := ATHEROS
-#BOARD_WLAN_VENDOR 			 := INTEL
+#BOARD_WLAN_VENDOR 			 := ATHEROS
+BOARD_WLAN_VENDOR 			 := INTEL
 ifeq ($(BOARD_WLAN_VENDOR),ATHEROS)
 BOARD_WLAN_DEVICE            := UNITE
 WPA_SUPPLICANT_VERSION       := VER_0_8_UNITE
@@ -87,17 +87,56 @@ BOARD_WPA_SUPPLICANT_PRIVATE_LIB_RTL        := lib_driver_cmd_rtl
 #endif
 #for intel vendor
 else ifeq ($(BOARD_WLAN_VENDOR),INTEL)
-BOARD_HOSTAPD_PRIVATE_LIB                := private_lib_driver_cmd
-BOARD_WPA_SUPPLICANT_PRIVATE_LIB         := private_lib_driver_cmd
+BOARD_WLAN_DEVICE                        := INTEL
+BOARD_HOSTAPD_PRIVATE_LIB                ?= private_lib_driver_cmd
+BOARD_WPA_SUPPLICANT_PRIVATE_LIB         ?= private_lib_driver_cmd
 WPA_SUPPLICANT_VERSION                   := VER_0_8_X
 HOSTAPD_VERSION                          := VER_0_8_X
 BOARD_WPA_SUPPLICANT_PRIVATE_LIB         := private_lib_driver_cmd_intel
 TARGET_KERNEL_MODULES                    := \
 					    backports-3.13.2-1/drivers/net/wireless/iwlwifi/dvm/iwldvm.ko:system/lib/modules/iwldvm.ko \
-					    backports-3.13.2-1/drivers/net/wireless/iwlwifi/mvm/iwlmvm.ko:system/lib/modules/iwlmvm.ko
-WIFI_DRIVER_MODULE_PATH                  := "/system/lib/modules/iwlagn.ko"
-WIFI_DRIVER_MODULE_NAME                  := "iwlagn"
+					    backports-3.13.2-1/drivers/net/wireless/iwlwifi/mvm/iwlmvm.ko:system/lib/modules/iwlmvm.ko \
+					    backports-3.13.2-1/drivers/net/wireless/iwlwifi/iwlwifi.ko:system/lib/modules/iwlwifi.ko \
+					    backports-3.13.2-1/net/mac80211/mac80211.ko:system/lib/modules/mac80211.ko \
+                                	    backports-3.13.2-1/compat/compat.ko:system/lib/modules/compat.ko \
+                                	    backports-3.13.2-1/compat/crc8.ko:system/lib/modules/crc8.ko \
+                                	    backports-3.13.2-1/compat/cordic.ko:system/lib/modules/cordic.ko \
+					    backports-3.13.2-1/net/wireless/cfg80211.ko:system/lib/modules/cfg80211.ko \
+                                	    backports-3.13.2-1/drivers/bluetooth/btusb.ko:system/lib/modules/btusb.ko \
+	                                    backports-3.13.2-1/drivers/bluetooth/btsdio.ko:system/lib/modules/btsdio.ko \
+                                            backports-3.13.2-1/drivers/bluetooth/bfusb.ko:system/lib/modules/bfusb.ko \
+					    backports-3.13.2-1/drivers/bluetooth/hci_vhci.ko:system/lib/modules/hci_vhci.ko \
+					    backports-3.13.2-1/net/bluetooth/rfcomm/rfcomm.ko:system/lib/modules/rfcomm.ko \
+                                	    backports-3.13.2-1/net/bluetooth/bnep/bnep.ko:system/lib/modules/bnep.ko \
+                                	    backports-3.13.2-1/net/bluetooth/hidp/hidp.ko:system/lib/modules/hidp.ko \
+                                	    backports-3.13.2-1/net/bluetooth/bluetooth.ko:system/lib/modules/bluetooth.ko \
+					    vendor/intel/iwlwifi-1000-3.ucode:system/etc/firmware/iwlwifi-1000-3.ucode \
+					    vendor/intel/iwlwifi-1000-5.ucode:system/etc/firmware/iwlwifi-1000-5.ucode \
+					    vendor/intel/iwlwifi-100-5.ucode:system/etc/firmware/iwlwifi-100-5.ucode \
+					    vendor/intel/iwlwifi-105-6.ucode:system/etc/firmware/iwlwifi-105-6.ucode \
+					    vendor/intel/iwlwifi-135-6.ucode:system/etc/firmware/iwlwifi-135-6.ucode \
+					    vendor/intel/iwlwifi-2000-6.ucode:system/etc/firmware/iwlwifi-2000-6.ucode \
+					    vendor/intel/iwlwifi-2030-6.ucode:system/etc/firmware/iwlwifi-2030-6.ucode \
+					    vendor/intel/iwlwifi-3160-7.ucode:system/etc/firmware/iwlwifi-3160-7.ucode \
+					    vendor/intel/iwlwifi-3160-8.ucode:system/etc/firmware/iwlwifi-3160-8.ucode \
+					    vendor/intel/iwlwifi-3945-2.ucode:system/etc/firmware/iwlwifi-3945-2.ucode \
+					    vendor/intel/iwlwifi-4965-2.ucode:system/etc/firmware/iwlwifi-4965-2.ucode \
+					    vendor/intel/iwlwifi-5000-1.ucode:system/etc/firmware/iwlwifi-5000-1.ucode \
+					    vendor/intel/iwlwifi-5000-2.ucode:system/etc/firmware/iwlwifi-5000-2.ucode \
+					    vendor/intel/iwlwifi-5150-2.ucode:system/etc/firmware/iwlwifi-5150-2.ucode \
+					    vendor/intel/iwlwifi-6000-4.ucode:system/etc/firmware/iwlwifi-6000-4.ucode \
+					    vendor/intel/iwlwifi-6000g2a-5.ucode:system/etc/firmware/iwlwifi-6000g2a-5.ucode \
+					    vendor/intel/iwlwifi-6000g2a-6.ucode:system/etc/firmware/iwlwifi-6000g2a-6.ucode \
+					    vendor/intel/iwlwifi-6000g2b-5.ucode:system/etc/firmware/iwlwifi-6000g2b-5.ucode \
+					    vendor/intel/iwlwifi-6000g2b-6.ucode:system/etc/firmware/iwlwifi-6000g2b-6.ucode \
+					    vendor/intel/iwlwifi-6050-4.ucode:system/etc/firmware/iwlwifi-6050-4.ucode \
+					    vendor/intel/iwlwifi-6050-5.ucode:system/etc/firmware/iwlwifi-6050-5.ucode \
+					    vendor/intel/iwlwifi-7260-7.ucode:system/etc/firmware/iwlwifi-7260-7.ucode \
+					    vendor/intel/iwlwifi-7260-8.ucode:system/etc/firmware/iwlwifi-7260-8.ucode
+WIFI_DRIVER_MODULE_PATH                  := "/system/lib/modules/iwlwifi.ko"
+WIFI_DRIVER_MODULE_NAME                  := "iwlwifi"
 WIFI_DRIVER_MODULE_PATH                  ?= auto
+WIFI_DRIVER_MODULE_ARG                   := "bt_coex_active=true"
 endif
 
 BOARD_MODEM_VENDOR := AMAZON
@@ -127,7 +166,9 @@ endif
 BOARD_HAVE_BLUETOOTH := true
 
 # atheros 3k BT
-BOARD_USE_AR3K_BLUETOOTH := true
+ifeq ($(BOARD_WLAN_VENDOR),ATHEROS)
+  BOARD_USE_AR3K_BLUETOOiTH := true
+endif
 
 USE_ION_ALLOCATOR := false
 USE_GPU_ALLOCATOR := true

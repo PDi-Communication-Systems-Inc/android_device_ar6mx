@@ -125,12 +125,12 @@ service mxt-app /system/bin/mxt-app --load /system/etc/touchscreen.xcfg
 # mount the debugfs
     mount debugfs none /sys/kernel/debug/
 
-service p2p_supplicant /system/bin/wpa_supplicant -dd -t \
-    -ip2p0 -Dnl80211 -c/data/misc/wifi/p2p_supplicant.conf -N \
-    -iwlan0 -Dnl80211 -c/data/misc/wifi/wpa_supplicant.conf
-    class main
-    disabled
-    oneshot
+# service p2p_supplicant /system/bin/wpa_supplicant -dd -t \
+#    -ip2p0 -Dnl80211 -c/data/misc/wifi/p2p_supplicant.conf -N \
+#    -iwlan0 -Dnl80211 -c/data/misc/wifi/wpa_supplicant.conf
+#    class main
+#   disabled
+#    oneshot
 
 #Wifi Client DHCP Service
 service dhcpcd_wlan0 /system/bin/dhcpcd -ABKL
@@ -170,24 +170,31 @@ insmod /system/lib/modules/cfg80211.ko
 insmod /system/lib/modules/mac80211.ko
 insmod /system/lib/modules/cordic.ko
 insmod /system/lib/modules/crc8.ko
-insmod /system/lib/modules/ath.ko
-insmod /system/lib/modules/ath9k_hw.ko
-insmod /system/lib/modules/ath9k_common.ko
-insmod /system/lib/modules/ath9k.ko
+# If using atheros 9k ar9462, uncomment these lines
+# and comment any iwl* lines
+# insmod /system/lib/modules/ath.ko
+# insmod /system/lib/modules/ath9k_hw.ko
+# insmod /system/lib/modules/ath9k_common.ko
+# insmod /system/lib/modules/ath9k.ko
 insmod /system/lib/modules/bluetooth.ko
 insmod /system/lib/modules/rfcomm.ko
 insmod /system/lib/modules/hidp.ko
 insmod /system/lib/modules/bnep.ko
-insmod /system/lib/modules/ath3k.ko
+# insmod /system/lib/modules/ath3k.ko
 insmod /system/lib/modules/btusb.ko
-insmod /system/lib/modules/btmrvl.ko
-insmod /system/lib/modules/btmrvl_sdio.ko
-insmod /system/lib/modules/bpa10x.ko
+# insmod /system/lib/modules/btmrvl.ko
+# insmod /system/lib/modules/btmrvl_sdio.ko
+# insmod /system/lib/modules/bpa10x.ko
 insmod /system/lib/modules/hci_vhci.ko
 insmod /system/lib/modules/btsdio.ko
-insmod /system/lib/modules/rtlwifi.ko
-insmod /system/lib/modules/rtl_pci.ko
-insmod /system/lib/modules/rtl8723ae.ko
+# insmod /system/lib/modules/rtlwifi.ko
+# insmod /system/lib/modules/rtl_pci.ko
+# insmod /system/lib/modules/rtl8723ae.ko
+
+# intel specific wifi drivers 
+insmod /system/lib/modules/iwlwifi.ko
+insmod /system/lib/modules/iwldvm.ko
+insmod /system/lib/modules/iwlmvm.ko
 
 on post-fs-data
     # give system access to wpa_supplicant.conf for backup and restore
