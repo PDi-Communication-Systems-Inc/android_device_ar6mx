@@ -125,13 +125,6 @@ service mxt-app /system/bin/mxt-app --load /system/etc/touchscreen.xcfg
 # mount the debugfs
     mount debugfs none /sys/kernel/debug/
 
-# service p2p_supplicant /system/bin/wpa_supplicant -dd -t \
-#    -ip2p0 -Dnl80211 -c/data/misc/wifi/p2p_supplicant.conf -N \
-#    -iwlan0 -Dnl80211 -c/data/misc/wifi/wpa_supplicant.conf
-#    class main
-#   disabled
-#    oneshot
-
 #Wifi Client DHCP Service
 service dhcpcd_wlan0 /system/bin/dhcpcd -ABKL
    class late_start
@@ -159,6 +152,13 @@ service wpa_supplicant /system/bin/wpa_supplicant -dd -t \
    class main 
    disabled
    oneshot
+
+service p2p_supplicant /system/bin/wpa_supplicant -dd -t \
+    -ip2p0 -Dnl80211 -c/data/misc/wifi/p2p_supplicant.conf -N \
+    -iwlan0 -Dnl80211 -c/data/misc/wifi/wpa_supplicant.conf
+    class main
+    disabled
+    oneshot
 
 on fs
 # mount ext4 partitions

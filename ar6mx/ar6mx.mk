@@ -66,12 +66,19 @@ PRODUCT_PACKAGES += \
 		   wpa_cli \
 		   rtl_wpa_supplicant
 
+# Wifi Configuration files, for atheros, replace intel...is there a way to have both ifeq does not work here
+# ... is this file processed after AR6MXBoardConfigComm.mk
 PRODUCT_COPY_FILES += \
-		   vendor/atheros/wifi/wpa_supplicant.conf:/system/etc/wifi/wpa_supplicant.conf \
-		   vendor/atheros/wifi/wpa_supplicant.conf:/data/misc/wifi/wpa_supplicant.conf \
-		   vendor/atheros/wifi/p2p_supplicant.conf:/data/misc/wifi/p2p_supplicant.conf \
-		   vendor/atheros/wifi/hostapd.conf:/data/misc/wifi/hostapd.conf \
-		   vendor/atmel/touchscreen/touchscreen.xcfg:/system/etc/touchscreen.xcfg
+                   vendor/intel/wifi/wpa_supplicant.conf:/system/etc/wifi/wpa_supplicant.conf \
+                   vendor/intel/wifi/wpa_supplicant.conf:/data/misc/wifi/wpa_supplicant.conf \
+                   vendor/intel/wifi/p2p_supplicant.conf:/data/misc/wifi/p2p_supplicant.conf \
+                   vendor/intel/wifi/hostapd.conf:/data/misc/wifi/hostapd.conf \
+                   vendor/atmel/touchscreen/touchscreen.xcfg:/system/etc/touchscreen.xcfg
+
+# Touchscreen configuration files
+PRODUCT_COPY_FILES += \
+		  vendor/atmel/touchscreen/touchscreen.xcfg:/system/etc/touchscreen.xcfg
+
 PRODUCT_PACKAGES += 		\
 com.adobe.reader_10.6.1                 \
 org.jtb.alogcat_43                      \
