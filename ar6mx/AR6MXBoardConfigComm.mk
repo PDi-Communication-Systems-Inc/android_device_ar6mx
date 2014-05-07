@@ -11,6 +11,7 @@ PRODUCT_MODEL := AR6MX
 # Wifi
 #BOARD_WLAN_VENDOR 			 := ATHEROS
 BOARD_WLAN_VENDOR 			 := INTEL
+
 ifeq ($(BOARD_WLAN_VENDOR),ATHEROS)
 BOARD_WLAN_DEVICE            := UNITE
 WPA_SUPPLICANT_VERSION       := VER_0_8_UNITE
@@ -84,15 +85,15 @@ BOARD_HOSTAPD_PRIVATE_LIB_QCOM              := lib_driver_cmd_qcwcn
 BOARD_WPA_SUPPLICANT_PRIVATE_LIB_QCOM       := lib_driver_cmd_qcwcn
 BOARD_HOSTAPD_PRIVATE_LIB_RTL               := lib_driver_cmd_rtl
 BOARD_WPA_SUPPLICANT_PRIVATE_LIB_RTL        := lib_driver_cmd_rtl
-#endif
-#for intel vendor
-else ifeq ($(BOARD_WLAN_VENDOR),INTEL)
+endif
+
+ifeq ($(BOARD_WLAN_VENDOR),INTEL)
 BOARD_WLAN_DEVICE                        := INTEL
-BOARD_HOSTAPD_PRIVATE_LIB                ?= private_lib_driver_cmd
-BOARD_WPA_SUPPLICANT_PRIVATE_LIB         ?= private_lib_driver_cmd
+BOARD_WPA_SUPPLICANT_DRIVER              := NL80211
 WPA_SUPPLICANT_VERSION                   := VER_0_8_X
 HOSTAPD_VERSION                          := VER_0_8_X
-BOARD_WPA_SUPPLICANT_PRIVATE_LIB         := private_lib_driver_cmd_intel
+BOARD_WPA_SUPPLICANT_PRIVATE_LIB         ?= private_lib_driver_cmd_intel
+BOARD_HOSTAPD_PRIVATE_LIB                ?= private_lib_driver_cmd_intel
 TARGET_KERNEL_MODULES                    := \
 					    backports-3.14-1/drivers/net/wireless/iwlwifi/dvm/iwldvm.ko:system/lib/modules/iwldvm.ko \
 					    backports-3.14-1/drivers/net/wireless/iwlwifi/mvm/iwlmvm.ko:system/lib/modules/iwlmvm.ko \
@@ -110,6 +111,7 @@ TARGET_KERNEL_MODULES                    := \
                                 	    backports-3.14-1/net/bluetooth/bnep/bnep.ko:system/lib/modules/bnep.ko \
                                 	    backports-3.14-1/net/bluetooth/hidp/hidp.ko:system/lib/modules/hidp.ko \
                                 	    backports-3.14-1/net/bluetooth/bluetooth.ko:system/lib/modules/bluetooth.ko \
+					    backports-3.14-1/net/ieee802154/6lowpan_iphc.ko:system/lib/modules/6lowpan_iphc.ko \
 					    vendor/intel/iwlwifi-1000-3.ucode:system/etc/firmware/iwlwifi-1000-3.ucode \
 					    vendor/intel/iwlwifi-1000-5.ucode:system/etc/firmware/iwlwifi-1000-5.ucode \
 					    vendor/intel/iwlwifi-100-5.ucode:system/etc/firmware/iwlwifi-100-5.ucode \
@@ -135,7 +137,6 @@ TARGET_KERNEL_MODULES                    := \
 					    vendor/intel/iwlwifi-7260-8.ucode:system/etc/firmware/iwlwifi-7260-8.ucode
 WIFI_DRIVER_MODULE_PATH                  := "/system/lib/modules/iwlwifi.ko"
 WIFI_DRIVER_MODULE_NAME                  := "iwlwifi"
-WIFI_DRIVER_MODULE_PATH                  ?= auto
 WIFI_DRIVER_MODULE_ARG                   := "bt_coex_active=true"
 endif
 

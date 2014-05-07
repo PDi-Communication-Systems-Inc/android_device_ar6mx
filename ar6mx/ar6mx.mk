@@ -63,8 +63,7 @@ PRODUCT_PACKAGES += \
  
 # Extra WPA Packages
 PRODUCT_PACKAGES += \
-		   wpa_cli \
-		   rtl_wpa_supplicant
+		   wpa_cli
 
 # Wifi Configuration files, for atheros, replace intel...is there a way to have both ifeq does not work here
 # ... is this file processed after AR6MXBoardConfigComm.mk

@@ -176,6 +176,7 @@ insmod /system/lib/modules/crc8.ko
 # insmod /system/lib/modules/ath9k_hw.ko
 # insmod /system/lib/modules/ath9k_common.ko
 # insmod /system/lib/modules/ath9k.ko
+insmod /system/lib/modules/6lowpan_iphc.ko
 insmod /system/lib/modules/bluetooth.ko
 insmod /system/lib/modules/rfcomm.ko
 insmod /system/lib/modules/hidp.ko
