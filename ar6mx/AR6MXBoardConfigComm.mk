@@ -134,7 +134,10 @@ TARGET_KERNEL_MODULES                    := \
 					    vendor/intel/iwlwifi-6050-4.ucode:system/etc/firmware/iwlwifi-6050-4.ucode \
 					    vendor/intel/iwlwifi-6050-5.ucode:system/etc/firmware/iwlwifi-6050-5.ucode \
 					    vendor/intel/iwlwifi-7260-7.ucode:system/etc/firmware/iwlwifi-7260-7.ucode \
-					    vendor/intel/iwlwifi-7260-8.ucode:system/etc/firmware/iwlwifi-7260-8.ucode
+					    vendor/intel/iwlwifi-7260-8.ucode:system/etc/firmware/iwlwifi-7260-8.ucode \
+					    vendor/intel/bt/ibt-hw-37.7.10-fw-1.0.2.3.d.bseq:system/etc/firmware/ibt-hw-37.7.10-fw-1.0.2.3.d.bseq \
+					    vendor/intel/bt/ibt-hw-37.7.10-fw-1.80.2.3.d.bseq:system/etc/firmware/ibt-hw-37.7.10-fw-1.80.2.3.d.bseq \
+					    vendor/intel/bt/ibt-hw-37.7.bseq:system/etc/firmware/ibt-hw-37.7.bseq
 WIFI_DRIVER_MODULE_PATH                  := "/system/lib/modules/iwlwifi.ko"
 WIFI_DRIVER_MODULE_NAME                  := "iwlwifi"
 WIFI_DRIVER_MODULE_ARG                   := "bt_coex_active=true"
