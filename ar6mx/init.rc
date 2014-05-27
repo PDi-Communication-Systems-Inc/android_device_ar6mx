@@ -146,56 +146,55 @@ service eGTouchD /system/bin/eGTouchD
     group root
     oneshot
 
+#service p2p_supplicant /system/bin/wpa_supplicant \
+#    -ip2p0 -Dnl80211 -c/data/misc/wifi/p2p_supplicant.conf -N \
+#    -iwlan0 -Dnl80211 -c/data/misc/wifi/wpa_supplicant.conf
+#    class main
+#    disabled
+#    oneshot
+
 service wpa_supplicant /system/bin/wpa_supplicant -dd -t \
-   -Dnl80211 -iwlan0 -c /data/misc/wifi/wpa_supplicant.conf \
-   socket wpa_wlan0 dgram 660 wifi wifi
+   -Dnl80211 -iwlan0 -c/data/misc/wifi/wpa_supplicant.conf \
+   socket wpa_wlan0 dgram 660 system wifi
    class main 
    disabled
    oneshot
-
-service p2p_supplicant /system/bin/wpa_supplicant -dd -t \
-    -ip2p0 -Dnl80211 -c/data/misc/wifi/p2p_supplicant.conf -N \
-    -iwlan0 -Dnl80211 -c/data/misc/wifi/wpa_supplicant.conf
-    class main
-    disabled
-    oneshot
 
 on fs
 # mount ext4 partitions
     mount_all /fstab.freescale
 
 # Testing AR9462 or dhxa 222 module
-insmod /system/lib/modules/compat.ko
-insmod /system/lib/modules/cfg80211.ko
-insmod /system/lib/modules/mac80211.ko
-insmod /system/lib/modules/cordic.ko
-insmod /system/lib/modules/crc8.ko
+#insmod /system/lib/modules/compat.ko
+#insmod /system/lib/modules/cfg80211.ko
+#insmod /system/lib/modules/mac80211.ko
+#insmod /system/lib/modules/cordic.ko
+#insmod /system/lib/modules/crc8.ko
+#insmod /system/lib/modules/sch_codel.ko
+#insmod /system/lib/modules/sch_fq_codel.ko
 # If using atheros 9k ar9462, uncomment these lines
 # and comment any iwl* lines
-# insmod /system/lib/modules/ath.ko
-# insmod /system/lib/modules/ath9k_hw.ko
-# insmod /system/lib/modules/ath9k_common.ko
-# insmod /system/lib/modules/ath9k.ko
-insmod /system/lib/modules/6lowpan_iphc.ko
-insmod /system/lib/modules/bluetooth.ko
-insmod /system/lib/modules/rfcomm.ko
-insmod /system/lib/modules/hidp.ko
-insmod /system/lib/modules/bnep.ko
-# insmod /system/lib/modules/ath3k.ko
-insmod /system/lib/modules/btusb.ko
-# insmod /system/lib/modules/btmrvl.ko
-# insmod /system/lib/modules/btmrvl_sdio.ko
-# insmod /system/lib/modules/bpa10x.ko
-insmod /system/lib/modules/hci_vhci.ko
-insmod /system/lib/modules/btsdio.ko
-# insmod /system/lib/modules/rtlwifi.ko
-# insmod /system/lib/modules/rtl_pci.ko
-# insmod /system/lib/modules/rtl8723ae.ko
+#insmod /system/lib/modules/ath.ko
+#insmod /system/lib/modules/ath9k_hw.ko
+#insmod /system/lib/modules/ath9k_common.ko
+#insmod /system/lib/modules/ath9k.ko
+#insmod /system/lib/modules/6lowpan_iphc.ko
+#insmod /system/lib/modules/bluetooth.ko
+#insmod /system/lib/modules/rfcomm.ko
+#insmod /system/lib/modules/hidp.ko
+#insmod /system/lib/modules/bnep.ko
+#insmod /system/lib/modules/ath3k.ko
+#insmod /system/lib/modules/btusb.ko
+#insmod /system/lib/modules/btmrvl.ko
+#insmod /system/lib/modules/btmrvl_sdio.ko
+#insmod /system/lib/modules/bpa10x.ko
+#insmod /system/lib/modules/hci_vhci.ko
+#insmod /system/lib/modules/btsdio.ko
 
 # intel specific wifi drivers 
-insmod /system/lib/modules/iwlwifi.ko
-insmod /system/lib/modules/iwldvm.ko
-insmod /system/lib/modules/iwlmvm.ko
+# insmod /system/lib/modules/iwlwifi.ko
+# insmod /system/lib/modules/iwldvm.ko
+# insmod /system/lib/modules/iwlmvm.ko
 
 on post-fs-data
     # give system access to wpa_supplicant.conf for backup and restore
@@ -203,22 +202,31 @@ on post-fs-data
     mkdir /system/etc/wifi 0770 wifi wifi
     chmod 0770 /system/etc/wifi 
     chmod 0660 /system/etc/wifi/wpa_supplicant.conf
-    chown wifi wifi /system/etc/wifi/wpa_supplicant.conf 
+    chown system wifi /system/etc/wifi/wpa_supplicant.conf 
+
+    # Make directory for UNIX style wpa supplicant socket connection
+    mkdir /data/system/wpa_supplicant wifi wifi
+    chmod 0770 /data/system/wpa_supplicant
 
     #wpa_supplicant control socket for android wifi.c (android private socket) 
-    mkdir /data/misc/wifi 0770 wifi wifi
-    mkdir /data/misc/wifi/sockets 0770 wifi wifi 
+    mkdir /data/misc/wifi 0770 system wifi
+    mkdir /data/misc/wifi/sockets 0770 system wifi 
     chmod 0770 /data/misc/wifi
     chmod 0660 /data/misc/wifi/wpa_supplicant.conf 
 
     #add to restore wifi data
-    chown wifi wifi /data/misc/wifi	
-    chown wifi wifi /data/misc/wifi/wpa_supplicant.conf
+    chown system wifi /data/misc/wifi	
+    chown system wifi /data/misc/wifi/wpa_supplicant.conf
 
     #P2P supplicant changes
     chmod 0660 /data/misc/wifi/p2p_supplicant.conf
-    chown wifi wifi /data/misc/wifi/p2p_supplicant.conf
+    chown system wifi /data/misc/wifi/p2p_supplicant.conf
 
    #HOSTAPD changes
    chmod 0660 /data/misc/wifi/hostapd.conf
-   chown wifi wifi /data/misc/wifi/hostapd.conf
+   chown system wifi /data/misc/wifi/hostapd.conf
+
+   # For IFACE_DIR wifi_connect_on_socket in wifi_intel.c
+   mkdir /data/misc/wifi/wlan0
+   chmod 0660 /data/misc/wifi/wlan0
+   chown system wifi /data/misc/wifi/wlan0

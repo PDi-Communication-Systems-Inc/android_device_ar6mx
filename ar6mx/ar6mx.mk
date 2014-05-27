@@ -30,7 +30,6 @@ PRODUCT_AAPT_CONFIG += xlarge large tvdpi hdpi
 
 PRODUCT_COPY_FILES += \
 	frameworks/native/data/etc/android.hardware.wifi.xml:system/etc/permissions/android.hardware.wifi.xml \
-	frameworks/native/data/etc/android.hardware.wifi.direct.xml:system/etc/permissions/android.hardware.wifi.direct.xml \
 	frameworks/native/data/etc/android.hardware.sensor.light.xml:system/etc/permissions/android.hardware.sensor.light.xml \
 	frameworks/native/data/etc/android.hardware.sensor.accelerometer.xml:system/etc/permissions/android.hardware.sensor.accelerometer.xml \
 	frameworks/native/data/etc/android.hardware.faketouch.xml:system/etc/permissions/android.hardware.faketouch.xml \
@@ -61,17 +60,18 @@ PRODUCT_PACKAGES += \
  		    libmaxtouch-jni \
  		    mxt-app
  
-# Extra WPA Packages
+# Extra Wireless Configuration Packages
 PRODUCT_PACKAGES += \
-		   wpa_cli
+		   wpa_cli \
+		   iw
 
 # Wifi Configuration files, for atheros, replace intel...is there a way to have both ifeq does not work here
 # ... is this file processed after AR6MXBoardConfigComm.mk
 PRODUCT_COPY_FILES += \
-                   vendor/intel/wifi/wpa_supplicant.conf:/system/etc/wifi/wpa_supplicant.conf \
-                   vendor/intel/wifi/wpa_supplicant.conf:/data/misc/wifi/wpa_supplicant.conf \
-                   vendor/intel/wifi/p2p_supplicant.conf:/data/misc/wifi/p2p_supplicant.conf \
-                   vendor/intel/wifi/hostapd.conf:/data/misc/wifi/hostapd.conf \
+                   vendor/atheros/wifi/wpa_supplicant.conf:/system/etc/wifi/wpa_supplicant.conf \
+                   vendor/atheros/wifi/wpa_supplicant.conf:/data/misc/wifi/wpa_supplicant.conf \
+                   vendor/atheros/wifi/p2p_supplicant.conf:/data/misc/wifi/p2p_supplicant.conf \
+                   vendor/atheros/wifi/hostapd.conf:/data/misc/wifi/hostapd.conf \
                    vendor/atmel/touchscreen/touchscreen.xcfg:/system/etc/touchscreen.xcfg
 
 # Touchscreen configuration files
@@ -96,4 +96,5 @@ org.androidappdev.wifiwidget            \
 caa-2.1.2-597-us_zeebox                 \
 com.pdiarm.systembackupandrestore 	\
 BackupRestoreConfirmationPDi		\
-ethernet				
+ethernet				\
+ReplicaIsland
