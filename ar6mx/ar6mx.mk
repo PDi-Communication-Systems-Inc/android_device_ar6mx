@@ -18,7 +18,8 @@ PRODUCT_COPY_FILES += \
 	device/bcm/ar6mx/audio_effects.conf:system/vendor/etc/audio_effects.conf \
 	device/bcm/EETI/eGalaxTouch_VirtualDevice.idc:system/usr/idc/eGalaxTouch_VirtualDevice.idc \
         device/bcm/EETI/eGTouchA.ini:data/eGTouchA.ini \
-        device/bcm/EETI/eGTouchD:system/bin/eGTouchD
+        device/bcm/EETI/eGTouchD:system/bin/eGTouchD \
+	device/bcm/ar6mx/process_ts.sh:system/etc/process_ts.sh
 
 # GPU files
 
@@ -30,6 +31,7 @@ PRODUCT_AAPT_CONFIG += xlarge large tvdpi hdpi
 
 PRODUCT_COPY_FILES += \
 	frameworks/native/data/etc/android.hardware.wifi.xml:system/etc/permissions/android.hardware.wifi.xml \
+	frameworks/native/data/etc/android.hardware.wifi.direct.xml:system/etc/permissions/android.hardware.wifi.direct.xml \
 	frameworks/native/data/etc/android.hardware.sensor.light.xml:system/etc/permissions/android.hardware.sensor.light.xml \
 	frameworks/native/data/etc/android.hardware.sensor.accelerometer.xml:system/etc/permissions/android.hardware.sensor.accelerometer.xml \
 	frameworks/native/data/etc/android.hardware.faketouch.xml:system/etc/permissions/android.hardware.faketouch.xml \
@@ -37,6 +39,7 @@ PRODUCT_COPY_FILES += \
 	frameworks/native/data/etc/android.software.sip.voip.xml:system/etc/permissions/android.software.sip.voip.xml \
 	frameworks/native/data/etc/android.hardware.usb.host.xml:system/etc/permissions/android.hardware.usb.host.xml \
 	frameworks/native/data/etc/android.hardware.usb.accessory.xml:system/etc/permissions/android.hardware.usb.accessory.xml \
+	frameworks/native/data/etc/android.hardware.location.xml:system/etc/permissions/android.hardware.location.xml \
 	frameworks/native/data/etc/android.hardware.bluetooth_le.xml:system/etc/permissions/android.hardware.bluetooth_le.xml
 
 # for PDK build, include only when the dir exists
