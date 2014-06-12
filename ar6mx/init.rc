@@ -140,6 +140,12 @@ service eGTouchD /system/bin/eGTouchD
     group root
     oneshot
 
+service load_wifi_module /system/bin/logwrapper -k /system/etc/load_wifi_module.sh
+    user root
+    group root
+    class main
+    oneshot
+
 service wpa_supplicant /system/bin/wpa_supplicant -dd -t \
    -Dnl80211 -iwlan0 -c/data/misc/wifi/wpa_supplicant.conf \
    socket wpa_wlan0 dgram 660 wifi wifi
