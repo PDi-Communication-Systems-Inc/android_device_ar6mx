@@ -142,17 +142,11 @@ service eGTouchD /system/bin/eGTouchD
 
 service wpa_supplicant /system/bin/wpa_supplicant -dd -t \
    -Dnl80211 -iwlan0 -c/data/misc/wifi/wpa_supplicant.conf \
-   socket wpa_wlan0 dgram 660 system wifi
+   socket wpa_wlan0 dgram 660 wifi wifi
+   group system wifi inet
    class main 
    disabled
    oneshot
-
-service p2p_supplicant /system/bin/wpa_supplicant \
-    -ip2p0 -Dnl80211 -c/data/misc/wifi/p2p_supplicant.conf -N \
-    -iwlan0 -Dnl80211 -c/data/misc/wifi/wpa_supplicant.conf
-    class main
-    disabled
-    oneshot
 
 service pdi_ts_script /system/bin/logwrapper -k /system/etc/process_ts.sh
     user root
@@ -199,15 +193,9 @@ on fs
 on post-fs-data
     # give system access to wpa_supplicant.conf for backup and restore
 
-    mkdir /system/etc/wifi 0770 wifi wifi
-    chmod 0770 /system/etc/wifi 
-    chmod 0660 /system/etc/wifi/wpa_supplicant.conf
-    chown system wifi /system/etc/wifi/wpa_supplicant.conf 
-
     # Make directory for UNIX style wpa supplicant socket connection
-    mkdir /data/system/wpa_supplicant 0770 system wifi
-    mkdir /data/system/wpa_supplicant/wlan0 0770 system wifi
-    chmod 0770 /data/system/wpa_supplicant/wlan0
+    mkdir /data/system/wpa_supplicant 0770 wifi wifi
+    chmod 0770 /data/system/wpa_supplicant
 
     #wpa_supplicant control socket for android wifi.c (android private socket) 
     mkdir /data/misc/wifi 0770 system wifi
@@ -216,16 +204,8 @@ on post-fs-data
     chmod 0660 /data/misc/wifi/wpa_supplicant.conf 
 
     #add to restore wifi data
-    chown system wifi /data/misc/wifi	
-    chown system wifi /data/misc/wifi/wpa_supplicant.conf
-
-    #P2P supplicant changes
-    chmod 0660 /data/misc/wifi/p2p_supplicant.conf
-    chown system wifi /data/misc/wifi/p2p_supplicant.conf
-
-   #HOSTAPD changes
-   chmod 0660 /data/misc/wifi/hostapd.conf
-   chown system wifi /data/misc/wifi/hostapd.conf
+    chown wifi wifi /data/misc/wifi	
+    chown wifi wifi /data/misc/wifi/wpa_supplicant.conf
 
    # For IFACE_DIR wifi_connect_on_socket in wifi_intel.c
    mkdir /data/misc/wifi/wlan0
