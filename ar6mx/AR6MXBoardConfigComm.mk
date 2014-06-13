@@ -96,7 +96,7 @@ BOARD_WPA_SUPPLICANT_PRIVATE_LIB         := private_lib_driver_cmd_intel
 TARGET_KERNEL_MODULES                    := \
 					    $(WIFI_ROOT)/drivers/net/wireless/iwlwifi/iwlwifi.ko:system/lib/modules/iwlwifi.ko \
 					    $(WIFI_ROOT)/drivers/net/wireless/iwlwifi/mvm/iwlmvm.ko:system/lib/modules/iwlmvm.ko \
-					    $(WIFI_ROOT)/drivers/net/wireless/iwlwifi/mvm/iwldvm.ko:system/lib/modules/iwldvm.ko \
+					    $(WIFI_ROOT)/drivers/net/wireless/iwlwifi/dvm/iwldvm.ko:system/lib/modules/iwldvm.ko \
 					    $(WIFI_ROOT)/net/mac80211/mac80211.ko:system/lib/modules/mac80211.ko \
                                 	    $(WIFI_ROOT)/compat/compat.ko:system/lib/modules/compat.ko \
                                 	    $(WIFI_ROOT)/compat/crc8.ko:system/lib/modules/crc8.ko \
