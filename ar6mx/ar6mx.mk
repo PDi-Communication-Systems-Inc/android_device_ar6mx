@@ -18,7 +18,9 @@ PRODUCT_COPY_FILES += \
 	device/bcm/ar6mx/audio_effects.conf:system/vendor/etc/audio_effects.conf \
 	device/bcm/EETI/eGalaxTouch_VirtualDevice.idc:system/usr/idc/eGalaxTouch_VirtualDevice.idc \
         device/bcm/EETI/eGTouchA.ini:data/eGTouchA.ini \
-        device/bcm/EETI/eGTouchD:system/bin/eGTouchD
+        device/bcm/EETI/eGTouchD:system/bin/eGTouchD \
+	device/bcm/ar6mx/process_ts.sh:system/etc/process_ts.sh \
+	device/bcm/ar6mx/load_wifi_module.sh:system/etc/load_wifi_module.sh
 
 # GPU files
 
@@ -37,6 +39,7 @@ PRODUCT_COPY_FILES += \
 	frameworks/native/data/etc/android.software.sip.voip.xml:system/etc/permissions/android.software.sip.voip.xml \
 	frameworks/native/data/etc/android.hardware.usb.host.xml:system/etc/permissions/android.hardware.usb.host.xml \
 	frameworks/native/data/etc/android.hardware.usb.accessory.xml:system/etc/permissions/android.hardware.usb.accessory.xml \
+	frameworks/native/data/etc/android.hardware.location.xml:system/etc/permissions/android.hardware.location.xml \
 	frameworks/native/data/etc/android.hardware.bluetooth_le.xml:system/etc/permissions/android.hardware.bluetooth_le.xml
 
 # for PDK build, include only when the dir exists
@@ -68,9 +71,7 @@ PRODUCT_PACKAGES += \
 # Wifi Configuration files, for atheros, replace intel...is there a way to have both ifeq does not work here
 # ... is this file processed after AR6MXBoardConfigComm.mk
 PRODUCT_COPY_FILES += \
-                   vendor/atheros/wifi/wpa_supplicant.conf:/system/etc/wifi/wpa_supplicant.conf \
                    vendor/atheros/wifi/wpa_supplicant.conf:/data/misc/wifi/wpa_supplicant.conf \
-                   vendor/atheros/wifi/p2p_supplicant.conf:/data/misc/wifi/p2p_supplicant.conf \
                    vendor/atheros/wifi/hostapd.conf:/data/misc/wifi/hostapd.conf \
                    vendor/atmel/touchscreen/touchscreen.xcfg:/system/etc/touchscreen.xcfg
 

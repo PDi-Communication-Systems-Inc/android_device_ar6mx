@@ -9,8 +9,8 @@ TARGET_BOOTLOADER_BOARD_NAME := AR6MX
 PRODUCT_MODEL := AR6MX 
 
 # Wifi
-BOARD_WLAN_VENDOR 			 := ATHEROS
-#BOARD_WLAN_VENDOR 			 := INTEL
+#BOARD_WLAN_VENDOR 			 := ATHEROS
+BOARD_WLAN_VENDOR 			 := INTEL
 
 ifeq ($(BOARD_WLAN_VENDOR),ATHEROS)
 BOARD_WLAN_DEVICE            := qcwcn
@@ -21,8 +21,8 @@ WIFI_DRIVER_MODULE_NAME              := "ath9k"
 WIFI_DRIVER_MODULE_NAME_ATHEROS      := "ath9k"
 WIFI_DRIVER_MODULE_ARG               := "nohwcrypt=1 btcoex_enable=1 debug=0xffffffff"
 WIFI_DRIVER_MODULE_ARG_ATHEROS       := "nohwcrypt=1 btcoex_enable=1 debug=0xffffffff"
-WIFI_DRIVER_P2P_MODULE_ARG           := ""
-WIFI_DRIVER_P2P_MODULE_ARG_ATHEROS   := ""
+#WIFI_DRIVER_P2P_MODULE_ARG_ATHEROS   := "nohwcrypt=1 btcoex_enable=1 debug=0xffffffff"
+#WIFI_DRIVER_P2P_MODULE_ARG           := "nohwcrypt=1 btcoex_enable=1 debug=0xffffffff"
 WIFI_SDIO_IF_DRIVER_MODULE_PATH      := "/system/lib/modules/cfg80211.ko"
 WIFI_SDIO_IF_DRIVER_MODULE_PATH_ATHEROS := "/system/lib/modules/cfg80211.ko"
 WIFI_SDIO_IF_DRIVER_MODULE_NAME := "cfg80211"
@@ -83,19 +83,20 @@ ifeq ($(BOARD_WLAN_VENDOR),INTEL)
 WIFI_ROOT                               := backports-3.14-1
 #WIFI_ROOT                                := external/intel_iwlwifi
 INTEL_FIRMWARE_BINARY_LOC                := /system/etc/firmware/iwlwifi-3160-8.ucode
-WIFI_DRIVER_FW_PATH_STA                  := $(INTEL_FIRMWARE_BINARY_LOC)
-WIFI_DRIVER_FW_PATH_AP                   := $(INTEL_FIRMWARE_BINARY_LOC)
-WIFI_DRIVER_FW_PATH_P2P                  := $(INTEL_FIRMWARE_BINARY_LOC)
+#WIFI_DRIVER_FW_PATH_STA                  := $(INTEL_FIRMWARE_BINARY_LOC)
+#WIFI_DRIVER_FW_PATH_AP                   := $(INTEL_FIRMWARE_BINARY_LOC)
+#WIFI_DRIVER_FW_PATH_P2P                  := $(INTEL_FIRMWARE_BINARY_LOC)
 WIFI_DRIVER_FW_PATH_PARAM                := /system/etc/firmware/
 BOARD_WLAN_DEVICE                        := INTEL
 BOARD_WPA_SUPPLICANT_DRIVER              := NL80211
 WPA_SUPPLICANT_VERSION                   := VER_0_8_X
 HOSTAPD_VERSION                          := VER_0_8_X
-BOARD_WPA_SUPPLICANT_PRIVATE_LIB         ?= private_lib_driver_cmd_intel
-BOARD_HOSTAPD_PRIVATE_LIB                ?= private_lib_driver_cmd_intel
+BOARD_WPA_SUPPLICANT_PRIVATE_LIB         := private_lib_driver_cmd_intel
+#BOARD_HOSTAPD_PRIVATE_LIB                ?= private_lib_driver_cmd_intel
 TARGET_KERNEL_MODULES                    := \
 					    $(WIFI_ROOT)/drivers/net/wireless/iwlwifi/iwlwifi.ko:system/lib/modules/iwlwifi.ko \
 					    $(WIFI_ROOT)/drivers/net/wireless/iwlwifi/mvm/iwlmvm.ko:system/lib/modules/iwlmvm.ko \
+					    $(WIFI_ROOT)/drivers/net/wireless/iwlwifi/dvm/iwldvm.ko:system/lib/modules/iwldvm.ko \
 					    $(WIFI_ROOT)/net/mac80211/mac80211.ko:system/lib/modules/mac80211.ko \
                                 	    $(WIFI_ROOT)/compat/compat.ko:system/lib/modules/compat.ko \
                                 	    $(WIFI_ROOT)/compat/crc8.ko:system/lib/modules/crc8.ko \
@@ -134,9 +135,9 @@ TARGET_KERNEL_MODULES                    := \
 					    vendor/intel/bt/ibt-hw-37.7.10-fw-1.0.2.3.d.bseq:system/etc/firmware/ibt-hw-37.7.10-fw-1.0.2.3.d.bseq \
 					    vendor/intel/bt/ibt-hw-37.7.10-fw-1.80.2.3.d.bseq:system/etc/firmware/ibt-hw-37.7.10-fw-1.80.2.3.d.bseq \
 					    vendor/intel/bt/ibt-hw-37.7.bseq:system/etc/firmware/ibt-hw-37.7.bseq
-WIFI_DRIVER_MODULE_PATH                  := "/system/lib/modules/iwlwifi.ko"
-WIFI_DRIVER_MODULE_NAME                  := "iwlwifi"
-WIFI_DRIVER_MODULE_ARG                   := "debug=0xf bt_coex_active=true"
+#WIFI_DRIVER_MODULE_PATH                  := "/system/lib/modules/iwlwifi.ko"
+#WIFI_DRIVER_MODULE_NAME                  := "iwlwifi"
+#WIFI_DRIVER_MODULE_ARG                   := "debug=0xf bt_coex_active=true"
 endif
 
 BOARD_MODEM_VENDOR := AMAZON
