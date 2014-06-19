@@ -98,3 +98,9 @@ com.pdiarm.systembackupandrestore 	\
 BackupRestoreConfirmationPDi		\
 ethernet				\
 ReplicaIsland
+
+ifeq ($(TVRC_BUILD),T)
+$(warning Adding TVRC packages)
+   PRODUCT_PACKAGES += omicron-V1_1_21	
+endif
+
