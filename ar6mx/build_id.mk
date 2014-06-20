@@ -18,5 +18,42 @@
 # (like "CRB01").  It must be a single word, and is
 # capitalized by convention.
 
-export BUILD_ID=1.1.0-rc4
-export BUILD_NUMBER=20140113
+buildnum := $(shell date +%Y%m%d.%H%M%S)
+builddtonly := $(shell date +%Y%m%d)
+export BUILD_NUMBER=${buildnum}
+export BUILD_DATE_ONLY=${builddtonly}
+
+ifeq (${PDI_SOLO},T)
+   export CORE_TYPE=S
+else
+   export CORE_TYPE=Q
+endif
+
+ifeq (${ANDROID_BUILD_MODE},user)
+   $(warning Generating user build)
+
+   ifeq (${NIH_BUILD}, T)
+      export BUILD_ID=NIH${CORE_TYPE}U8-${BUILD_DATE_ONLY}
+   endif
+
+   ifeq (${TVRC_BUILD}, T)
+      export BUILD_ID=TVRC${CORE_TYPE}U8-${BUILD_DATE_ONLY}
+   else
+      export BUILD_ID=${CORE_TYPE}U8-${BUILD_DATE_ONLY}
+   endif
+
+else
+   $(warning Generating enginnering build)
+
+   ifeq (${NIH_BUILD}, T) 
+      export BUILD_ID=NIH${CORE_TYPE}E8-${BUILD_DATE_ONLY}
+   endif 
+
+   ifeq (${TVRC_BUILD}, T)
+      export BUILD_ID=TVRC${CORE_TYPE}E8-${BUILD_DATE_ONLY}
+   else
+      export BUILD_ID=${CORE_TYPE}E8-${BUILD_DATE_ONLY}
+   endif
+endif
+$(warning the finalized build id is defined to be ${BUILD_ID})
+#export BUILD_ID=1.1.0-rc4
