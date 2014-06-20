@@ -79,6 +79,7 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
 		  vendor/atmel/touchscreen/touchscreen.xcfg:/system/etc/touchscreen.xcfg
 
+# Packages for all builds that add variety, fun, and spice to the PDi-Tab
 PRODUCT_PACKAGES += 		\
 com.adobe.reader_10.6.1                 \
 org.jtb.alogcat_43                      \
@@ -100,8 +101,15 @@ BackupRestoreConfirmationPDi		\
 ethernet				\
 ReplicaIsland
 
+# Packages to include if the build is TVRC
 ifeq ($(TVRC_BUILD),T)
 $(warning Adding TVRC packages)
-   PRODUCT_PACKAGES += omicron-V1_1_21	
+   PRODUCT_PACKAGES += omicron-V1_1_21	\
+		       su
 endif
 
+# Packages to include if the build is NOT TVRC
+ifneq ($(TVRC_BUILD),T)
+$(warning Adding packages for non-TVRC build like cci-test)
+   PRODUCT_PACKAGES += cci-test
+endif
