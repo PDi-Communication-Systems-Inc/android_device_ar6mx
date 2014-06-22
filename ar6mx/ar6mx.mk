@@ -106,7 +106,10 @@ ReplicaIsland
 ifeq ($(TVRC_BUILD),T)
 $(warning Adding TVRC packages)
    PRODUCT_PACKAGES += omicron-V1_1_21	\
-		       su
+		       su 
+
+   SUPERUSER_PACKAGE := com.pdiarm.superuser
+   SUPERUSER_EMBEDDED := true;
 endif
 
 # Packages to include if the build is NOT TVRC
