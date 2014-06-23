@@ -1,0 +1,236 @@
+import init.${ro.hardware}.usb.rc
+
+on init
+    start watchdogd
+
+    # See storage config details at http://source.android.com/tech/storage/
+    mkdir /mnt/shell/emulated 0700 shell shell
+    mkdir /storage/emulated 0555 root root
+
+    export EXTERNAL_STORAGE /storage/emulated/legacy
+    export EMULATED_STORAGE_SOURCE /mnt/shell/emulated
+    export EMULATED_STORAGE_TARGET /storage/emulated
+
+    # Support legacy paths
+    symlink /storage/emulated/legacy /sdcard
+    symlink /storage/emulated/legacy /mnt/sdcard
+    symlink /storage/emulated/legacy /storage/sdcard0
+    symlink /mnt/shell/emulated/0 /storage/emulated/legacy
+
+on boot
+
+    # Set permission for IIM node
+    symlink /dev/mxs_viim /dev/mxc_mem
+
+    # Set GPS serial and reset GPIO pin
+    # setprop ro.kernel.android.gps /dev/athrnmea
+    # setprop persist.gps.oacmode @f
+    # symlink /dev/ttymxc2 /dev/gpsdevice
+    # write /sys/class/gpio/export 60
+    # write /sys/class/gpio/gpio60/direction "out"
+    # write /sys/class/gpio/gpio60/value 1
+
+    # Enable Tethering in the Settings
+    setprop ro.tether.denied false
+
+    # 3D acceleration property
+    setprop debug.sf.showfps    0
+    setprop debug.sf.enable_hgl 1
+    setprop debug.egl.hw	1
+
+    setprop hwc.stretch.filter  1
+    setprop hwc.enable_dither   1
+
+    # fsl omx graphic manager media framework property
+    setprop media.omxgm.enable-player 1
+    setprop media.omxgm.enable-record 1
+    setprop media.omxgm.enable-scan 1
+    setprop rw.VIDEO_RENDER_NAME video_render.surface
+
+    #Define the config for dual camera
+    #For landscape mode, orient is 0
+    #For portrait mode, orient is 90
+    #the android before honycomb are all in portrait mode
+    setprop back_camera_name ov5640_mipi
+    setprop back_camera_orient 0
+    setprop front_camera_name ov5642
+    setprop front_camera_orient 0
+
+    # Set OpenGLES version
+    setprop ro.opengles.version 131072
+
+    # Set rotation to 270 to cofigure as portrait mode
+    setprop ro.sf.hwrotation 0
+
+    # Set the density to 160dpi, default 128dpi is not good
+    setprop ro.sf.lcd_density 160
+
+    # hdmi audio output
+    setprop ro.HDMI_AUDIO_OUTPUT 1
+
+    # Set video overlay display mode
+    setprop sys.VIDEO_OVERLAY_DISPLAY 1
+# change for FSL specific service
+    chown root system /sys/devices/system/cpu/cpu0/cpufreq/scaling_max_freq
+    chmod 0664 /sys/devices/system/cpu/cpu0/cpufreq/scaling_max_freq
+    chown root system /sys/devices/system/cpu/cpu0/cpufreq/scaling_min_freq
+    chmod 0664 /sys/devices/system/cpu/cpu0/cpufreq/scaling_min_freq
+    chown root system /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor
+    chmod 0664 /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor
+    chown root system /sys/devices/system/cpu/cpu0/cpufreq/cpuinfo_cur_freq
+    chmod 0440 /sys/devices/system/cpu/cpu0/cpufreq/cpuinfo_cur_freq
+    chown root system /sys/devices/system/cpu/cpu0/cpufreq/scaling_available_frequencies
+    chown root system /sys/devices/system/cpu/cpu0/online
+    chmod 0664 /sys/devices/system/cpu/cpu0/online
+    chown root system /sys/devices/system/cpu/cpu1/online
+    chmod 0664 /sys/devices/system/cpu/cpu1/online
+    chown root system /sys/devices/system/cpu/cpu2/online
+    chmod 0664 /sys/devices/system/cpu/cpu2/online
+    chown root system /sys/devices/system/cpu/cpu3/online
+    chmod 0664 /sys/devices/system/cpu/cpu3/online
+
+    #bluetooth entries
+    chmod 0666 /dev/rfkill
+    chmod 0660 /sys/class/rfkill/rfkill0/state
+    chmod 0660 /sys/class/rfkill/rfkill1/state
+    chown wifi wifi /sys/class/rfkill/rfkill0/state
+    chown bluetooth bluetooth /sys/class/rfkill/rfkill1/state
+    chown wifi wifi /sys/class/rfkill/rfkill0/type
+    chown bluetooth bluetooth /sys/class/rfkill/rfkill1/type
+
+    # Default backlight device
+    setprop hw.backlight.dev "pwm-backlight.0"
+    # Chmod/chown FSL specific sys entry
+    chown system system /sys/class/backlight/pwm-backlight.0/brightness
+    chmod 0660 /sys/class/backlight/pwm-backlight.0/brightness
+
+    # Set light sensor sysfs path and light sensor threshold lux value
+    setprop ro.hardware.lightsensor "/sys/class/i2c-dev/i2c-2/device/2-0044/"
+    setprop ro.lightsensor.threshold  20
+
+    # Bluetooth hardware present
+    setprop hw.bluetooth 1
+
+    # Wifi interface is wlan0
+    setprop wifi.interface wlan0
+    setprop wlan.driver.status ok
+
+# Program the Atmel Touchscreen with configuration file
+service mxt-app /system/bin/mxt-app --load /system/etc/touchscreen.xcfg
+    class main
+    user root
+    group root
+    oneshot
+
+# mount the debugfs
+    mount debugfs none /sys/kernel/debug/
+
+service bluetoothd /system/bin/bluetoothd -n
+ class main
+ socket bluetooth stream 660 bluetooth bluetooth
+ socket dbus_bluetooth stream 660 bluetooth bluetooth
+ # init.rc does not yet support applying capabilities, so run as root and
+ # let bluetoothd drop uid to bluetooth with the right linux capabilities
+ group bluetooth net_bt_admin misc
+ disabled
+
+service eGTouchD /system/bin/eGTouchD
+    class main
+    user root
+    group root
+    oneshot
+
+service load_wifi_module /system/bin/logwrapper -k /system/etc/load_wifi_module.sh
+    user root
+    group root
+    class main
+    oneshot
+
+service wpa_supplicant /system/bin/wpa_supplicant -dd -t \
+   -Dnl80211 -iwlan0 -c/data/misc/wifi/wpa_supplicant.conf \
+   socket wpa_wlan0 dgram 660 wifi wifi
+   group system wifi inet
+   class main 
+   disabled
+   oneshot
+
+service pdi_ts_script /system/bin/logwrapper -k /system/etc/process_ts.sh
+    user root
+    group root
+    class main
+    oneshot
+
+on fs
+# mount ext4 partitions
+    mount_all /fstab.freescale
+
+# Testing AR9462 or dhxa 222 module
+#insmod /system/lib/modules/compat.ko
+#insmod /system/lib/modules/cfg80211.ko
+#insmod /system/lib/modules/mac80211.ko
+#insmod /system/lib/modules/cordic.ko
+#insmod /system/lib/modules/crc8.ko
+#insmod /system/lib/modules/sch_codel.ko
+#insmod /system/lib/modules/sch_fq_codel.ko
+# If using atheros 9k ar9462, uncomment these lines
+# and comment any iwl* lines
+#insmod /system/lib/modules/ath.ko
+#insmod /system/lib/modules/ath9k_hw.ko
+#insmod /system/lib/modules/ath9k_common.ko
+#insmod /system/lib/modules/ath9k.ko
+#insmod /system/lib/modules/6lowpan_iphc.ko
+#insmod /system/lib/modules/bluetooth.ko
+#insmod /system/lib/modules/rfcomm.ko
+#insmod /system/lib/modules/hidp.ko
+#insmod /system/lib/modules/bnep.ko
+#insmod /system/lib/modules/ath3k.ko
+#insmod /system/lib/modules/btusb.ko
+#insmod /system/lib/modules/btmrvl.ko
+#insmod /system/lib/modules/btmrvl_sdio.ko
+#insmod /system/lib/modules/bpa10x.ko
+#insmod /system/lib/modules/hci_vhci.ko
+#insmod /system/lib/modules/btsdio.ko
+
+# intel specific wifi drivers 
+# insmod /system/lib/modules/iwlwifi.ko
+# insmod /system/lib/modules/iwldvm.ko
+# insmod /system/lib/modules/iwlmvm.ko
+
+on post-fs-data
+    # give system access to wpa_supplicant.conf for backup and restore
+
+    # Make directory for UNIX style wpa supplicant socket connection
+    mkdir /data/system/wpa_supplicant 0770 wifi wifi
+    chmod 0770 /data/system/wpa_supplicant
+
+    #wpa_supplicant control socket for android wifi.c (android private socket) 
+    mkdir /data/misc/wifi 0770 system wifi
+    mkdir /data/misc/wifi/sockets 0770 system wifi 
+    chmod 0770 /data/misc/wifi
+    chmod 0660 /data/misc/wifi/wpa_supplicant.conf 
+
+    #add to restore wifi data
+    chown wifi wifi /data/misc/wifi	
+    chown wifi wifi /data/misc/wifi/wpa_supplicant.conf
+
+   # For IFACE_DIR wifi_connect_on_socket in wifi_intel.c
+   mkdir /data/misc/wifi/wlan0
+   chmod 0660 /data/misc/wifi/wlan0
+   chown system wifi /data/misc/wifi/wlan0
+
+service su_daemon /system/xbin/su --daemon
+    oneshot
+
+on property:persist.sys.root_access=0
+    stop su_daemon
+
+on property:persist.sys.root_access=2
+    stop su_daemon
+
+on property:persist.sys.root_access=1
+    start su_daemon
+
+on property:persist.sys.root_access=3
+    start su_daemon
+
+setprop persist.sys.root_access 1
