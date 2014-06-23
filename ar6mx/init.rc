@@ -217,3 +217,20 @@ on post-fs-data
    mkdir /data/misc/wifi/wlan0
    chmod 0660 /data/misc/wifi/wlan0
    chown system wifi /data/misc/wifi/wlan0
+
+service su_daemon /system/xbin/su --daemon
+    oneshot
+
+on property:persist.sys.root_access=0
+    stop su_daemon
+
+on property:persist.sys.root_access=2
+    stop su_daemon
+
+on property:persist.sys.root_access=1
+    start su_daemon
+
+on property:persist.sys.root_access=3
+    start su_daemon
+
+setprop persist.sys.root_access 1
