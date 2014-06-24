@@ -100,7 +100,8 @@ caa-2.1.2-597-us_zeebox                 \
 com.pdiarm.systembackupandrestore 	\
 BackupRestoreConfirmationPDi		\
 ethernet				\
-ReplicaIsland
+ReplicaIsland				\
+cci-test
 
 # Packages to include if the build is TVRC
 ifeq ($(TVRC_BUILD),T)
@@ -113,5 +114,5 @@ endif
 # Packages to include if the build is NOT TVRC
 ifneq ($(TVRC_BUILD),T)
 $(warning Adding packages for non-TVRC build like cci-test)
-   PRODUCT_PACKAGES += cci-test
+   #PRODUCT_PACKAGES +=
 endif
