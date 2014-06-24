@@ -48,3 +48,4 @@ TARGET_USERIMAGES_SPARSE_EXT_DISABLED	:= true
 # System
 TARGET_NO_RECOVERY			:= false
 TARGET_PROVIDES_INIT_RC			:= true
+TARGET_RECOVERY_FSTAB 			:= device/bcm/ar6mx/recovery.fstab
