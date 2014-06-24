@@ -19,8 +19,8 @@ TARGET_KERNEL_DEFCONF := ar6mx_android_defconfig
 TARGET_BOOTLOADER_CONFIG := 6q:mx6q_ar6mx_android_config 6solo:mx6solo_ar6mx_android_config
 
 # Filesystem and partitioning
-BOARD_RECOVERY_PARTITION_SIZE 		:= 100M
-BOARD_CACHEIMAGE_PARTITION_SIZE         := 256M
+BOARD_RECOVERY_PARTITION_SIZE 		:= 104900000
+BOARD_CACHEIMAGE_PARTITION_SIZE         := 256000000
 BOARD_CACHEIMAGE_FILE_SYSTEM_TYPE       := ext4
 
 ifeq ($(EMMC_SIZE),8)
@@ -48,4 +48,4 @@ TARGET_USERIMAGES_SPARSE_EXT_DISABLED	:= true
 # System
 TARGET_NO_RECOVERY			:= false
 TARGET_PROVIDES_INIT_RC			:= true
-TARGET_RECOVERY_FSTAB 			:= device/bcm/ar6mx/recovery.fstab
+TARGET_RECOVERY_FSTAB 			:= device/bcm/ar6mx/fstab.bcm
