@@ -19,6 +19,6 @@
 <resources>
     <!-- Default for Settings.Secure.USER_SETUP_COMPLETE -->
     <bool name="def_user_setup_complete">true</bool>
-    <bool name="def_auto_time">false</bool>
-    <bool name="def_auto_time_zone">false</bool>
+    <bool name="def_auto_time">true</bool>
+    <bool name="def_auto_time_zone">true</bool>
 </resources>
