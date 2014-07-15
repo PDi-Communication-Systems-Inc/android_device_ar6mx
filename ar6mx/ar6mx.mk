@@ -116,3 +116,6 @@ ifneq ($(TVRC_BUILD),T)
 $(warning Adding packages for non-TVRC build like cci-test)
    #PRODUCT_PACKAGES +=
 endif
+
+PRODUCT_PROPERTY_OVERRIDES += hw.nobattery=true
+PRODUCT_PROPERTY_OVERRIDES += sys.device.type=true
