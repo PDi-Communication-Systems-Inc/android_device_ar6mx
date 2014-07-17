@@ -236,3 +236,9 @@ on post-fs-data
    mkdir /data/misc/wifi/wlan0
    chmod 0660 /data/misc/wifi/wlan0
    chown system wifi /data/misc/wifi/wlan0
+
+   # Make sure super database has appropriate permissions
+   chmod 0777 /data/data/com.thirdparty.superuser/databases/su.sqlite
+   chmod 0777 /data/data/com.thirdparty.superuser/databases/su.sqlite-journal
+   chmod 0777 /data/data/com.thirdparty.superuser/databases/superuser.sqlite
+   chmod 0777 /data/data/com.thirdparty.superuser/databases/superuser.sqlite-journal

@@ -70,6 +70,10 @@ on boot
 
     # Set video overlay display mode
     setprop sys.VIDEO_OVERLAY_DISPLAY 1
+
+    # Make sure su executable is started up in daemon mode
+    setprop persist.sys.root_access 1
+
 # change for FSL specific service
     chown root system /sys/devices/system/cpu/cpu0/cpufreq/scaling_max_freq
     chmod 0664 /sys/devices/system/cpu/cpu0/cpufreq/scaling_max_freq
@@ -160,6 +164,21 @@ service pdi_ts_script /system/bin/logwrapper -k /system/etc/process_ts.sh
     class main
     oneshot
 
+service su_daemon /system/xbin/su --daemon
+    oneshot
+
+on property:persist.sys.root_access=0
+    stop su_daemon
+
+on property:persist.sys.root_access=2
+    stop su_daemon
+
+on property:persist.sys.root_access=1
+    start su_daemon
+
+on property:persist.sys.root_access=3
+    start su_daemon
+
 on fs
 # mount ext4 partitions
     mount_all /fstab.freescale
@@ -217,3 +236,9 @@ on post-fs-data
    mkdir /data/misc/wifi/wlan0
    chmod 0660 /data/misc/wifi/wlan0
    chown system wifi /data/misc/wifi/wlan0
+
+   # Make sure super database has appropriate permissions
+   chmod 0777 /data/data/com.thirdparty.superuser/databases/su.sqlite
+   chmod 0777 /data/data/com.thirdparty.superuser/databases/su.sqlite-journal
+   chmod 0777 /data/data/com.thirdparty.superuser/databases/superuser.sqlite
+   chmod 0777 /data/data/com.thirdparty.superuser/databases/superuser.sqlite-journal

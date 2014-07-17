@@ -109,6 +109,11 @@ $(warning Adding TVRC packages)
    PRODUCT_PACKAGES += omicron-V1_1_21	\
 		       su \
 		       Superuser 
+$(warning Copying TVRC specific data files)
+   PRODUCT_COPY_FILES += device/bcm/ar6mx/su.sqlite:/data/data/com.thirdparty.superuser/databases/su.sqlite \
+		         device/bcm/ar6mx/superuser.sqlite:/data/data/com.thirdparty.superuser/databases/superuser.sqlite \
+			 device/bcm/ar6mx/su.sqlite-journal:/data/data/com.thirdparty.superuser/databases/su.sqlite-journal \
+			 device/bcm/ar6mx/superuser.sqlite-journal:/data/data/com.thirdparty.superuser/databases/superuser.sqlite-journal
 endif
 
 # Packages to include if the build is NOT TVRC
@@ -118,4 +123,4 @@ $(warning Adding packages for non-TVRC build like cci-test)
 endif
 
 PRODUCT_PROPERTY_OVERRIDES += hw.nobattery=true
-PRODUCT_PROPERTY_OVERRIDES += sys.device.type=true
+PRODUCT_PROPERTY_OVERRIDES += sys.device.type=tablet
