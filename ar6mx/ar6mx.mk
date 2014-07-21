@@ -110,10 +110,10 @@ $(warning Adding TVRC packages)
 		       su \
 		       Superuser 
 $(warning Copying TVRC specific data files)
-   PRODUCT_COPY_FILES += device/bcm/ar6mx/su.sqlite:/data/data/com.thirdparty.superuser/databases/su.sqlite \
-		         device/bcm/ar6mx/superuser.sqlite:/data/data/com.thirdparty.superuser/databases/superuser.sqlite \
-			 device/bcm/ar6mx/su.sqlite-journal:/data/data/com.thirdparty.superuser/databases/su.sqlite-journal \
-			 device/bcm/ar6mx/superuser.sqlite-journal:/data/data/com.thirdparty.superuser/databases/superuser.sqlite-journal
+   PRODUCT_COPY_FILES += vendor/tvrc/su.sqlite:/data/data/com.thirdparty.superuser/databases/su.sqlite \
+		         vendor/tvrc/superuser.sqlite:/data/data/com.thirdparty.superuser/databases/superuser.sqlite \
+			 vendor/tvrc/su.sqlite-journal:/data/data/com.thirdparty.superuser/databases/su.sqlite-journal \
+			 vendor/tvrc/superuser.sqlite-journal:/data/data/com.thirdparty.superuser/databases/superuser.sqlite-journal
 endif
 
 # Packages to include if the build is NOT TVRC
