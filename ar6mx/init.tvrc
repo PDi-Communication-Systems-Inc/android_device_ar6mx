@@ -74,6 +74,9 @@ on boot
     # Make sure su executable is started up in daemon mode
     setprop persist.sys.root_access 1
 
+    # Hide the navigation bar by default on startup
+    setprop qemu.hw.mainkeys 1
+
 # change for FSL specific service
     chown root system /sys/devices/system/cpu/cpu0/cpufreq/scaling_max_freq
     chmod 0664 /sys/devices/system/cpu/cpu0/cpufreq/scaling_max_freq
@@ -178,9 +181,6 @@ on property:persist.sys.root_access=1
 
 on property:persist.sys.root_access=3
     start su_daemon
-
-# Hide the navigation bar by telling the unit it has hw keys
- setprop qemu.hw.mainkeys 1
 
 # For testing, debug, and special operation purposes allow the nav bar to toggle
 on property:qemu.hw.mainkeys=0
