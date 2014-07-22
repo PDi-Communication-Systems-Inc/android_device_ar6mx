@@ -179,6 +179,18 @@ on property:persist.sys.root_access=1
 on property:persist.sys.root_access=3
     start su_daemon
 
+# Hide the navigation bar by telling the unit it has hw keys
+ setprop qemu.hw.mainkeys 1
+
+# For testing, debug, and special operation purposes allow the nav bar to toggle
+on property:qemu.hw.mainkeys=0
+   restart zygote
+   setprop pdiarm.softkeys.tobeenabled 1
+
+on property:qemu.hw.mainkeys=1
+   restart zygote
+   setprop pdiarm.softkeys.tobeenabled 0
+
 on fs
 # mount ext4 partitions
     mount_all /fstab.freescale
