@@ -98,6 +98,7 @@ on boot
 
     #bluetooth entries
     chmod 0666 /dev/rfkill
+    chmod 0666 /dev/uinput
     chmod 0660 /sys/class/rfkill/rfkill0/state
     chmod 0660 /sys/class/rfkill/rfkill1/state
     chown wifi wifi /sys/class/rfkill/rfkill0/state

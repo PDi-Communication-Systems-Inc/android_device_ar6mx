@@ -74,7 +74,7 @@ on boot
     # Make sure su executable is started up in daemon mode
     setprop persist.sys.root_access 1
 
-    # Hide the navigation bar by default
+    # Hide the navigation bar by default on startup
     setprop qemu.hw.mainkeys 1
 
 # change for FSL specific service
