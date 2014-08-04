@@ -103,7 +103,6 @@ BackupRestoreConfirmationPDi		\
 ethernet				\
 ReplicaIsland				\
 cci-test 				\
-chromadoze				\
 android-support-v4			\
 android-support-v7-appcompat		\
 android-support-v7-gridlayout		\
