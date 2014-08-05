@@ -21,8 +21,7 @@ PRODUCT_COPY_FILES += \
         device/bcm/EETI/eGTouchD:system/bin/eGTouchD \
 	device/bcm/ar6mx/process_ts.sh:system/etc/process_ts.sh \
 	device/bcm/ar6mx/load_wifi_module.sh:system/etc/load_wifi_module.sh \
-	device/bcm/ar6mx/dhcpcd.conf:system/etc/dhcpcd/dhcpcd.conf \
-	vendor/pdi/data/littlewomenormeg00alcoiala.epub:system/media/text/littlewomenormeg00alcoiala.epub
+	device/bcm/ar6mx/dhcpcd.conf:system/etc/dhcpcd/dhcpcd.conf
 
 # GPU files
 
@@ -111,7 +110,8 @@ android-support-v8-renderscript		\
 android-support-v13			\
 procstatlog				\
 tomdroid				\
-k9
+k9					\
+com.ghostsq.commander
 
 
 # Packages to include if the build is TVRC
