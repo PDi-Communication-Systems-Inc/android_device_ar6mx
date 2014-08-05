@@ -110,9 +110,7 @@ android-support-v8-renderscript		\
 android-support-v13			\
 procstatlog				\
 tomdroid				\
-k9					\
-com.ghostsq.commander
-
+k9
 
 # Packages to include if the build is TVRC
 ifeq ($(TVRC_BUILD),T)
