@@ -80,6 +80,10 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
 		  vendor/atmel/touchscreen/touchscreen.xcfg:/system/etc/touchscreen.xcfg
 
+# Add sample data files
+PRODUCT_COPY_FILES += \
+		  vendor/pdi/data/littlewomenormeg00alcoiala.epub:system/media/text/littlewomenormeg00alcoiala.epub
+
 # Packages for all builds that add variety, fun, and spice to the PDi-Tab
 PRODUCT_PACKAGES += 		\
 com.adobe.reader_10.6.1                 \
