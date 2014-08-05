@@ -111,7 +111,9 @@ android-support-v13			\
 procstatlog				\
 tomdroid				\
 k9					\
-com.ghostsq.commander
+com.ghostsq.commander			\
+VLC					\
+fbreader
 
 # Packages to include if the build is TVRC
 ifeq ($(TVRC_BUILD),T)
