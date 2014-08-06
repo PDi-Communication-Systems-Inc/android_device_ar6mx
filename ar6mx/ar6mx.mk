@@ -118,9 +118,15 @@ k9					\
 com.ghostsq.commander			\
 VLC					\
 fbreader				\
-libDeflatingDecompressor-v3.so		\
-libLineBreak-v2.so			\
-libNativeFormats-v3.so
+ghost-sftp-plugin			\
+ghost-dropbox-plugin			\
+ghost-box-plugin			\
+ghost-google-drive-plugin		\
+ghost-samba-plugin
+
+# Packages for engineering only builds
+PRODUCT_PACKAGES += \
+		 sl4a
 
 # Packages to include if the build is TVRC
 ifeq ($(TVRC_BUILD),T)
