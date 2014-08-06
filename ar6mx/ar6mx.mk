@@ -117,7 +117,10 @@ tomdroid				\
 k9					\
 com.ghostsq.commander			\
 VLC					\
-fbreader
+fbreader				\
+libDeflatingDecompressor-v3.so		\
+libLineBreak-v2.so			\
+libNativeFormats-v3.so
 
 # Packages to include if the build is TVRC
 ifeq ($(TVRC_BUILD),T)
