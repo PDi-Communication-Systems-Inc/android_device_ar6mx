@@ -116,7 +116,6 @@ procstatlog				\
 tomdroid				\
 k9					\
 com.ghostsq.commander			\
-VLC					\
 fbreader				\
 ghost-sftp-plugin			\
 ghost-dropbox-plugin			\
