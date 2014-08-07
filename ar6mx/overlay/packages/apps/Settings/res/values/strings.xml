@@ -22,4 +22,38 @@
     <!-- About device, status item titile. The MAC address of the Ethernet network adapater. -->
     <add-resource type="string" name="status_ethernet_mac_address"/>
     <string name="status_ethernet_mac_address"> Ethernet MAC address </string>
+    <add-resource type="string" name="ota_settings" />
+    <string name="ota_settings"> Over the Air (OTA) </string>
+    <add-resource type="string" name="ota_server_name" />
+    <string name="ota_server_name"> Server </string>
+    <add-resource type="string" name="ota_port_name" />
+    <string name="ota_port_name"> Port </string>
+    <add-resource type="string" name="ota_server_summary" />
+    <string name="ota_server_summary"> Tap to use a non PDi OTA server </string>
+    <add-resource type="string" name="ota_port_summary" />
+    <string name="ota_port_summary"> Tap to use a different port </string> 
+    <add-resource type="string" name="ota_protocol_name" />
+    <string name="ota_protocol_name"> Protocol </string>
+    <add-resource type="string" name="ota_protocol_summary" />
+    <string name="ota_protocol_summary"> Tap to change the type of server being accessed </string>
+    <add-resource type="string" name="ota_config_name" />
+    <string name="ota_config_name"> Configuration Suffix </string>
+    <add-resource type="string" name="ota_config_summary" />
+    <string name="ota_config_summary"> Tap to use a custom update configuration </string>
+    <add-resource type="string" name="ota_archive_name" />
+    <string name="ota_archive_name"> Archive Suffix </string>
+    <add-resource type="string" name="ota_port_summary" />
+    <string name="ota_archive_summary"> Tap to use a custom update package </string>
+    <add-resource type="string" name="ota_monthly_check_name" />
+    <string name="ota_monthly_check_name"> Automate Updates </string>
+    <add-resource type="string" name="ota_monthly_check_sum_off" />
+    <string name="ota_monthly_check_sum_off">Tap box to have system start monthly checks for updates </string>
+    <add-resource type="string" name="ota_monthly_check_sum_on" />
+    <string name="ota_monthly_check_sum_on">Tap box to have system stop monthly checks </string>
+    <add-resource type="string" name="ota_url_mod_title" />
+    <string name="ota_url_mod_title"> URL Configuration </string>
+    <add-resource type="string" name="ota_automation_title" />
+    <string name="ota_automation_title"> Automation Configuration</string>
+    <add-resource type="string" name="ota_actions_title" />
+    <string name="ota_actions_title"> Actions </string>
 </resources>
