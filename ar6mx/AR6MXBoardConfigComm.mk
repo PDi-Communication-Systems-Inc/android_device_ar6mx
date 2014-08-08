@@ -6,7 +6,6 @@
 include device/fsl/imx6/BoardConfigCommon.mk
 
 TARGET_BOOTLOADER_BOARD_NAME := AR6MX
-PRODUCT_MODEL := AR6MX 
 
 # Wifi
 #BOARD_WLAN_VENDOR 			 := ATHEROS

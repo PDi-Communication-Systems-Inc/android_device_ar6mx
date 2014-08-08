@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <PreferenceCategory 
+        android:title="@string/ota_url_mod_title"
+        android:key="pref_ota_url_settings">
+
+	    <ListPreference
+		android:title="@string/ota_protocol_name"
+		android:dialogTitle="@string/ota_protocol_name"
+		
+		android:key="ota_protocol_name"
+
+		android:entries="@array/ota_protocols_human_readable"
+		android:entryValues="@array/ota_protocols"
+
+		android:defaultValue="http"
+		
+		android:summary="@string/ota_protocol_summary"
+	    />
+
+	    <EditTextPreference
+		android:title="@string/ota_server_name"
+		android:dialogTitle="@string/ota_server_name"
+
+		android:key="ota_server_name"
+
+		android:singleLine="true"
+		android:inputType="text"
+
+		android:defaultValue="pdiarm.com"
+
+		android:summary="@string/ota_server_summary"
+
+	    />
+
+	    <EditTextPreference
+		android:title="@string/ota_port_name"
+		android:dialogTitle="@string/ota_port_name"
+
+		android:key="ota_port_name"
+
+		android:singleLine="true"
+		android:inputType="number"
+
+		android:defaultValue="80"
+
+		android:summary="@string/ota_port_summary"
+
+		/>
+
+	    <EditTextPreference
+	    
+		android:title="@string/ota_config_name"
+		android:dialogTitle="@string/ota_config_name"
+
+		android:key="ota_config_name"
+
+		android:singleLine="true"
+		android:inputType="text"
+		
+		android:defaultValue="build.prop"
+
+		android:summary="@string/ota_config_summary"
+	    />
+
+	    <EditTextPreference
+	    
+		android:title="@string/ota_archive_name"
+		android:dialogTitle="@string/ota_archive_name"
+
+		android:key="ota_archive_name"
+
+		android:singleLine="true"
+		android:inputType="text"
+		
+		android:defaultValue=".ota.zip"
+
+		android:summary="@string/ota_archive_summary"
+	    />
+   </PreferenceCategory>
+
+   <PreferenceCategory 
+	android:title="@string/ota_automation_title"
+	android:key="pref_ota_auto_settings">
+
+	   <CheckBoxPreference
+		android:title="@string/ota_monthly_check_name"
+		android:dialogTitle="@string/ota_monthly_check_name"
+
+		android:key="ota_monthly_check_name"
+		
+		android:summaryOff="@string/ota_monthly_check_sum_off"
+		android:summaryOn="@string/ota_monthly_check_sum_on"
+
+		android:focusable="false"
+	   />
+    </PreferenceCategory>
+
+    <PreferenceCategory
+	android:title="@string/ota_actions_title"
+	android:key="pref_ota_actions_settings">
+
+	    <PreferenceScreen android:key="additional_system_update_settings"
+			      android:title="@string/additional_system_update_settings_list_item_title">
+		<intent android:action="android.intent.action.MAIN"
+			android:targetPackage="@string/additional_system_update"
+			android:targetClass="@string/additional_system_update_menu" />
+	    </PreferenceScreen>
+    </PreferenceCategory>
+
+</PreferenceScreen>
