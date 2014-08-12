@@ -23,7 +23,8 @@ PRODUCT_COPY_FILES += \
 	device/bcm/ar6mx/process_ts.sh:system/etc/process_ts.sh \
 	device/bcm/ar6mx/load_wifi_module.sh:system/etc/load_wifi_module.sh \
 	device/bcm/ar6mx/dhcpcd.conf:system/etc/dhcpcd/dhcpcd.conf \
-	device/bcm/ar6mx/ota.conf:data/system/ota.conf
+	device/bcm/ar6mx/ota.conf:data/system/ota.conf \
+	branding/bootanimation.zip:system/media/bootanimation.zip
 
 # GPU files
 
