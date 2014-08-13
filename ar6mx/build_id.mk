@@ -38,6 +38,10 @@ ifeq (${ANDROID_BUILD_MODE},user)
 
    ifeq (${TVRC_BUILD}, T)
       export BUILD_ID=TVRC${CORE_TYPE}U8-${BUILD_DATE_ONLY}
+   endif
+
+   ifeq (${DAVITA_BUILD}, T)
+      export BUILD_ID=DVT${CORE_TYPE}U8-${BUILD_DATE_ONLY}
    else
       export BUILD_ID=${CORE_TYPE}U8-${BUILD_DATE_ONLY}
    endif
@@ -48,6 +52,10 @@ else
    ifeq (${NIH_BUILD}, T) 
       export BUILD_ID=NIH${CORE_TYPE}E8-${BUILD_DATE_ONLY}
    endif 
+
+   ifeq (${DAVITA_BUILD}, T)
+      export BUILD_ID=DVT${CORE_TYPE}E8-${BUILD_DATE_ONLY}
+   endif
 
    ifeq (${TVRC_BUILD}, T)
       export BUILD_ID=TVRC${CORE_TYPE}E8-${BUILD_DATE_ONLY}
