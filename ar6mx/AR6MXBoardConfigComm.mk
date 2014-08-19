@@ -7,6 +7,9 @@ include device/fsl/imx6/BoardConfigCommon.mk
 
 TARGET_BOOTLOADER_BOARD_NAME := AR6MX
 
+#Override camera default in freescale config
+BOARD_CAMERA_LIBRARIES := libcamera2
+
 # Wifi
 #BOARD_WLAN_VENDOR 			 := ATHEROS
 BOARD_WLAN_VENDOR 			 := INTEL
