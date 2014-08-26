@@ -24,7 +24,8 @@ PRODUCT_COPY_FILES += \
 	device/bcm/ar6mx/load_wifi_module.sh:system/etc/load_wifi_module.sh \
 	device/bcm/ar6mx/dhcpcd.conf:system/etc/dhcpcd/dhcpcd.conf \
 	device/bcm/ar6mx/ota.conf:data/system/ota.conf \
-	branding/bootanimation.zip:system/media/bootanimation.zip
+	branding/bootanimation.zip:system/media/bootanimation.zip \
+	vendor/pdi/idc/Vendor_0ac8_Product_3470.idc:system/usr/idc/Vendor_0ac8_Product_3470.idc
 
 # GPU files
 
@@ -125,6 +126,10 @@ ghost-dropbox-plugin			\
 ghost-box-plugin			\
 ghost-google-drive-plugin		\
 ghost-samba-plugin
+
+# Extra software based encoders
+PRODUCT_PACKAGES += \
+		 libstagefright_avcenc
 
 # Packages for engineering only builds
 PRODUCT_PACKAGES += \

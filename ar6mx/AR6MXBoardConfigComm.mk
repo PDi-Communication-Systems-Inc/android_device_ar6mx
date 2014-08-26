@@ -7,9 +7,6 @@ include device/fsl/imx6/BoardConfigCommon.mk
 
 TARGET_BOOTLOADER_BOARD_NAME := AR6MX
 
-#Override camera default in freescale config
-BOARD_CAMERA_LIBRARIES := libcamera2
-
 # Wifi
 #BOARD_WLAN_VENDOR 			 := ATHEROS
 BOARD_WLAN_VENDOR 			 := INTEL
@@ -111,6 +108,9 @@ TARGET_KERNEL_MODULES                    := \
                                 	    $(WIFI_ROOT)/net/bluetooth/bnep/bnep.ko:system/lib/modules/bnep.ko \
                                 	    $(WIFI_ROOT)/net/bluetooth/hidp/hidp.ko:system/lib/modules/hidp.ko \
                                 	    $(WIFI_ROOT)/net/bluetooth/bluetooth.ko:system/lib/modules/bluetooth.ko \
+					    $(WIFI_ROOT)/net/ieee802154/6lowpan_iphc.ko:system/lib/modules/6lowpan_iphc.ko \
+					    $(WIFI_ROOT)/drivers/bluetooth/hci_vhci.ko:system/lib/modules/hci_vhci.ko \
+					    $(WIFI_ROOT)/drivers/bluetooth/btsdio.ko:system/lib/modules/btsdio.ko \
 					    vendor/intel/iwlwifi-1000-3.ucode:system/etc/firmware/iwlwifi-1000-3.ucode \
 					    vendor/intel/iwlwifi-1000-5.ucode:system/etc/firmware/iwlwifi-1000-5.ucode \
 					    vendor/intel/iwlwifi-100-5.ucode:system/etc/firmware/iwlwifi-100-5.ucode \
