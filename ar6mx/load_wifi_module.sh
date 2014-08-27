@@ -31,5 +31,3 @@
     /system/bin/busybox sleep 2
     insmod /system/lib/modules/hci_vhci.ko
     /system/bin/busybox sleep 2
-    insmod /system/lib/modules/btsdio.ko
-    /system/bin/busybox sleep 2

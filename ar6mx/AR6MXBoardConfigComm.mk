@@ -110,7 +110,6 @@ TARGET_KERNEL_MODULES                    := \
                                 	    $(WIFI_ROOT)/net/bluetooth/bluetooth.ko:system/lib/modules/bluetooth.ko \
 					    $(WIFI_ROOT)/net/ieee802154/6lowpan_iphc.ko:system/lib/modules/6lowpan_iphc.ko \
 					    $(WIFI_ROOT)/drivers/bluetooth/hci_vhci.ko:system/lib/modules/hci_vhci.ko \
-					    $(WIFI_ROOT)/drivers/bluetooth/btsdio.ko:system/lib/modules/btsdio.ko \
 					    vendor/intel/iwlwifi-1000-3.ucode:system/etc/firmware/iwlwifi-1000-3.ucode \
 					    vendor/intel/iwlwifi-1000-5.ucode:system/etc/firmware/iwlwifi-1000-5.ucode \
 					    vendor/intel/iwlwifi-100-5.ucode:system/etc/firmware/iwlwifi-100-5.ucode \
