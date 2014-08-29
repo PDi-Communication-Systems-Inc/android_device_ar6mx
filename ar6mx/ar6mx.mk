@@ -131,10 +131,6 @@ ghost-samba-plugin
 PRODUCT_PACKAGES += \
 		 libstagefright_avcenc
 
-# Packages for engineering only builds
-PRODUCT_PACKAGES += \
-		 sl4a
-
 # Packages to include if the build is TVRC
 ifeq ($(TVRC_BUILD),T)
 $(warning Adding TVRC packages)
