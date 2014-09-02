@@ -119,6 +119,7 @@ TARGET_KERNEL_MODULES                    := \
 					    vendor/intel/iwlwifi-2030-6.ucode:system/etc/firmware/iwlwifi-2030-6.ucode \
 					    vendor/intel/iwlwifi-3160-7.ucode:system/etc/firmware/iwlwifi-3160-7.ucode \
 					    vendor/intel/iwlwifi-3160-8.ucode:system/etc/firmware/iwlwifi-3160-8.ucode \
+					    vendor/intel/iwlwifi-3160-9.ucode:system/etc/firmware/iwlwifi-3160-9.ucode \
 					    vendor/intel/iwlwifi-3945-2.ucode:system/etc/firmware/iwlwifi-3945-2.ucode \
 					    vendor/intel/iwlwifi-4965-2.ucode:system/etc/firmware/iwlwifi-4965-2.ucode \
 					    vendor/intel/iwlwifi-5000-1.ucode:system/etc/firmware/iwlwifi-5000-1.ucode \
@@ -133,9 +134,17 @@ TARGET_KERNEL_MODULES                    := \
 					    vendor/intel/iwlwifi-6050-5.ucode:system/etc/firmware/iwlwifi-6050-5.ucode \
 					    vendor/intel/iwlwifi-7260-7.ucode:system/etc/firmware/iwlwifi-7260-7.ucode \
 					    vendor/intel/iwlwifi-7260-8.ucode:system/etc/firmware/iwlwifi-7260-8.ucode \
+					    vendor/intel/iwlwifi-7260-9.ucode:system/etc/firmware/iwlwifi-7260-9.ucode \
+					    vendor/intel/iwlwifi-7265-8.ucode:system/etc/firmware/iwlwifi-7265-8.ucode \
+					    vendor/intel/iwlwifi-7265-9.ucode:system/etc/firmware/iwlwifi-7265-9.ucode \
 					    vendor/intel/bt/ibt-hw-37.7.10-fw-1.0.2.3.d.bseq:system/etc/firmware/ibt-hw-37.7.10-fw-1.0.2.3.d.bseq \
 					    vendor/intel/bt/ibt-hw-37.7.10-fw-1.80.2.3.d.bseq:system/etc/firmware/ibt-hw-37.7.10-fw-1.80.2.3.d.bseq \
-					    vendor/intel/bt/ibt-hw-37.7.bseq:system/etc/firmware/ibt-hw-37.7.bseq
+					    vendor/intel/bt/ibt-hw-37.7.bseq:system/etc/firmware/ibt-hw-37.7.bseq \
+					    vendor/intel/bt/ibt-hw-37.7.10-fw-1.0.1.2d.d.bseq:system/etc/firmware/ibt-hw-37.7.10-fw-1.0.1.2d.d.bseq \
+					    vendor/intel/bt/ibt-hw-37.7.10-fw-1.80.1.2d.d.bseq:system/etc/firmware/ibt-hw-37.7.10-fw-1.80.1.2d.d.bseq \
+					    vendor/intel/bt/ibt-hw-37.8.10-fw-1.10.2.27.d.bseq:system/etc/firmware/ibt-hw-37.8.10-fw-1.10.2.27.d.bseq \
+					    vendor/intel/bt/ibt-hw-37.8.bseq:system/etc/firmware/ibt-hw-37.8.bseq \
+					    vendor/intel/fw_sst_0f28.bin-48kHz_i2s_master:system/etc/firmware/fw_sst_0f28.bin-48kHz_i2s_master
 #WIFI_DRIVER_MODULE_PATH                  := "/system/lib/modules/iwlwifi.ko"
 #WIFI_DRIVER_MODULE_NAME                  := "iwlwifi"
 #WIFI_DRIVER_MODULE_ARG                   := "debug=0xf bt_coex_active=true"
