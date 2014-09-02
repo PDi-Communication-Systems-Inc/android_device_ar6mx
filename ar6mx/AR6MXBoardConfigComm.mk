@@ -31,31 +31,31 @@ WIFI_COMPAT_MODULE_NAME  := "compat"
 WIFI_COMPAT_MODULE_ARG   := ""
 WIFI_TEST_INTERFACE      := "sta"
 TARGET_KERNEL_MODULES        := \
-				backports-3.14-1/drivers/net/wireless/ath/ath9k/ath9k.ko:system/lib/modules/ath9k.ko \
-				backports-3.14-1/drivers/net/wireless/ath/ath9k/ath9k_hw.ko:system/lib/modules/ath9k_hw.ko \
-				backports-3.14-1/drivers/net/wireless/ath/ath9k/ath9k_common.ko:system/lib/modules/ath9k_common.ko \
-				backports-3.14-1/drivers/net/wireless/ath/ath10k/ath10k_pci.ko:system/lib/modules/ath10k_pci.ko \
-				backports-3.14-1/drivers/net/wireless/ath/ath10k/ath10k_core.ko:system/lib/modules/ath10k_core.ko \
-				backports-3.14-1/drivers/net/wireless/ath/ath.ko:system/lib/modules/ath.ko \
-				backports-3.14-1/net/mac80211/mac80211.ko:system/lib/modules/mac80211.ko \
-				backports-3.14-1/compat/compat.ko:system/lib/modules/compat.ko \
-				backports-3.14-1/compat/crc8.ko:system/lib/modules/crc8.ko \
-				backports-3.14-1/compat/cordic.ko:system/lib/modules/cordic.ko \
-				backports-3.14-1/net/wireless/cfg80211.ko:system/lib/modules/cfg80211.ko \
-				backports-3.14-1/drivers/bluetooth/btusb.ko:system/lib/modules/btusb.ko \
-				backports-3.14-1/drivers/bluetooth/btsdio.ko:system/lib/modules/btsdio.ko \
-				backports-3.14-1/drivers/bluetooth/bfusb.ko:system/lib/modules/bfusb.ko \
-				backports-3.14-1/drivers/bluetooth/bcm203x.ko:system/lib/modules/bcm203x.ko \
-				backports-3.14-1/drivers/bluetooth/btmrvl_sdio.ko:system/lib/modules/btmrvl_sdio.ko \
-				backports-3.14-1/drivers/bluetooth/bpa10x.ko:system/lib/modules/bpa10x.ko \
-				backports-3.14-1/drivers/bluetooth/btmrvl.ko:system/lib/modules/btmrvl.ko \
-				backports-3.14-1/drivers/bluetooth/hci_vhci.ko:system/lib/modules/hci_vhci.ko \
-				backports-3.14-1/drivers/bluetooth/ath3k.ko:system/lib/modules/ath3k.ko \
-				backports-3.14-1/net/bluetooth/rfcomm/rfcomm.ko:system/lib/modules/rfcomm.ko \
-				backports-3.14-1/net/bluetooth/bnep/bnep.ko:system/lib/modules/bnep.ko \
-				backports-3.14-1/net/bluetooth/hidp/hidp.ko:system/lib/modules/hidp.ko \
-				backports-3.14-1/net/bluetooth/bluetooth.ko:system/lib/modules/bluetooth.ko \
-				backports-3.14-1/net/ieee802154/6lowpan_iphc.ko:system/lib/modules/6lowpan_iphc.ko \
+				backports-3.16-1/drivers/net/wireless/ath/ath9k/ath9k.ko:system/lib/modules/ath9k.ko \
+				backports-3.16-1/drivers/net/wireless/ath/ath9k/ath9k_hw.ko:system/lib/modules/ath9k_hw.ko \
+				backports-3.16-1/drivers/net/wireless/ath/ath9k/ath9k_common.ko:system/lib/modules/ath9k_common.ko \
+				backports-3.16-1/drivers/net/wireless/ath/ath10k/ath10k_pci.ko:system/lib/modules/ath10k_pci.ko \
+				backports-3.16-1/drivers/net/wireless/ath/ath10k/ath10k_core.ko:system/lib/modules/ath10k_core.ko \
+				backports-3.16-1/drivers/net/wireless/ath/ath.ko:system/lib/modules/ath.ko \
+				backports-3.16-1/net/mac80211/mac80211.ko:system/lib/modules/mac80211.ko \
+				backports-3.16-1/compat/compat.ko:system/lib/modules/compat.ko \
+				backports-3.16-1/compat/crc8.ko:system/lib/modules/crc8.ko \
+				backports-3.16-1/compat/cordic.ko:system/lib/modules/cordic.ko \
+				backports-3.16-1/net/wireless/cfg80211.ko:system/lib/modules/cfg80211.ko \
+				backports-3.16-1/drivers/bluetooth/btusb.ko:system/lib/modules/btusb.ko \
+				backports-3.16-1/drivers/bluetooth/btsdio.ko:system/lib/modules/btsdio.ko \
+				backports-3.16-1/drivers/bluetooth/bfusb.ko:system/lib/modules/bfusb.ko \
+				backports-3.16-1/drivers/bluetooth/bcm203x.ko:system/lib/modules/bcm203x.ko \
+				backports-3.16-1/drivers/bluetooth/btmrvl_sdio.ko:system/lib/modules/btmrvl_sdio.ko \
+				backports-3.16-1/drivers/bluetooth/bpa10x.ko:system/lib/modules/bpa10x.ko \
+				backports-3.16-1/drivers/bluetooth/btmrvl.ko:system/lib/modules/btmrvl.ko \
+				backports-3.16-1/drivers/bluetooth/hci_vhci.ko:system/lib/modules/hci_vhci.ko \
+				backports-3.16-1/drivers/bluetooth/ath3k.ko:system/lib/modules/ath3k.ko \
+				backports-3.16-1/net/bluetooth/rfcomm/rfcomm.ko:system/lib/modules/rfcomm.ko \
+				backports-3.16-1/net/bluetooth/bnep/bnep.ko:system/lib/modules/bnep.ko \
+				backports-3.16-1/net/bluetooth/hidp/hidp.ko:system/lib/modules/hidp.ko \
+				backports-3.16-1/net/bluetooth/bluetooth.ko:system/lib/modules/bluetooth.ko \
+				backports-3.16-1/net/ieee802154/6lowpan_iphc.ko:system/lib/modules/6lowpan_iphc.ko \
 				vendor/atheros/bluetooth/ar3k/AthrBT_0x01020001.dfu:system/etc/firmware/ar3k/AthrBT_0x01020001.dfu \
 				vendor/atheros/bluetooth/ar3k/AthrBT_0x01020200.dfu:system/etc/firmware/ar3k/AthrBT_0x01020200.dfu \
 				vendor/atheros/bluetooth/ar3k/AthrBT_0x01020201.dfu:system/etc/firmware/ar3k/AthrBT_0x01020201.dfu \
@@ -79,9 +79,9 @@ BOARD_WPA_SUPPLICANT_PRIVATE_LIB_QCOM       := lib_driver_cmd_qcwcn
 endif
 
 ifeq ($(BOARD_WLAN_VENDOR),INTEL)
-WIFI_ROOT                               := backports-3.14-1
+WIFI_ROOT                               := backports-3.16-1
 #WIFI_ROOT                                := external/intel_iwlwifi
-INTEL_FIRMWARE_BINARY_LOC                := /system/etc/firmware/iwlwifi-3160-8.ucode
+INTEL_FIRMWARE_BINARY_LOC                := /system/etc/firmware/iwlwifi-3160-9.ucode
 #WIFI_DRIVER_FW_PATH_STA                  := $(INTEL_FIRMWARE_BINARY_LOC)
 #WIFI_DRIVER_FW_PATH_AP                   := $(INTEL_FIRMWARE_BINARY_LOC)
 #WIFI_DRIVER_FW_PATH_P2P                  := $(INTEL_FIRMWARE_BINARY_LOC)
