@@ -125,7 +125,8 @@ ghost-sftp-plugin			\
 ghost-dropbox-plugin			\
 ghost-box-plugin			\
 ghost-google-drive-plugin		\
-ghost-samba-plugin
+ghost-samba-plugin			\
+Wiktionary
 
 # Extra software based encoders
 PRODUCT_PACKAGES += \
