@@ -132,6 +132,21 @@ Wiktionary
 PRODUCT_PACKAGES += \
 		 libstagefright_avcenc
 
+# Packages to include if the build is NIH
+ifeq ($(NIH_BUILD),T)
+	PRODUCT_PACKAGES += \
+		com.pdiarm.nihwebsite			\
+		com.pdiarm.patientportal		\
+		com.pdiarm.nutrition			\
+		com.pdiarm.disclaimer
+endif 
+
+# Packages to include if the build is Davita
+ifeq ($(DAVITA_BUILD),T)
+	PRODUCT_PACKAGES += \
+		com.kmagic.solitaire_450			
+endif 
+
 # Packages to include if the build is TVRC
 ifeq ($(TVRC_BUILD),T)
 $(warning Adding TVRC packages)
