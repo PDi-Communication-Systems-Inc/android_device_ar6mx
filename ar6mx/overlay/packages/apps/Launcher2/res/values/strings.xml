@@ -276,24 +276,42 @@ s -->
     <string name="custom_workspace_cling_description_2"></string>
 	
 	<!-- Start - PDi Additions-->
+    <add-resource type="string" name="welcome_head"></add-resource>
     <string name="welcome_head">WELCOME</string>
+    <add-resource type="string" name="welcome_intro"></add-resource>
     <string name="welcome_intro">PDi-Tab can bring you more than just TV. A few steps before we start:</string>
+    <add-resource type="string" name="permission_secure_device"></add-resource>
     <string name="permission_secure_device">Secure Device - Ask your permission to Administer this PDi-TAB to secure your data</string>
+    <add-resource type="string" name="choose_password"></add-resource>
     <string name="choose_password">Step 1 - Secure your personal data - Choose a password for yourself</string>
+    <add-resource type="string" name="home_screen"></add-resource>
     <string name="home_screen">Step 2 - Device Setup - Device will configure itself and take you to the home screen</string>
+    <add-resource type="string" name="touch_here"></add-resource>
     <string name="touch_here">Continue</string>
+    <add-resource type="string" name="change_language"></add-resource>
     <string name="change_language">Change Language</string>
+    <add-resource type="string" name="food_analyzer"></add-resource>
     <string name="food_analyzer">Food Analyzer</string>
+    <add-resource type="string" name="kidney_smart"></add-resource>
     <string name="kidney_smart">Kidney Smart</string>
+    <add-resource type="string" name="kidney_disease"></add-resource>
     <string name="kidney_disease">Kidney Disease</string>
+    <add-resource type="string" name="davita_tools"></add-resource>
     <string name="davita_tools">DaVita Tools</string>
+    <add-resource type="string" name="mydavita"></add-resource>
     <string name="mydavita">MyDaVita</string>
-    <string name="working_on_dialysis">Work &amp; Dialysis</string>	
-    <string name="facebook">Facebook</string>	
-    <string name="foxnews">Fox News</string>	
+    <add-resource type="string" name="working_on_dialysis"></add-resource>
+    <string name="working_on_dialysis">Work &amp; Dialysis</string>
+    <add-resource type="string" name="facebook"></add-resource>	
+    <string name="facebook">Facebook</string>
+    <add-resource type="string" name="foxnews"></add-resource>	
+    <string name="foxnews">Fox News</string>
+    <add-resource type="string" name="cnn"></add-resource>	
     <string name="cnn">CNN</string>	
+    <add-resource type="string" name="pinterest"></add-resource>
     <string name="pinterest">Pinterest</string>
-	<string name="nxsteps_training">Training</string>	
+    <add-resource type="string" name="nxsteps_training"></add-resource>
+    <string name="nxsteps_training">Training</string>	
 		
     <!-- End - PDi Additions -->
 
