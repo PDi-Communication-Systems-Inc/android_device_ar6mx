@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='utf-8' standalone='yes' ?>
+<policies>
+<admin name="com.android.launcher/com.android.launcher2.ForceUserPassword$DeviceAdminSampleReceiver">
+<policies flags="95" />
+<password-quality value="131072" />
+<min-password-length value="4" />
+<max-time-to-unlock value="1800000" />
+<max-failed-password-wipe value="-1" />
+</admin>
+<admin name="org.wso2.emm.agent/org.wso2.emm.agent.services.WSO2DeviceAdminReceiver">
+<policies flags="479" />
+</admin>
+<active-password quality="131072" length="4" uppercase="0" lowercase="0" letters="0" numeric="4" symbols="0" nonletter="4" />
+</policies>

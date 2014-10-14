@@ -104,7 +104,7 @@ on boot
     # Chmod/chown FSL specific sys entry
     chown system system /sys/class/backlight/pwm-backlight.0/brightness
     chmod 0660 /sys/class/backlight/pwm-backlight.0/brightness
-
+	
     # Set light sensor sysfs path and light sensor threshold lux value
     setprop ro.hardware.lightsensor "/sys/class/i2c-dev/i2c-2/device/2-0044/"
     setprop ro.lightsensor.threshold  20
@@ -160,7 +160,7 @@ service pdi_ts_script /system/bin/logwrapper -k /system/etc/process_ts.sh
     group root
     class main
     oneshot
-
+	
 on fs
 # mount ext4 partitions
     mount_all /fstab.freescale
@@ -218,3 +218,9 @@ on post-fs-data
    mkdir /data/misc/wifi/wlan0
    chmod 0660 /data/misc/wifi/wlan0
    chown system wifi /data/misc/wifi/wlan0
+   
+  #copy the default admin policy file
+service copy_policy /system/bin/sh /system/etc/copy_device_policies.sh
+    class main
+    oneshot
+   

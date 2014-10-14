@@ -27,6 +27,11 @@ PRODUCT_COPY_FILES += \
 	branding/bootanimation.zip:system/media/bootanimation.zip \
 	vendor/pdi/idc/Vendor_0ac8_Product_3470.idc:system/usr/idc/Vendor_0ac8_Product_3470.idc
 
+#Copy default device admin files
+PRODUCT_COPY_FILES += \
+	device/bcm/ar6mx/device_policies.xml:system/etc/device_policies.xml \
+	device/bcm/ar6mx/copy_device_policies.sh:system/etc/copy_device_policies.sh
+	
 # GPU files
 
 DEVICE_PACKAGE_OVERLAYS := device/bcm/ar6mx/overlay
