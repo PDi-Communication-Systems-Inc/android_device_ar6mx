@@ -98,7 +98,6 @@ on boot
     chown bluetooth bluetooth /sys/class/rfkill/rfkill1/state
     chown wifi wifi /sys/class/rfkill/rfkill0/type
     chown bluetooth bluetooth /sys/class/rfkill/rfkill1/type
-	chmod 0777 /dev/ttymxc1
 
     # Default backlight device
     setprop hw.backlight.dev "pwm-backlight.0"
@@ -161,6 +160,13 @@ service pdi_ts_script /system/bin/logwrapper -k /system/etc/process_ts.sh
     group root
     class main
     oneshot
+	
+service test_cci /system/bin/cci-test
+	user root
+    group root
+    class main
+    oneshot
+
 	
 on fs
 # mount ext4 partitions

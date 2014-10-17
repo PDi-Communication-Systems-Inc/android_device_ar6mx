@@ -161,6 +161,13 @@ service pdi_ts_script /system/bin/logwrapper -k /system/etc/process_ts.sh
     class main
     oneshot
 	
+service test_cci /system/bin/cci-test
+	user root
+    group root
+    class main
+    oneshot
+
+	
 on fs
 # mount ext4 partitions
     mount_all /fstab.freescale
