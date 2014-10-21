@@ -190,5 +190,6 @@
 
     <!-- Hotseat (We use the screen as the position of the item in the hotseat) 
          Reserve this section for PDi Store Apps that we want to highlight
-         and always have front and present-->
+         and always have front and present or those that are special to 
+         a given non-Main branch -->
 </favorites>

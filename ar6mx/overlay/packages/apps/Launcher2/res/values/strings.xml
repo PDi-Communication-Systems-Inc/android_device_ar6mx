@@ -312,7 +312,14 @@ s -->
     <string name="pinterest">Pinterest</string>
     <add-resource type="string" name="nxsteps_training"></add-resource>
     <string name="nxsteps_training">Training</string>	
-		
+    <add-resource type="string" name="cancel_setup"></add-resource>
+    <string name="cancel_setup">Skip</string>   
+    <add-resource type="string" name="continue_setup"></add-resource>
+    <string name="continue_setup">Continue</string>     
+    <add-resource type="string" name="app_choice_view_name"></add-resource>
+    <string name="app_choice_view_name">Restricted Profile App Permissions</string>
+    <add-resource type="string" name="restricted_listview_header_prompt"></add-resource>
+    <string name="restricted_listview_header_prompt">What apps are patients allowed to use&#63;</string>
     <!-- End - PDi Additions -->
 
 </resources>
