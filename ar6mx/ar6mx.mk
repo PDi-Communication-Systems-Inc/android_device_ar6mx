@@ -131,7 +131,10 @@ ghost-dropbox-plugin			\
 ghost-box-plugin			\
 ghost-google-drive-plugin		\
 ghost-samba-plugin			\
-Wiktionary
+Wiktionary				\
+com.pdiarm.showusermessage		\
+org.wso2.emm.agent
+
 
 # Extra software based encoders
 PRODUCT_PACKAGES += \
