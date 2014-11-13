@@ -132,8 +132,7 @@ ghost-box-plugin			\
 ghost-google-drive-plugin		\
 ghost-samba-plugin			\
 Wiktionary				\
-com.pdiarm.showusermessage		\
-org.wso2.emm.agent
+com.pdiarm.showusermessage		
 
 
 # Extra software based encoders
@@ -169,9 +168,10 @@ $(warning Copying TVRC specific data files)
 endif
 
 # Packages to include if the build is NOT TVRC
+# Exclude other OEM/rooted builds here
 ifneq ($(TVRC_BUILD),T)
-$(warning Adding packages for non-TVRC build like cci-test)
-   #PRODUCT_PACKAGES +=
+$(warning Adding packages for non-TVRC build like the store agent)
+   PRODUCT_PACKAGES += org.wso2.emm.agent
 endif
 
 PRODUCT_PROPERTY_OVERRIDES += hw.nobattery=true
