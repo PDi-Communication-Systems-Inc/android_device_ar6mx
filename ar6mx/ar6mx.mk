@@ -158,7 +158,7 @@ endif
 # Packages to include if the build is TVRC
 ifeq ($(TVRC_BUILD),T)
 $(warning Adding TVRC packages)
-   PRODUCT_PACKAGES += omicron-V1_1_21	\
+   PRODUCT_PACKAGES += omicron-V1_2_4 \
 		       su \
 		       Superuser 
 $(warning Copying TVRC specific data files)
