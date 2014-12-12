@@ -25,7 +25,8 @@ PRODUCT_COPY_FILES += \
 	device/bcm/ar6mx/dhcpcd.conf:system/etc/dhcpcd/dhcpcd.conf \
 	device/bcm/ar6mx/ota.conf:data/system/ota.conf \
 	branding/bootanimation.zip:system/media/bootanimation.zip \
-	vendor/pdi/idc/Vendor_0ac8_Product_3470.idc:system/usr/idc/Vendor_0ac8_Product_3470.idc
+	vendor/pdi/idc/Vendor_0ac8_Product_3470.idc:system/usr/idc/Vendor_0ac8_Product_3470.idc \
+	device/bcm/ar6mx/ntp.conf:/system/etc/ntp.conf
 
 #Copy default device admin files
 PRODUCT_COPY_FILES += \
@@ -132,7 +133,8 @@ ghost-box-plugin			\
 ghost-google-drive-plugin		\
 ghost-samba-plugin			\
 Wiktionary				\
-com.pdiarm.showusermessage		
+com.pdiarm.showusermessage		\
+com.pdiarm.deleteme
 
 
 # Extra software based encoders
