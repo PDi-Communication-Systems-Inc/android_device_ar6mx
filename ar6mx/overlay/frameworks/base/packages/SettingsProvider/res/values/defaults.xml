@@ -21,4 +21,13 @@
     <bool name="def_user_setup_complete">true</bool>
     <bool name="def_auto_time">true</bool>
     <bool name="def_auto_time_zone">true</bool>
+
+    <!-- no way to give user tactile feedback as no vibration component exists -->
+    <bool name="def_haptic_feedback">false</bool>
+
+    <!-- no gps ic -->
+    <bool name="assisted_gps_enabled">false</bool>
+
+    <!-- Development settings - RahulTBD-change to true is temporary, revert to false later-->
+    <bool name="def_stay_on_while_plugged_in">true</bool>
 </resources>
