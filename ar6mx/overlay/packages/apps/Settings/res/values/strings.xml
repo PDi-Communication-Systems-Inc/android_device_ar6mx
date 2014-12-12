@@ -14,7 +14,6 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <!--  Help URLs for some screens. Not specified here. Specified in product overlays --><skip/>
     <!-- Help menu label [CHAR LIMIT=20] -->
     <!-- Help URL, WiFi [DO NOT TRANSLATE] -->
     <string name="help_url_wifi" translatable="false">http://support.google.com/wifi</string>
@@ -153,7 +152,7 @@
          to the permissions and need to be listed here. -->
     <string name="security_settings_desc_multi" product="tablet">This app can access the following on your PDi-TAB2\u2122.
          In order to improve performance and reduce memory usage, some of these permissions
-         are available to <xliff:g id="base_app_name">%1$s</xliff:g>
+         are available to <xliff:g id="base_app_name">%1$s</xliff:g> </string>
 
     <!-- Manage applications, text for Move button to move app to internal storage -->
     <string name="move_app_to_internal" product="tablet">Move to PDi-TAB2\u2122</string>
