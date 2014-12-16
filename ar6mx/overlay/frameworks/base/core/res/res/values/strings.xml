@@ -4112,7 +4112,7 @@
     <!-- Message informing user that the requested activity could not be found [CHAR LIMIT=none] -->
     <string name="app_not_found">No application found to handle this action</string>
     <string name="revoke">Revoke</string>
-	
-	<!-- PDi Button at the bottom of the unlock screen for new user -->
-    <string name="im_a_new_user">I\'m a new user</string>
+
+    <!-- PDi Button at the bottom of the unlock screen for new user -->
+    <string name="im_a_new_user">Create Account</string>
 </resources>
