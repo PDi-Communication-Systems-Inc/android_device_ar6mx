@@ -253,4 +253,6 @@
     <string name="ota_automation_title"> Automation Configuration</string>
     <add-resource type="string" name="ota_actions_title" />
     <string name="ota_actions_title"> Actions </string>
+    <add-resource type="string" name="max_users_choice" />
+    <string name="max_users_choice"> Maximum users on device (including owner) </string>
 </resources>

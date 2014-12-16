@@ -28,4 +28,11 @@
             android:title="@string/user_add_user_menu"
             android:icon="@drawable/ic_menu_add" />
 
+     <ListPreference
+	  android:key="maxUsers"
+	  android:title="@string/max_users_choice"
+	  android:entries="@array/max_users_choices_human_readable"
+	  android:entryValues="@array/max_users_choices_lookup"
+     />
+
 </PreferenceScreen>
