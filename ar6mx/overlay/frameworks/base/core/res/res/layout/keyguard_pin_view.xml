@@ -212,34 +212,21 @@
                android:contentDescription="@string/keyboardview_keycode_enter"
                />
        </LinearLayout>
-	   <LinearLayout
+       <LinearLayout
            android:layout_width="match_parent"
            android:layout_height="0dp"
            android:layout_weight="1"
-	   android:layout_marginTop="20dp"
-           android:orientation="horizontal"
-           >         
-
+           android:layout_marginTop="40dp"
+           android:orientation="horizontal"   
+       >
            <Button
                android:id="@+id/im_a_new_user"
-               android:layout_width="0px"
+               android:layout_width="match_parent"
                android:layout_height="match_parent"
                android:layout_weight="1"
-               android:paddingRight="10dp"
                android:text="@string/im_a_new_user"
                android:contentDescription="@string/keyboardview_keycode_enter"
-               />
- 
-			    <Space
-               android:layout_width="0px"
-               android:layout_height="match_parent"
-               android:layout_weight="1"
-               />
-			   <Space
-               android:layout_width="0px"
-               android:layout_height="match_parent"
-               android:layout_weight="1"
-               />
+          />
 
        </LinearLayout>
     </LinearLayout>
