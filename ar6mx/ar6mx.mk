@@ -63,7 +63,6 @@ endif
 PRODUCT_PACKAGES += \
 		    AudioRoute \
 		    libhardware_legacy \
-		    libnetcmdiface \
 		    libcrypto \
 		    libnetcmdiface
 
@@ -167,6 +166,12 @@ $(warning Copying TVRC specific data files)
 		         vendor/tvrc/superuser.sqlite:/data/data/com.thirdparty.superuser/databases/superuser.sqlite \
 			 vendor/tvrc/su.sqlite-journal:/data/data/com.thirdparty.superuser/databases/su.sqlite-journal \
 			 vendor/tvrc/superuser.sqlite-journal:/data/data/com.thirdparty.superuser/databases/superuser.sqlite-journal
+endif
+
+ifeq ($(TELEHEALTH_BUILD),T)
+$(warning Adding TELEHEALTH packages)
+    PRODUCT_PACKAGES += su \
+                        Superuser
 endif
 
 # Packages to include if the build is NOT TVRC
