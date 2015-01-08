@@ -162,7 +162,7 @@ service pdi_ts_script /system/bin/logwrapper -k /system/etc/process_ts.sh
     oneshot
 	
 service test_cci /system/bin/cci-test
-	user root
+    user root
     group root
     class main
     oneshot
@@ -221,13 +221,13 @@ on post-fs-data
     chown wifi wifi /data/misc/wifi	
     chown wifi wifi /data/misc/wifi/wpa_supplicant.conf
 
-   # For IFACE_DIR wifi_connect_on_socket in wifi_intel.c
-   mkdir /data/misc/wifi/wlan0
-   chmod 0660 /data/misc/wifi/wlan0
-   chown system wifi /data/misc/wifi/wlan0
+    # For IFACE_DIR wifi_connect_on_socket in wifi_intel.c
+    mkdir /data/misc/wifi/wlan0
+    chmod 0660 /data/misc/wifi/wlan0
+    chown system wifi /data/misc/wifi/wlan0
    
-  #copy the default admin policy file
-service copy_policy /system/bin/sh /system/etc/copy_device_policies.sh
+    #copy the default admin policy file
+    service copy_policy /system/bin/sh /system/etc/copy_device_policies.sh
     class main
     oneshot
    
