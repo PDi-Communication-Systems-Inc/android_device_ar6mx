@@ -325,7 +325,7 @@
     <dimen name="keyguard_avatar_size">66dp</dimen>
 
     <!-- Size of the text under the avator on the multiuser lockscreen. -->
-    <dimen name="keyguard_avatar_name_size">60sp</dimen>
+    <dimen name="keyguard_avatar_name_size">24sp</dimen>
 
     <!-- Size of the region along the edge of the screen that will accept
          swipes to scroll the widget area. -->
