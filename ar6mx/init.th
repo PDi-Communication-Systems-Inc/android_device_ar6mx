@@ -74,9 +74,6 @@ on boot
     # Make sure su executable is started up in daemon mode
     setprop persist.sys.root_access 1
 
-    # Hide the navigation bar by default on startup
-    setprop qemu.hw.mainkeys 1
-
 # change for FSL specific service
     chown root system /sys/devices/system/cpu/cpu0/cpufreq/scaling_max_freq
     chmod 0664 /sys/devices/system/cpu/cpu0/cpufreq/scaling_max_freq
@@ -168,6 +165,12 @@ service pdi_ts_script /system/bin/logwrapper -k /system/etc/process_ts.sh
     class main
     oneshot
 
+service test_cci /system/bin/cci-test
+    user root
+    group root
+    class main
+    oneshot
+
 service su_daemon /system/xbin/su --daemon
     oneshot
 
@@ -182,11 +185,6 @@ on property:persist.sys.root_access=1
 
 on property:persist.sys.root_access=3
     start su_daemon
-
-# For testing, debug, and special operation purposes allow the nav bar to toggle
-on property:qemu.hw.mainkeys=0
-   restart zygote
-   setprop pdiarm.softkeys.tobeenabled 1
 
 on property:qemu.hw.mainkeys=1
    restart zygote
@@ -245,13 +243,18 @@ on post-fs-data
     chown wifi wifi /data/misc/wifi	
     chown wifi wifi /data/misc/wifi/wpa_supplicant.conf
 
-   # For IFACE_DIR wifi_connect_on_socket in wifi_intel.c
-   mkdir /data/misc/wifi/wlan0
-   chmod 0660 /data/misc/wifi/wlan0
-   chown system wifi /data/misc/wifi/wlan0
+    # For IFACE_DIR wifi_connect_on_socket in wifi_intel.c
+    mkdir /data/misc/wifi/wlan0
+    chmod 0660 /data/misc/wifi/wlan0
+    chown system wifi /data/misc/wifi/wlan0
 
-   # Make sure super database has appropriate permissions
-   chmod 0777 /data/data/com.thirdparty.superuser/databases/su.sqlite
-   chmod 0777 /data/data/com.thirdparty.superuser/databases/su.sqlite-journal
-   chmod 0777 /data/data/com.thirdparty.superuser/databases/superuser.sqlite
-   chmod 0777 /data/data/com.thirdparty.superuser/databases/superuser.sqlite-journal
+    #copy the default admin policy file
+    service copy_policy /system/bin/sh /system/etc/copy_device_policies.sh
+    class main
+    oneshot
+
+    # Make sure super database has appropriate permissions
+    chmod 0777 /data/data/com.thirdparty.superuser/databases/su.sqlite
+    chmod 0777 /data/data/com.thirdparty.superuser/databases/su.sqlite-journal
+    chmod 0777 /data/data/com.thirdparty.superuser/databases/superuser.sqlite
+    chmod 0777 /data/data/com.thirdparty.superuser/databases/superuser.sqlite-journal
