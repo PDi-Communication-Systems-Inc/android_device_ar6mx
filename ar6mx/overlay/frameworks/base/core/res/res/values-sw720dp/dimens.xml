@@ -104,13 +104,13 @@
     <dimen name="keyguard_muliuser_selector_margin">24dp</dimen>
 
     <!-- Stroke width of the frame for the circular avatars. -->
-    <dimen name="keyguard_avatar_frame_stroke_width">3dp</dimen>
+    <dimen name="keyguard_avatar_frame_stroke_width">1dp</dimen>
 
     <!-- Size of the avator on the multiuser lockscreen. -->
-    <dimen name="keyguard_avatar_size">75dp</dimen>
+    <dimen name="keyguard_avatar_size">100dp</dimen>
 
     <!-- Size of the text under the avator on the multiuser lockscreen. -->
-    <dimen name="keyguard_avatar_name_size">18sp</dimen>
+    <dimen name="keyguard_avatar_name_size">24sp</dimen>
 
     <!-- Width of the sliding KeyguardSecurityContainer (includes 2x keyguard_security_view_margin) -->
     <dimen name="keyguard_security_width">420dp</dimen>
