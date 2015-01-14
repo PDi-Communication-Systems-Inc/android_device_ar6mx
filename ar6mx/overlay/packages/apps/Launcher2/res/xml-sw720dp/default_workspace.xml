@@ -49,8 +49,8 @@
 		launcher:spanY="1" />
 
 	<favorite
-        launcher:packageName="com.android.deskclock"
-        launcher:className="com.android.deskclock.DeskClock"
+        launcher:packageName="com.pdiarm.deleteme"
+        launcher:className="com.pdiarm.deleteme.DeleteMeMain"
         launcher:screen="2"
         launcher:x="0"
         launcher:y="4"
