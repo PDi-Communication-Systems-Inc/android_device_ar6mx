@@ -133,7 +133,8 @@ ghost-google-drive-plugin		\
 ghost-samba-plugin			\
 Wiktionary				\
 com.pdiarm.showusermessage		\
-com.pdiarm.deleteme
+com.pdiarm.deleteme			\
+VLC
 
 
 # Extra software based encoders
