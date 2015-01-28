@@ -134,7 +134,8 @@ ghost-samba-plugin			\
 Wiktionary				\
 com.pdiarm.showusermessage		\
 com.pdiarm.deleteme			\
-VLC
+VLC					\
+todoTxtTouch
 
 
 # Extra software based encoders
