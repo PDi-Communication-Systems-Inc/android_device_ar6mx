@@ -81,7 +81,7 @@ endif
 ifeq ($(BOARD_WLAN_VENDOR),INTEL)
 WIFI_ROOT                               := backports-3.16-1
 #WIFI_ROOT                                := external/intel_iwlwifi
-INTEL_FIRMWARE_BINARY_LOC                := /system/etc/firmware/iwlwifi-3160-10.ucode
+INTEL_FIRMWARE_BINARY_LOC                := /system/etc/firmware/iwlwifi-3160-9.ucode
 #WIFI_DRIVER_FW_PATH_STA                  := $(INTEL_FIRMWARE_BINARY_LOC)
 #WIFI_DRIVER_FW_PATH_AP                   := $(INTEL_FIRMWARE_BINARY_LOC)
 #WIFI_DRIVER_FW_PATH_P2P                  := $(INTEL_FIRMWARE_BINARY_LOC)
