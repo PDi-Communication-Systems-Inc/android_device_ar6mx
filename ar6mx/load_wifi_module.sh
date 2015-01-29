@@ -17,8 +17,8 @@
     /system/bin/busybox sleep 2
     insmod /system/lib/modules/iwldvm.ko
     /system/bin/busybox sleep 2
-    insmod /system/lib/modules/6lowpan_iphc.ko
-    /system/bin/busybox sleep 2
+    #insmod /system/lib/modules/6lowpan_iphc.ko
+    #/system/bin/busybox sleep 2
     insmod /system/lib/modules/bluetooth.ko
     /system/bin/busybox sleep 2
     insmod /system/lib/modules/rfcomm.ko
