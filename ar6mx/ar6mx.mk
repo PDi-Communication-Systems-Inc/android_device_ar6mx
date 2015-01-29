@@ -135,7 +135,8 @@ Wiktionary				\
 com.pdiarm.showusermessage		\
 com.pdiarm.deleteme			\
 VLC					\
-todoTxtTouch
+todoTxtTouch				\
+hn-android
 
 
 # Extra software based encoders
