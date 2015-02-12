@@ -180,8 +180,10 @@ endif
 # Packages to include if the build is NOT TVRC
 # Exclude other OEM/rooted builds here
 ifneq ($(TVRC_BUILD),T)
-$(warning Adding packages for non-TVRC build like the store agent)
-   PRODUCT_PACKAGES += org.wso2.emm.agent
+   ifneq ($(TELEHEALTH_BUILD),T)
+$(warning Adding agent for non-TVRC and non-Telehealth build)
+      PRODUCT_PACKAGES += org.wso2.emm.agent
+   endif
 endif
 
 PRODUCT_PROPERTY_OVERRIDES += hw.nobattery=true
