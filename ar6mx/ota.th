@@ -1,0 +1,5 @@
+server=ota.appserver.tigr
+port=80
+ota=.ota.zip
+build=build.prop
+protocol=http
