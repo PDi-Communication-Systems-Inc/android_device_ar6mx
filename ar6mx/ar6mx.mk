@@ -136,7 +136,8 @@ com.pdiarm.showusermessage		\
 com.pdiarm.deleteme			\
 VLC					\
 todoTxtTouch				\
-hn-android
+hn-android				\
+usbreset
 
 
 # Extra software based encoders
