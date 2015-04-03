@@ -1,7 +1,8 @@
 #!/system/bin/sh
 
 # Test for Atmel or EETI touchscreen
-COUNT=`lsusb | grep -i atmel | busybox wc -l`
+COUNT=`"$BIN"/lsusb | "$BIN"/grep -i atmel | "$BIN"/busybox wc -l`
+BIN="/system/bin"
 
 # Atmel touchscreen handling
 if [ $COUNT -ge "1" ];
@@ -9,19 +10,27 @@ if [ $COUNT -ge "1" ];
       # try to reset Atmel MXT1664S1 up to five times
       echo "$COUNT Atmel Touchscreen discovered"
       setprop pdiarm.touchscreen Atmel
-      mxt-app --reset
+ 
+      # Figure out where the Atmel touchscreen is on the usb bus
+      PATH=`"$BIN"/lsusb | "$BIN"/grep -i Atmel | "$BIN"/busybox cut -d " " -f 1`
+      # Simulating reconnect to CN5 port 
+      "$BIN"/usbreset $PATH
+      # Send USB packet to Atmel chip to reset itself
+      "$BIN"/mxt-app --reset
+
       RESULT=$?	
       let COUNTER=0
       if [ $RESULT -gt "0" ];
          then
          while [ $COUNTER -lt 5 ]; do
             echo "Retrying mxt-app reset, try $COUNTER"
-            PATH=`lsusb | grep -i Atmel | busybox cut -d " " -f 1`
+            # Figure out where the Atmel touchscreen is on the usb bus
+            PATH=`"$BIN"/lsusb | "$BIN"/grep -i Atmel | "$BIN"/busybox cut -d " " -f 1`
 
             # Simulating reconnect to CN5 port 
-            usbreset $PATH
+            "$BIN"/usbreset $PATH
             # Send USB packet to Atmel chip to reset itself
-            mxt-app --reset
+            "$BIN"/mxt-app --reset
 
             # Check to see if we need to repeat process
             RESULT=$?
@@ -29,7 +38,7 @@ if [ $COUNT -ge "1" ];
                then
                # stop any additional attempts and display info on Atmel chip
                let COUNTER=100
-               mxt-app -i
+               "$BIN"/mxt-app -i
             else
                # try again
                let COUNTER=COUNTER+1
@@ -37,7 +46,7 @@ if [ $COUNT -ge "1" ];
          done
       fi  
       # For Atmel touchscreens we need to disable the egalax touchscreen 
-      PROCESS=`ps | grep eGTouchD | busybox tr -s " " | busybox cut -d " " -f 2`
+      PROCESS=`"$BIN"/ps | "$BIN"/grep eGTouchD | "$BIN"/busybox tr -s " " | "$BIN"/busybox cut -d " " -f 2`
       if [ $PROCESS -gt "0" ];
          then
              echo "killing process $PROCESS"
@@ -48,7 +57,7 @@ if [ $COUNT -ge "1" ];
 fi
 
 # EETI touchscreen handling
-COUNT=`lsusb | grep -i egalax | busybox wc -l`
+COUNT=`"$BIN"/lsusb | "$BIN"/grep -i egalax | "$BIN"/busybox wc -l`
 if [ $COUNT -ge "1" ];
    then
        echo "$COUNT eGalax Touchscreen discovered"
@@ -56,5 +65,5 @@ if [ $COUNT -ge "1" ];
 fi
 
 # Indicate completion of touchscreen processing
-PROP="$(getprop pdiarm.touchscreen)"
+PROP="$("$BIN"/getprop pdiarm.touchscreen)"
 echo "Done with touchscreen processing $PROP"
