@@ -26,7 +26,8 @@ PRODUCT_COPY_FILES += \
 	device/bcm/ar6mx/ota.conf:data/system/ota.conf \
 	branding/bootanimation.zip:system/media/bootanimation.zip \
 	vendor/pdi/idc/Vendor_0ac8_Product_3470.idc:system/usr/idc/Vendor_0ac8_Product_3470.idc \
-	device/bcm/ar6mx/ntp.conf:/system/etc/ntp.conf
+	device/bcm/ar6mx/ntp.conf:/system/etc/ntp.conf \
+	kernel_imx/drivers/watchdog/imx2_wdt.ko:/system/lib/modules/imx2_wdt.ko
 
 #Copy default device admin files
 PRODUCT_COPY_FILES += \
