@@ -28,7 +28,8 @@ PRODUCT_COPY_FILES += \
 	vendor/pdi/idc/Vendor_0ac8_Product_3470.idc:system/usr/idc/Vendor_0ac8_Product_3470.idc \
 	device/bcm/ar6mx/ntp.conf:/system/etc/ntp.conf \
 	kernel_imx/drivers/watchdog/imx2_wdt.ko:/system/lib/modules/imx2_wdt.ko \
-	kernel_imx/drivers/input/touchscreen/atmel_mxt_ts.ko:/system/lib/modules/atmel_mxt_ts.ko
+	kernel_imx/drivers/input/touchscreen/atmel_mxt_ts.ko:/system/lib/modules/atmel_mxt_ts.ko \
+	device/bcm/ar6mx/common/input/atmel_mxt_ts_T100_touchscreen.idc:system/usr/idc/atmel_mxt_ts_T100_touchscreen.idc
 
 #Copy default device admin files
 PRODUCT_COPY_FILES += \
@@ -124,8 +125,6 @@ android-support-v7-mediarouter		\
 android-support-v8-renderscript		\
 android-support-v13			\
 procstatlog				\
-tomdroid				\
-k9					\
 com.ghostsq.commander			\
 fbreader				\
 ghost-sftp-plugin			\
@@ -160,6 +159,15 @@ ifeq ($(DAVITA_BUILD),T)
 	PRODUCT_PACKAGES += \
 		com.kmagic.solitaire_450			
 endif 
+
+# Packages to include if the build is not Davita
+# they do not want email packages for instance
+ifneq ($(DAVITA_BUILD),T)
+$(warning Not a Davita build, adding some other packages)
+	PRODUCT_PACKAGES += \
+		k9		\
+		tomdroid
+endif
 
 # Packages to include if the build is TVRC
 ifeq ($(TVRC_BUILD),T)
