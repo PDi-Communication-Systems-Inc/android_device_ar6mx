@@ -167,7 +167,8 @@ $(warning Not a Davita build, adding some other packages)
 		ghost-box-plugin                \
 		ghost-google-drive-plugin       \
 		ghost-samba-plugin		\
-		Email
+		Email				\
+		Exchange2
 endif
 
 # Packages to include if the build is TVRC
