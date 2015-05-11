@@ -105,14 +105,13 @@ com.pdiarm.clone                        \
 com.pdiarm.clonemaster                  \
 com.pdiarm.cloneslave                   \
 com.davidgoemans.simpleClockWidget      \
-net.micode.fileexplorer_1               \
+net.micode.fileexplorer                 \
 org.jfedor.frozenbubble_13              \
 com.pdiarm.newuserconfirmation          \
 OpenSudoku-1.1.5-01                     \
 com.mobilepearls.sokoban                \
 jackpal.androidterm_53                  \
 org.androidappdev.wifiwidget            \
-caa-2.1.2-597-us_zeebox                 \
 com.pdiarm.systembackupandrestore 	\
 BackupRestoreConfirmationPDi		\
 ethernet				\
@@ -125,13 +124,7 @@ android-support-v7-mediarouter		\
 android-support-v8-renderscript		\
 android-support-v13			\
 procstatlog				\
-com.ghostsq.commander			\
 fbreader				\
-ghost-sftp-plugin			\
-ghost-dropbox-plugin			\
-ghost-box-plugin			\
-ghost-google-drive-plugin		\
-ghost-samba-plugin			\
 Wiktionary				\
 com.pdiarm.showusermessage		\
 com.pdiarm.deleteme			\
@@ -165,8 +158,16 @@ endif
 ifneq ($(DAVITA_BUILD),T)
 $(warning Not a Davita build, adding some other packages)
 	PRODUCT_PACKAGES += \
-		k9		\
-		tomdroid
+		k9				\
+		tomdroid			\
+		caa-2.1.2-597-us_zeebox		\
+		com.ghostsq.commander		\
+		ghost-sftp-plugin               \
+		ghost-dropbox-plugin            \
+		ghost-box-plugin                \
+		ghost-google-drive-plugin       \
+		ghost-samba-plugin		\
+		Email
 endif
 
 # Packages to include if the build is TVRC
