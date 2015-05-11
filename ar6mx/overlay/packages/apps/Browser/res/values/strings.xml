@@ -800,6 +800,24 @@
     <!-- Bookmarks -->
     <string-array name="bookmarks" translatable="false">
 
+        <item>Food Analyzer</item>
+        <item>http://www.davita.com/food-analyzer/</item>
+
+        <item>Kidney Smart</item>
+        <item>https://davitakidneysmart.edmeasures.com/welcome.php</item>
+
+        <item>Kidney Disease</item>
+        <item>http://www.davita.com/kidney-disease</item>
+
+        <item>Davita Tools</item>
+        <item>http://www.davita.com/tools/</item>
+
+        <item>MyDavita</item>
+        <item>http://www.davita.com/mydavita/</item>
+
+        <item>Working on Dialysis</item>     
+        <item>http://www.davita.com/working-on-dialysis</item>     
+
         <item>PDi Communication Systems, Inc.</item>
         <item>http://www.pdiarm.com/</item>
      

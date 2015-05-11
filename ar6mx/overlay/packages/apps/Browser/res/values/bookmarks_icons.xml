@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <array name="bookmark_preloads">
+        <item>@raw/favicon_davita</item>
+        <item>@raw/thumb_davita_food_analyzer</item>
+        <item>@raw/favicon_davita</item>
+        <item>@raw/thumb_davita_kidney_smart</item>
+        <item>@raw/favicon_davita</item>
+        <item>@raw/thumb_davita_kidney_disease</item>
+        <item>@raw/favicon_davita</item>
+        <item>@raw/thumb_davita_tools</item>
+        <item>@raw/favicon_davita</item>
+        <item>@raw/thumb_davita_mydavita</item>
+        <item>@raw/favicon_davita</item>
+        <item>@raw/thumb_davita_dialysis</item>
 	<item>@raw/favicon_pdiarm</item>
 	<item>@raw/thumb_pdiarm</item>
         <item>@raw/favicon_google</item>
