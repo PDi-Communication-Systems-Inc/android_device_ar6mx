@@ -190,6 +190,12 @@ $(warning Adding TELEHEALTH packages)
                         Superuser
 endif
 
+ifeq ($(OPTIMAL_BUILD),T)
+$(warning Adding OPTIMAL packages)
+    PRODUCT_PACKAGES += su \
+                        Superuser
+endif
+
 # Packages to include if the build is NOT TVRC
 # Exclude other OEM/rooted builds here
 ifneq ($(TVRC_BUILD),T)
