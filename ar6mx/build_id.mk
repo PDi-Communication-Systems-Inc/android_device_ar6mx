@@ -47,7 +47,11 @@ ifeq (${ANDROID_BUILD_MODE},user)
 	       ifeq (${OPTIMAL_BUILD}, T)
                   export BUILD_ID=OS${CORE_TYPE}U8-${BUILD_DATE_ONLY}
                else
-                  export BUILD_ID=${CORE_TYPE}U8-${BUILD_DATE_ONLY}
+                  ifeq (${SIMONETTO_BUILD}, T)
+                     export BUILD_ID=SIM${CORE_TYPE}U8-${BUILD_DATE_ONLY}
+                  else
+                     export BUILD_ID=${CORE_TYPE}U8-${BUILD_DATE_ONLY}
+                  endif
                endif
 	    endif
          endif
@@ -74,7 +78,11 @@ else
                   ifeq (${OPTIMAL_BUILD}, T)
                      export BUILD_ID=OS${CORE_TYPE}E8-${BUILD_DATE_ONLY}
                   else
-                     export BUILD_ID=${CORE_TYPE}E8-${BUILD_DATE_ONLY}
+                     ifeq (${SIMONETTO_BUILD}, T)
+                        export BUILD_ID=SIM${CORE_TYPE}E8-${BUILD_DATE_ONLY}
+                     else
+                        export BUILD_ID=${CORE_TYPE}E8-${BUILD_DATE_ONLY}
+                     endif
                   endif
 	       endif
 	    endif
