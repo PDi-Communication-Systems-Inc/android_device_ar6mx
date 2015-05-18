@@ -205,5 +205,10 @@ $(warning Adding agent for non-TVRC and non-Telehealth build)
    endif
 endif
 
+ifeq ($(SIMONETTO_BUILD),T)
+$(warning Adding packages for Simonetto Build)
+   PRODUCT_PACKAGES += videosan
+endif
+
 PRODUCT_PROPERTY_OVERRIDES += hw.nobattery=true
 PRODUCT_PROPERTY_OVERRIDES += sys.device.type=tablet
