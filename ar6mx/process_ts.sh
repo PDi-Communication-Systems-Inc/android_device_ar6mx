@@ -3,6 +3,7 @@
 # Test for Atmel or EETI touchscreen
 BIN=/system/bin
 COUNT=`$BIN/lsusb | $BIN/grep -i atmel | $BIN/busybox wc -l`
+DONE=false
 
 # Atmel touchscreen handling
 if [ $COUNT -ge "1" ];
@@ -56,6 +57,7 @@ if [ $COUNT -ge "1" ];
       else
           echo "Nothing to kill"
       fi
+      DONE=true
 fi
 
 # EETI touchscreen handling
@@ -64,6 +66,18 @@ if [ $COUNT -ge "1" ];
    then
        echo "$COUNT eGalax Touchscreen discovered"
        setprop pdiarm.touchscreen eGalax
+       DONE=true
+fi
+
+# if nothing found assume i2c touchscreen
+if [ DONE -eq "false"]
+   then
+      PROCESS=`$BIN/ps | $BIN/grep eGTouchD | $BIN/busybox tr -s " " | $BIN/busybox cut -d " " -f 2`
+      echo "killing process $PROCESS"
+      kill $PROCESS
+      NAME=`cat /sys/bus/i2c/devices/1-004a/name`
+      echo "found touchscreen $NAME"
+      setprop pdiarm.touchscreen $NAME
 fi
 
 # Indicate completion of touchscreen processing
