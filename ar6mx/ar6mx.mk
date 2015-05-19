@@ -210,5 +210,11 @@ $(warning Adding packages for Simonetto Build)
    PRODUCT_PACKAGES += videosan
 endif
 
+ifeq ($(ROOTED_BUILD_NEEDED), T)
+$(warning Adding root package outside branch, do not publicly distribute)
+   PRODUCT_PACKAGES += su \
+                       Superuser
+endif
+
 PRODUCT_PROPERTY_OVERRIDES += hw.nobattery=true
 PRODUCT_PROPERTY_OVERRIDES += sys.device.type=tablet
