@@ -216,5 +216,21 @@ $(warning Adding root package outside branch, do not publicly distribute)
                        Superuser
 endif
 
+ifeq ($(WIDEVINE_SUPPORT),T)
+$(warning Adding Widevine packages)
+   BOARD_WIDEVINE_OEMCRYPTO_LEVEL := 3
+   BUILD_WV_OEMCRYPTO_SRC = true
+   PRODUCT_PROPERTY_OVERRIDES += drm.service.enabled=true
+   PRODUCT_PACKAGES += com.google.widevine.software.drm.xml \
+		       com.google.widevine.software.drm \
+		       libdrmwvmplugin \
+		       libwvm 
+	               libWVStreamControlAPI_L3 \
+		       libwvdrm_L3 \
+		       WidevineSamplePlayer \
+		       install-file-key-box
+endif 
+
+
 PRODUCT_PROPERTY_OVERRIDES += hw.nobattery=true
 PRODUCT_PROPERTY_OVERRIDES += sys.device.type=tablet
