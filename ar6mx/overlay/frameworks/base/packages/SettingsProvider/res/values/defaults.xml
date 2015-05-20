@@ -30,4 +30,9 @@
 
     <!-- Development settings - RahulTBD-change to true is temporary, revert to false later-->
     <bool name="def_stay_on_while_plugged_in">true</bool>
+
+   <!-- Modify the default timeout to 10 minutes this is line with HIPAA best
+        practice defined at 
+        https://www.hipaa.com/access-control-automatic-logoff-what-to-do-and-how-to-do-it/ -->
+   <integer name="def_screen_off_timeout">600000</integer>
 </resources>
