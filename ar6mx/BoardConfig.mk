@@ -50,3 +50,9 @@ TARGET_NO_RECOVERY			:= false
 TARGET_PROVIDES_INIT_RC			:= true
 TARGET_RECOVERY_FSTAB 			:= device/bcm/ar6mx/fstab.freescale
 TARGET_RECOVERY_UPDATER_LIBS            := librecovery_updater_ar6mx
+
+#Widevine options
+ifeq ($(WIDEVINE_SUPPORT),T)
+   BOARD_WIDEVINE_OEMCRYPTO_LEVEL := 3
+   BUILD_WV_OEMCRYPTO_SRC = true
+endif
