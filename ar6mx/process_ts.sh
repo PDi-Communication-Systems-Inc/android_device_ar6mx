@@ -70,7 +70,7 @@ if [ $COUNT -ge "1" ];
 fi
 
 # if nothing found assume i2c touchscreen
-if [ DONE -eq "false"];
+if [ $DONE == "false" ];
    then
       PROCESS=`$BIN/ps | $BIN/grep eGTouchD | $BIN/busybox tr -s " " | $BIN/busybox cut -d " " -f 2`
       echo "killing process $PROCESS"
