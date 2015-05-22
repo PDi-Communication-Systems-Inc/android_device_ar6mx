@@ -57,6 +57,7 @@ if [ $COUNT -ge "1" ];
       else
           echo "Nothing to kill"
       fi
+
       DONE=true
 fi
 
@@ -72,9 +73,15 @@ fi
 # if nothing found assume i2c touchscreen
 if [ $DONE == "false" ];
    then
+      # load i2c touchscreen 
+      insmod /system/lib/modules/atmel_mxt_ts.ko
+
+      # remove eGalax USB Touch Daemon process 
       PROCESS=`$BIN/ps | $BIN/grep eGTouchD | $BIN/busybox tr -s " " | $BIN/busybox cut -d " " -f 2`
       echo "killing process $PROCESS"
       kill $PROCESS
+
+      # indicate the i2c touchscreen has been setup via properties
       NAME=`cat /sys/bus/i2c/devices/1-004a/name`
       echo "found touchscreen $NAME"
       setprop pdiarm.touchscreen $NAME
