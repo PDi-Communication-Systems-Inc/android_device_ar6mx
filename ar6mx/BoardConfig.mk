@@ -49,7 +49,8 @@ TARGET_USERIMAGES_SPARSE_EXT_DISABLED	:= true
 TARGET_NO_RECOVERY			:= false
 TARGET_PROVIDES_INIT_RC			:= true
 TARGET_RECOVERY_FSTAB 			:= device/bcm/ar6mx/fstab.freescale
-TARGET_RECOVERY_UPDATER_LIBS            := librecovery_updater_ar6mx
+TARGET_RECOVERY_UPDATER_LIBS		:= librecovery_updater_ar6mx
+TARGET_RECOVERY_PIXEL_FORMAT		:= "BGRA_8888"
 
 #Widevine options
 ifeq ($(WIDEVINE_SUPPORT),T)
