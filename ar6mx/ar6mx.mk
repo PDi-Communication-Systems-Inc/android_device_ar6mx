@@ -196,13 +196,13 @@ $(warning Adding OPTIMAL packages)
                         Superuser
 endif
 
-# Packages to include if the build is NOT TVRC
-# Exclude other OEM/rooted builds here
-ifneq ($(TVRC_BUILD),T)
-   ifneq ($(TELEHEALTH_BUILD),T)
-$(warning Adding agent for non-TVRC and non-Telehealth build)
+# Check to add PDi Store or not
+$(warning $(filter T, $(TVRC_BUILD) $(TELEHEALTH_BUILD), $(SIMONETTO_BUILD)))
+ifneq (T,$(filter T, $(TVRC_BUILD) $(TELEHEALTH_BUILD), $(SIMONETTO_BUILD)))
+$(warning Adding PDi Store agent to build)
       PRODUCT_PACKAGES += org.wso2.emm.agent
-   endif
+else 
+$(warning Not adding PDi Store agent to build)
 endif
 
 ifeq ($(SIMONETTO_BUILD),T)
