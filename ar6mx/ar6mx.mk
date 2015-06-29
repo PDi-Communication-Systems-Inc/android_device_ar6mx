@@ -131,7 +131,12 @@ com.pdiarm.deleteme			\
 VLC					\
 todoTxtTouch				\
 hn-android				\
-usbreset
+usbreset				\
+i2c-tools				\
+i2cdetect				\
+i2cget					\
+i2cset					\
+i2cdump
 
 
 # Extra software based encoders
