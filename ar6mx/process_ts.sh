@@ -70,11 +70,26 @@ if [ $COUNT -ge "1" ];
        DONE=true
 fi
 
+# Indicate completion of touchscreen processing
+if [ $DONE == "true" ];
+   then
+      PROP="$("$BIN"/getprop pdiarm.touchscreen)"
+      echo "Done with touchscreen processing $PROP"
+      exit 0
+fi
+
 # if nothing found assume i2c touchscreen
-if [ $DONE == "false" ];
+I2CDETECTCMD=`i2cdetect -y 1 0x4a 0x4a | busybox cut -d : -f2 | busybox tail +6 | busybox xargs`
+echo Result of i2c detection is $I2CDETECTCMD
+if [ $I2CDETECTCMD == "4a" ];
    then
       # load i2c touchscreen 
-      insmod /system/lib/modules/atmel_mxt_ts.ko
+      RESULT=`insmod /system/lib/modules/atmel_mxt_ts.ko`
+      if [ $RESULT -ne "0" ];
+      then
+         echo "Driver failed to load properly, try removing"
+         rmmod atmel_mxt_ts.ko
+      fi
 
       # remove eGalax USB Touch Daemon process 
       PROCESS=`$BIN/ps | $BIN/grep eGTouchD | $BIN/busybox tr -s " " | $BIN/busybox cut -d " " -f 2`
@@ -85,8 +100,23 @@ if [ $DONE == "false" ];
       NAME=`cat /sys/bus/i2c/devices/1-004a/name`
       echo "found touchscreen $NAME"
       setprop pdiarm.touchscreen $NAME
+      PROP="$("$BIN"/getprop pdiarm.touchscreen)"
+      echo "Done with touchscreen processing $PROP"
+elif [ $I2CDETECTCMD == "UU" ] 
+     then
+         echo "Driver already loaded"
+         DONE=true
+	 exit 126
+else
+   echo "Device not present"
+   DONE=true 
+   exit 131
 fi
 
 # Indicate completion of touchscreen processing
-PROP="$("$BIN"/getprop pdiarm.touchscreen)"
-echo "Done with touchscreen processing $PROP"
+if [ $DONE == "true" ];
+   then
+      PROP="$("$BIN"/getprop pdiarm.touchscreen)"
+      echo "Done with touchscreen processing $PROP"
+      exit 0
+fi
