@@ -189,16 +189,25 @@ $(warning Copying TVRC specific data files)
 			 vendor/tvrc/superuser.sqlite-journal:/data/data/com.thirdparty.superuser/databases/superuser.sqlite-journal
 endif
 
+# Packages to include if the build is Telehealth
 ifeq ($(TELEHEALTH_BUILD),T)
 $(warning Adding TELEHEALTH packages)
     PRODUCT_PACKAGES += su \
                         Superuser
 endif
 
+# Packages to include if the build is Optimal
 ifeq ($(OPTIMAL_BUILD),T)
 $(warning Adding OPTIMAL packages)
     PRODUCT_PACKAGES += su \
                         Superuser
+endif
+
+# Packages to include if the build is Simonetto
+ifeq ($(SIMONETTO_BUILD),T)
+$(warning Adding packages for Simonetto Build)
+   PRODUCT_PACKAGES += videosan \
+		       psreader
 endif
 
 # Check to add PDi Store or not
@@ -208,11 +217,6 @@ $(warning Adding PDi Store agent to build)
       PRODUCT_PACKAGES += org.wso2.emm.agent
 else 
 $(warning Not adding PDi Store agent to build)
-endif
-
-ifeq ($(SIMONETTO_BUILD),T)
-$(warning Adding packages for Simonetto Build)
-   PRODUCT_PACKAGES += videosan
 endif
 
 ifeq ($(ROOTED_BUILD_NEEDED), T)
