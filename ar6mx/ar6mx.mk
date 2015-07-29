@@ -5,12 +5,51 @@ $(call inherit-product, device/fsl/imx6/imx6.mk)
 $(call inherit-product-if-exists,vendor/google/products/gms.mk)
 
 # Overrides
+
+# Set MODEL by firmware part model
+# if no BUILD defined PDI-PXT will be used
 PRODUCT_MODEL := PDI-PXT
+ifeq ($(STANDARD_BUILD),T)
+$(warning Setting PRODUCT_MODEL to PD403-008)
+    PRODUCT_MODEL := PD403-008
+endif
+ifeq ($(NIH_BUILD),T)
+$(warning Setting PRODUCT_MODEL to PD403-009)
+    PRODUCT_MODEL := PD403-009
+endif
+
+ifeq ($(TVRC_BUILD),T)
+$(warning Setting PRODUCT_MODEL to PD403-010)
+    PRODUCT_MODEL := PD403-010
+endif
+
+ifeq ($(DAVITA_BUILD),T)
+$(warning Setting PRODUCT_MODEL to PD403-011)
+    PRODUCT_MODEL := PD403-011
+endif
+
+ifeq ($(TELEHEALTH_BUILD),T)
+$(warning Setting PRODUCT_MODEL to PD403-015)
+    PRODUCT_MODEL := PD403-015
+endif
+
+ifeq ($(OPTIMAL_SOLUTIONS),T)
+$(warning Setting PRODUCT_MODEL to PD403-016)
+    PRODUCT_MODEL := PD403-016
+endif
+
+ifeq ($(SIMONETTO_BUILD),T)
+$(warning Setting PRODUCT_MODEL to PD403-017)
+    PRODUCT_MODEL := PD403-017
+endif
+
+# These values are not to be changed
 PRODUCT_NAME := ar6mx
 PRODUCT_DEVICE := ar6mx
 PRODUCT_MANUFACTURER := PDi Communication Systems, Inc.
 PRODUCT_BRAND := PDi-Tab
 
+# Files to include in all images
 PRODUCT_COPY_FILES += \
 	device/bcm/ar6mx/required_hardware.xml:system/etc/permissions/required_hardware.xml \
 	device/bcm/ar6mx/init.rc:root/init.freescale.rc \
@@ -36,8 +75,6 @@ PRODUCT_COPY_FILES += \
 	device/bcm/ar6mx/device_policies.xml:system/etc/device_policies.xml \
 	device/bcm/ar6mx/copy_device_policies.sh:system/etc/copy_device_policies.sh
 	
-# GPU files
-
 DEVICE_PACKAGE_OVERLAYS := device/bcm/ar6mx/overlay
 
 PRODUCT_CHARACTERISTICS := tablet
