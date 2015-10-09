@@ -66,7 +66,6 @@ PRODUCT_COPY_FILES += \
 	branding/bootanimation.zip:system/media/bootanimation.zip \
 	vendor/pdi/idc/Vendor_0ac8_Product_3470.idc:system/usr/idc/Vendor_0ac8_Product_3470.idc \
 	device/bcm/ar6mx/ntp.conf:/system/etc/ntp.conf \
-	kernel_imx/drivers/watchdog/imx2_wdt.ko:/system/lib/modules/imx2_wdt.ko \
 	kernel_imx/drivers/input/touchscreen/atmel_mxt_ts.ko:/system/lib/modules/atmel_mxt_ts.ko \
 	device/bcm/ar6mx/common/input/atmel_mxt_ts_T100_touchscreen.idc:system/usr/idc/atmel_mxt_ts_T100_touchscreen.idc
 
