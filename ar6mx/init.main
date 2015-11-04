@@ -124,7 +124,7 @@ on boot
 
 # Program the Atmel Touchscreen with configuration file
 service mxt-app /system/bin/mxt-app --load /system/etc/touchscreen.xcfg
-    class main
+    class core
     user root
     group root
     oneshot
@@ -142,7 +142,7 @@ service bluetoothd /system/bin/bluetoothd -n
  disabled
 
 service eGTouchD /system/bin/eGTouchD
-    class main
+    class core
     user root
     group root
     oneshot
@@ -164,15 +164,14 @@ service wpa_supplicant /system/bin/wpa_supplicant -dd -t \
 service pdi_ts_script /system/bin/logwrapper -k /system/etc/process_ts.sh
     user root
     group root
-    class main
+    class core
     oneshot
 	
 service test_cci /system/bin/cci-test
     user root
     group root
-    class main
+    class core
     oneshot
-
 	
 on fs
 # mount ext4 partitions
@@ -211,7 +210,14 @@ on fs
 # insmod /system/lib/modules/iwlmvm.ko
 
 # Install IMX2 Watchdog timer as module needed for debugging
+# insmod /system/lib/modules/softdog.ko soft_margin=65534 nowayout=0 soft_noboot=1 soft_panic=1
   insmod /system/lib/modules/imx2_wdt.ko
+
+# Install Camera Drivers
+insmod /system/lib/modules/csi_v4l2_capture.ko
+insmod /system/lib/modules/fsl_csi.ko
+#insmod /system/lib/modules/ov5640_camera.ko
+insmod system/lib/modules/ov5640_camera_mipi.ko
 
 on post-fs-data
     # give system access to wpa_supplicant.conf for backup and restore
@@ -237,6 +243,6 @@ on post-fs-data
    
     #copy the default admin policy file
     service copy_policy /system/bin/sh /system/etc/copy_device_policies.sh
-    class main
+    class core
     oneshot
    

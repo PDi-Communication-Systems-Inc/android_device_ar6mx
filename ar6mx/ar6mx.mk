@@ -133,6 +133,14 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
 		  vendor/pdi/data/littlewomenormeg00alcoiala.epub:system/media/text/littlewomenormeg00alcoiala.epub
 
+#Camera Drivers
+PRODUCT_COPY_FILES += \
+		  kernel_imx/drivers/media/video/mxc/capture/csi_v4l2_capture.ko:system/lib/modules/csi_v4l2_capture.ko \
+		  kernel_imx/drivers/media/video/mxc/capture/fsl_csi.ko:system/lib/modules/fsl_csi.ko \
+		  kernel_imx/drivers/media/video/mxc/capture/ov5640_camera_mipi.ko:system/lib/modules/ov5640_camera_mipi.ko \
+		  kernel_imx/drivers/media/video/mxc/capture/ov5640_camera.ko:system/lib/modules/ov5640_camera.ko
+
+
 # Packages for all builds that add variety, fun, and spice to the PDi-Tab
 PRODUCT_PACKAGES += 		\
 com.adobe.reader_10.6.1                 \
@@ -173,8 +181,9 @@ i2c-tools				\
 i2cdetect				\
 i2cget					\
 i2cset					\
-i2cdump
-
+i2cdump					\
+raidl					\
+iperf
 
 # Extra software based encoders
 PRODUCT_PACKAGES += \

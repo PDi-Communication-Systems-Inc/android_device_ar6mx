@@ -8,9 +8,17 @@ include device/bcm/ar6mx/AR6MXBoardConfigComm.mk
 include device/fsl-proprietary/gpu-viv/fsl-gpu.mk
 
 ifneq (T,$(filter T, $(TELEHEALTH_BUILD)))
-BOARD_KERNEL_CMDLINE := bootargs=console=ttymxc0,115200 init=/init emmc_en video=mxcfb0:dev=hdmi,1280x720M@60,if=RGB24,bpp=32 video=mxcfb1:off video=mxcfb2:off vmalloc=400M androidboot.console=ttymxc0 androidboot.hardware=freescale fbmem=12M\0 
+   ifeq ($(MAKE_SD_CARD),T)
+      BOARD_KERNEL_CMDLINE := bootargs=console=ttymxc0,115200 init=/init video=mxcfb0:dev=hdmi,1280x720M@60,if=RGB24,bpp=32 video=mxcfb1:off video=mxcfb2:off vmalloc=400M androidboot.console=ttymxc0 androidboot.hardware=freescale fbmem=12M\0 
+   else
+      BOARD_KERNEL_CMDLINE := bootargs=console=ttymxc0,115200 init=/init emmc_en video=mxcfb0:dev=hdmi,1280x720M@60,if=RGB24,bpp=32 video=mxcfb1:off video=mxcfb2:off vmalloc=400M androidboot.console=ttymxc0 androidboot.hardware=freescale fbmem=12M\0
+   endif
 else
-BOARD_KERNEL_CMDLINE := console=ttymxc0,115200 init=/init emmc_en video=mxcfb0:dev=ldb,1366x768M@60,bpp=32 video=mxcfb2:dev=hdmi,1280x720M@60,bpp=32 video=mxcfb1:off vmalloc=400M androidboot.console=ttymxc0 androidboot.hardware=freescale fbmem=13M,12M\0
+   ifeq ($(MAKE_SD_CARD),T)
+      BOARD_KERNEL_CMDLINE := console=ttymxc0,115200 init=/init video=mxcfb0:dev=ldb,1366x768M@60,bpp=32 video=mxcfb2:dev=hdmi,1280x720M@60,bpp=32 video=mxcfb1:off vmalloc=400M androidboot.console=ttymxc0 androidboot.hardware=freescale fbmem=13M,12M\0
+   else
+      BOARD_KERNEL_CMDLINE := console=ttymxc0,115200 init=/init emmc_en video=mxcfb0:dev=ldb,1366x768M@60,bpp=32 video=mxcfb2:dev=hdmi,1280x720M@60,bpp=32 video=mxcfb1:off vmalloc=400M androidboot.console=ttymxc0 androidboot.hardware=freescale fbmem=13M,12M\0
+   endif
 endif
 
 ifeq ($(TARGET_USERIMAGES_USE_UBIFS),true)
