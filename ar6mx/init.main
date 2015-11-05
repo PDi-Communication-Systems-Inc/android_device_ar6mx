@@ -216,7 +216,7 @@ on fs
 # Install Camera Drivers
 insmod /system/lib/modules/csi_v4l2_capture.ko
 insmod /system/lib/modules/fsl_csi.ko
-#insmod /system/lib/modules/ov5640_camera.ko
+insmod /system/lib/modules/ov5640_camera.ko
 insmod system/lib/modules/ov5640_camera_mipi.ko
 
 on post-fs-data
