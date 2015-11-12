@@ -43,6 +43,11 @@ $(warning Setting PRODUCT_MODEL to PD403-017)
     PRODUCT_MODEL := PD403-017
 endif
 
+ifeq ($(SALES_MKT_BUILD),T)
+$(warning Setting PRODUCT_MODEL to SALES-DEMO)
+    PRODUCT_MODEL := SALES-DEMO
+endif
+
 # These values are not to be changed
 PRODUCT_NAME := ar6mx
 PRODUCT_DEVICE := ar6mx
