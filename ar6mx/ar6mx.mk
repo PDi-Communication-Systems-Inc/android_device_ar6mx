@@ -43,7 +43,7 @@ $(warning Setting PRODUCT_MODEL to PD403-017)
     PRODUCT_MODEL := PD403-017
 endif
 
-ifeq ($(SALES_MKT_BUILD),T)
+ifeq ($(ARA_BUILD),T)
 $(warning Setting PRODUCT_MODEL to SALES-DEMO)
     PRODUCT_MODEL := PD403-012
 endif
