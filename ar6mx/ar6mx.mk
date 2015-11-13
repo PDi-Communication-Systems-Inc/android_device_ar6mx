@@ -45,7 +45,7 @@ endif
 
 ifeq ($(SALES_MKT_BUILD),T)
 $(warning Setting PRODUCT_MODEL to SALES-DEMO)
-    PRODUCT_MODEL := SALES-DEMO
+    PRODUCT_MODEL := PD403-012
 endif
 
 # These values are not to be changed
