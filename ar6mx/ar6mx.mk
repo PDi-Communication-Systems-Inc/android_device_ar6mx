@@ -44,7 +44,7 @@ $(warning Setting PRODUCT_MODEL to PD403-017)
 endif
 
 ifeq ($(ARA_BUILD),T)
-$(warning Setting PRODUCT_MODEL to SALES-DEMO)
+$(warning Setting PRODUCT_MODEL to PD403-012)
     PRODUCT_MODEL := PD403-012
 endif
 
@@ -294,7 +294,7 @@ endif
 ifeq ($(ARA_BUILD),T)
 $(warning Adding ARA packages and files)
 
-    PRODUCT_COPY_FILES += \ 
+    PRODUCT_COPY_FILES += \
        packages/apps/pdi_packages_apps/PDiCinchWidget/app/src/main/res/raw/pdi_cinch_widget_demo.config:/system/etc/pdi_cinch_widget_demo.config
 
 endif
