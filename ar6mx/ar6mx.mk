@@ -291,6 +291,13 @@ $(warning Adding Widevine packages)
    PRODUCT_PROPERTY_OVERRIDES += drm.service.enabled=true
 endif 
 
+ifeq ($(ARA_BUILD),T)
+$(warning Adding ARA packages and files)
+
+    PRODUCT_COPY_FILES += \ 
+       packages/apps/pdi_packages_apps/PDiCinchWidget/app/src/main/res/raw/pdi_cinch_widget_demo.config:/system/etc/pdi_cinch_widget_demo.config
+
+endif
 
 PRODUCT_PROPERTY_OVERRIDES += hw.nobattery=true
 PRODUCT_PROPERTY_OVERRIDES += sys.device.type=tablet
