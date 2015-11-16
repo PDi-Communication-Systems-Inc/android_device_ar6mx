@@ -189,7 +189,8 @@ i2cget					\
 i2cset					\
 i2cdump					\
 raidl					\
-iperf
+iperf					\
+pdicinchwidget.apps.android.pdiarm.com.pdicinchwidget
 
 # Extra software based encoders
 PRODUCT_PACKAGES += \
