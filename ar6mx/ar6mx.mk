@@ -295,7 +295,7 @@ ifeq ($(ARA_BUILD),T)
 $(warning Adding ARA packages and files)
 
     PRODUCT_COPY_FILES += \
-       packages/apps/pdi_packages_apps/PDiCinchWidget/app/src/main/res/raw/pdi_cinch_widget_demo.config:/system/etc/pdi_cinch_widget_demo.config
+       packages/apps/pdi_packages_apps/PDiCinchWidget/app/src/main/res/raw/pdi_cinch_widget_demo_pngs.config:/system/etc/pdi_cinch_widget_demo_pngs.config
 
 endif
 
