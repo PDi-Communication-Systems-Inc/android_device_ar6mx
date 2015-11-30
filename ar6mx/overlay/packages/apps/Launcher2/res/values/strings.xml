@@ -322,6 +322,8 @@ s -->
     <string name="restricted_listview_header_prompt">What apps are patients allowed to use&#63;</string>
     <add-resource type="string" name="pdi_comp_name"></add-resource>
     <string name="pdi_comp_name">PDi Communication Systems&#44; Inc&#46;</string>
+    <add-resource type="string" name="pdi_games_folder_name"></add-resource>
+    <string name="pdi_games_folder_name">Games</string>
     <!-- End - PDi Additions -->
 
 </resources>
