@@ -65,6 +65,10 @@ TARGET_RECOVERY_PIXEL_FORMAT		:= "BGRA_8888"
 
 #Widevine options
 ifeq ($(WIDEVINE_SUPPORT),T)
+   $(warning Setting widevine oem crypt to level 3)
+   $(warning Telling system to build widvine oem crypto)
    BOARD_WIDEVINE_OEMCRYPTO_LEVEL := 3
    BUILD_WV_OEMCRYPTO_SRC = true
+else 
+   $(warning Widevine NOT Required, BoardConfig.mk)
 endif
