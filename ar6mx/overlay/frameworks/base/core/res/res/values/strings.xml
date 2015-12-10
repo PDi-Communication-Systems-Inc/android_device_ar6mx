@@ -345,6 +345,8 @@
 
     <!-- label for item that turns off power in phone options dialog -->
     <string name="global_action_power_off">Power off</string>
+    <add-resource type="string" name="global_action_restart"/>
+    <string name="global_action_restart">Restart</string>
 
     <!-- label for item that generates a bug report in the phone options dialog -->
     <string name="global_action_bug_report">Bug report</string>
