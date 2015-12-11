@@ -16,11 +16,99 @@
 
 <favorites xmlns:launcher="http://schemas.android.com/apk/res/com.android.launcher">
     <!-- Far-left screen [0] -->
-
+     <appwidget
+	launcher:packageName="com.pdiarm.pdicinchwidgets.pdixplain"
+	launcher:className="com.pdiarm.pdicinchwidgets.pdixplain.XplainWidget"
+	launcher:screen="0"
+	launcher:x="0"
+	launcher:y="0"
+	launcher:spanX="2"
+	launcher:spanY="2" />
     <!-- Left screen [1] -->
+    <appwidget
+        launcher:packageName="pdicinchwidget.apps.android.pdiarm.com.pdicinchwidget"
+        launcher:className="pdicinchwidget.apps.android.pdiarm.com.pdicinchwidget.PDiCinchURLWidget"
+        launcher:screen="1"
+        launcher:x="0"
+        launcher:y="0"
+        launcher:spanX="2"
+        launcher:spanY="2" />
+
+    <appwidget
+        launcher:packageName="pdicinchwidget.apps.android.pdiarm.com.pdicinchwidget"
+        launcher:className="pdicinchwidget.apps.android.pdiarm.com.pdicinchwidget.PDiCinchURLWidget"
+        launcher:screen="1"
+        launcher:x="3"
+        launcher:y="0"
+        launcher:spanX="2"
+        launcher:spanY="2" />
+
+    <appwidget
+        launcher:packageName="pdicinchwidget.apps.android.pdiarm.com.pdicinchwidget"
+        launcher:className="pdicinchwidget.apps.android.pdiarm.com.pdicinchwidget.PDiCinchURLWidget"
+        launcher:screen="1"
+        launcher:x="0"
+        launcher:y="2"
+        launcher:spanX="2"
+        launcher:spanY="2" />
+
+    <appwidget
+        launcher:packageName="pdicinchwidget.apps.android.pdiarm.com.pdicinchwidget"
+        launcher:className="pdicinchwidget.apps.android.pdiarm.com.pdicinchwidget.PDiCinchURLWidget"
+        launcher:screen="1"
+        launcher:x="3"
+        launcher:y="2"
+        launcher:spanX="2"
+        launcher:spanY="2" />
+
+    <appwidget
+        launcher:packageName="pdicinchwidget.apps.android.pdiarm.com.pdicinchwidget"
+        launcher:className="pdicinchwidget.apps.android.pdiarm.com.pdicinchwidget.PDiCinchURLWidget"
+        launcher:screen="1"
+        launcher:x="0"
+        launcher:y="5"
+        launcher:spanX="2"
+        launcher:spanY="2" />
 
     <!-- Middle screen [2] -->
+  
+    <appwidget
+        launcher:packageName="com.davidgoemans.simpleClockWidget"
+        launcher:className="com.davidgoemans.simpleClockWidget.SimpleClockWidgetLarge"
+        launcher:screen="2"
+        launcher:x="0"
+        launcher:y="0"
+        launcher:spanX="4"
+        launcher:spanY="2" />
 
+   <favorite
+        launcher:packageName="com.android.browser"
+        launcher:className="com.android.browser.BrowserActivity"
+        launcher:screen="2"
+        launcher:x="1"
+        launcher:y="2"
+                launcher:spanX="1"
+                launcher:spanY="1" />
+
+   <favorite
+        launcher:packageName="com.android.gallery3d"
+        launcher:className="com.android.gallery3d.app.Gallery"
+        launcher:screen="2"
+        launcher:x="2"
+        launcher:y="2"
+        launcher:spanX="1"
+                launcher:spanY="1" />
+
+   <appwidget
+        launcher:packageName="org.androidappdev.wifiwidget"
+        launcher:className="org.androidappdev.wifiwidget.WifiAppWidgetProvider"
+        launcher:screen="2"
+        launcher:x="6"
+        launcher:y="4"
+        launcher:spanX="1"
+        launcher:spanY="1" />
+
+<<<<<<< HEAD
    <appwidget
         launcher:packageName="com.davidgoemans.simpleClockWidget"
         launcher:className="com.davidgoemans.simpleClockWidget.SimpleClockWidgetLarge"
@@ -184,6 +272,13 @@
         launcher:spanX="1"
         launcher:spanY="1" />
    
+   <shortcut 
+        launcher:screen="2" 
+        launcher:x="3" 
+        launcher:y="2" 
+        launcher:icon="@drawable/hand" 
+        launcher:title="@string/pdi_comp_name" 
+        launcher:uri="http://www.pdiarm.com/#Intent;action=android.intent.action.VIEW;end" />
     <!-- Right screen [3] -->
 
     <!-- Far-right screen [4] -->
