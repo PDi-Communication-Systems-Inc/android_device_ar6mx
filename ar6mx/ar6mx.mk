@@ -283,6 +283,7 @@ ifeq ($(WIDEVINE_SUPPORT),T)
 $(warning Adding Widevine packages)
    PRODUCT_PACKAGES += com.google.widevine.software.drm.xml \
 		       com.google.widevine.software.drm     \
+		       libdrmwvmcommon			    \
 		       libdrmwvmplugin                      \
 		       libwvm                               \
 	               libWVStreamControlAPI_L3             \
