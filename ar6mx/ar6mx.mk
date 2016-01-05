@@ -203,7 +203,8 @@ ifeq ($(NIH_BUILD),T)
 		com.pdiarm.nihwebsite			\
 		com.pdiarm.patientportal		\
 		com.pdiarm.nutrition			\
-		com.pdiarm.disclaimer
+		com.pdiarm.disclaimer			\
+		com.pdiarm.patientfeedback
 endif 
 
 # Packages to include if the build is Davita
