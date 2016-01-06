@@ -176,7 +176,6 @@ android-support-v8-renderscript		\
 android-support-v13			\
 procstatlog				\
 fbreader				\
-Wiktionary				\
 com.pdiarm.showusermessage		\
 com.pdiarm.deleteme			\
 VLC					\
@@ -191,7 +190,8 @@ i2cdump					\
 raidl					\
 iperf					\
 pdicinchwidget.apps.android.pdiarm.com.pdicinchwidget \
-com.pdiarm.pdicinchwidgets.pdixplain
+com.pdiarm.pdicinchwidgets.pdixplain	\
+org.wikipedia
 
 # Extra software based encoders
 PRODUCT_PACKAGES += \
