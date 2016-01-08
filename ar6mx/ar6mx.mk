@@ -161,6 +161,7 @@ org.jfedor.frozenbubble_13              \
 com.pdiarm.newuserconfirmation          \
 OpenSudoku-1.1.5-01                     \
 com.mobilepearls.sokoban                \
+com.mobilepearls.memory			\
 jackpal.androidterm_53                  \
 org.androidappdev.wifiwidget            \
 com.pdiarm.systembackupandrestore 	\
