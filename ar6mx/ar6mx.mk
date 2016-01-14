@@ -159,7 +159,7 @@ com.davidgoemans.simpleClockWidget      \
 net.micode.fileexplorer                 \
 org.jfedor.frozenbubble_13              \
 com.pdiarm.newuserconfirmation          \
-OpenSudoku-1.1.5-01                     \
+org.moire.opensudoku.game		\
 com.mobilepearls.sokoban                \
 com.mobilepearls.memory			\
 com.faddensoft.breakout                 \
