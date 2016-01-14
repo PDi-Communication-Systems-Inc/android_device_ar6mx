@@ -159,8 +159,10 @@ com.davidgoemans.simpleClockWidget      \
 net.micode.fileexplorer                 \
 org.jfedor.frozenbubble_13              \
 com.pdiarm.newuserconfirmation          \
-OpenSudoku-1.1.5-01                     \
+org.moire.opensudoku.game		\
 com.mobilepearls.sokoban                \
+com.mobilepearls.memory			\
+com.faddensoft.breakout                 \
 jackpal.androidterm_53                  \
 org.androidappdev.wifiwidget            \
 com.pdiarm.systembackupandrestore 	\
@@ -176,7 +178,6 @@ android-support-v8-renderscript		\
 android-support-v13			\
 procstatlog				\
 fbreader				\
-Wiktionary				\
 com.pdiarm.showusermessage		\
 com.pdiarm.deleteme			\
 VLC					\
@@ -190,7 +191,9 @@ i2cset					\
 i2cdump					\
 raidl					\
 iperf					\
-pdicinchwidget.apps.android.pdiarm.com.pdicinchwidget
+pdicinchwidget.apps.android.pdiarm.com.pdicinchwidget \
+com.pdiarm.pdicinchwidgets.pdixplain	\
+org.wikipedia
 
 # Extra software based encoders
 PRODUCT_PACKAGES += \
@@ -202,7 +205,8 @@ ifeq ($(NIH_BUILD),T)
 		com.pdiarm.nihwebsite			\
 		com.pdiarm.patientportal		\
 		com.pdiarm.nutrition			\
-		com.pdiarm.disclaimer
+		com.pdiarm.disclaimer			\
+		com.pdiarm.patientfeedback
 endif 
 
 # Packages to include if the build is Davita
@@ -282,6 +286,7 @@ ifeq ($(WIDEVINE_SUPPORT),T)
 $(warning Adding Widevine packages)
    PRODUCT_PACKAGES += com.google.widevine.software.drm.xml \
 		       com.google.widevine.software.drm     \
+		       libdrmwvmcommon			    \
 		       libdrmwvmplugin                      \
 		       libwvm                               \
 	               libWVStreamControlAPI_L3             \
