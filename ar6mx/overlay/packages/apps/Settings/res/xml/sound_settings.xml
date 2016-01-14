@@ -78,6 +78,11 @@
             android:defaultValue="true" />
 
     <CheckBoxPreference
+            android:key="internal_speakers"
+            android:title="@string/internal_speakers_title"
+            android:defaultValue="true" />
+
+    <CheckBoxPreference
             android:key="haptic_feedback"
             android:title="@string/haptic_feedback_enable_title"
             android:defaultValue="true" />

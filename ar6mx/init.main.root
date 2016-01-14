@@ -30,6 +30,11 @@ on boot
     # write /sys/class/gpio/gpio60/direction "out"
     # write /sys/class/gpio/gpio60/value 1
 
+    chmod 777 /sys/class/gpio/gpio39/value
+    chmod 777 /sys/class/gpio/gpio39/direction
+    chown root system /sys/class/gpio/gpio39/value
+    chown root system /sys/class/gpio/gpio39/direction
+
     # Enable Tethering in the Settings
     setprop ro.tether.denied false
 
