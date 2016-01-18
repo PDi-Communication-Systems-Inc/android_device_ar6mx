@@ -48,6 +48,11 @@ $(warning Setting PRODUCT_MODEL to PD403-012)
     PRODUCT_MODEL := PD403-012
 endif
 
+ifeq ($(MDM_BUILD),T)
+$(warning Setting PRODUCT_MODEL to PD403-999 - needs a product number assigned)
+    PRODUCT_MODEL := PD403-999
+endif
+
 # These values are not to be changed
 PRODUCT_NAME := ar6mx
 PRODUCT_DEVICE := ar6mx
@@ -149,7 +154,7 @@ PRODUCT_COPY_FILES += \
 
 # Packages for all builds that add variety, fun, and spice to the PDi-Tab
 PRODUCT_PACKAGES += 		\
-com.adobe.reader_10.6.1                 \
+AdobeReader                             \
 org.jtb.alogcat_43                      \
 org.petero.droidfish_54                 \
 com.pdiarm.clone                        \
