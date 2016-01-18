@@ -198,6 +198,7 @@ raidl					\
 iperf					\
 pdicinchwidget.apps.android.pdiarm.com.pdicinchwidget \
 com.pdiarm.pdicinchwidgets.pdixplain	\
+com.example.puzzlegame			\
 org.wikipedia
 
 # Extra software based encoders
