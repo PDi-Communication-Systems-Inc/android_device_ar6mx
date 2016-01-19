@@ -199,6 +199,8 @@ iperf					\
 pdicinchwidget.apps.android.pdiarm.com.pdicinchwidget \
 com.pdiarm.pdicinchwidgets.pdixplain	\
 com.example.puzzlegame			\
+de.cketti.library.changelog		\
+com.uberspot.a2048			\
 org.wikipedia
 
 # Extra software based encoders
