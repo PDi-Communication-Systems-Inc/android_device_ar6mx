@@ -50,10 +50,14 @@ ifeq (${ANDROID_BUILD_MODE},user)
                   ifeq (${SIMONETTO_BUILD}, T)
                      export BUILD_ID=SIM${CORE_TYPE}U8-${BUILD_DATE_ONLY}  
                   else
-                     ifeq (${ARA_BUILD},T)
+                     ifeq (${ARA_BUILD}, T)
                         export BUILD_ID=ARA${CORE_TYPE}U8-${BUILD_DATE_ONLY}
                      else
-                        export BUILD_ID=${CORE_TYPE}U8-${BUILD_DATE_ONLY}
+                        ifeq (${MDM_BUILD}, T)
+                           export BUILD_ID=MDM${CORE_TYPE}U8-${BUILD_DATE_ONLY}
+                        else
+                           export BUILD_ID=${CORE_TYPE}U8-${BUILD_DATE_ONLY}
+                        endif
                      endif
                   endif
                endif
@@ -85,10 +89,14 @@ else
                      ifeq (${SIMONETTO_BUILD}, T)
                         export BUILD_ID=SIM${CORE_TYPE}E8-${BUILD_DATE_ONLY}
                      else
-                        ifeq (${ARA_BUILD},T)
+                        ifeq (${ARA_BUILD}, T)
                            export BUILD_ID=ARA${CORE_TYPE}E8-${BUILD_DATE_ONLY}
                         else
-                           export BUILD_ID=${CORE_TYPE}E8-${BUILD_DATE_ONLY}A
+                           ifeq (${MDM_BUILD}, T)
+                              export BUILD_ID=MDM${CORE_TYPE}E8-${BUILD_DATE_ONLY}
+                           else
+                              export BUILD_ID=${CORE_TYPE}E8-${BUILD_DATE_ONLY}
+                           endif
                         endif
                      endif
                   endif
