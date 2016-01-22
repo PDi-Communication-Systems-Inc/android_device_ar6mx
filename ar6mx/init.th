@@ -35,6 +35,13 @@ on boot
     chown root system /sys/class/gpio/gpio39/value
     chown root system /sys/class/gpio/gpio39/direction
 
+   # Set permission for the usb
+   chmod 777 /dev/bus/usb/002/001 
+   chmod 777 /dev/bus/usb/002/002
+   chmod 777 /dev/bus/usb/002/003
+   chmod 777 /dev/bus/usb/002/004
+
+
     # Enable Tethering in the Settings
     setprop ro.tether.denied false
 
