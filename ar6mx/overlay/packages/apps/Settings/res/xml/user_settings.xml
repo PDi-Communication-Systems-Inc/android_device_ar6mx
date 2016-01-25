@@ -35,4 +35,14 @@
 	  android:entryValues="@array/max_users_choices_lookup"
      />
 
+     <CheckBoxPreference
+          android:key="guestAccount"
+          android:title="@string/enable_guest_account_title"
+          android:summaryOn="@string/enable_guest_account_summary_on"
+          android:summaryOff="@string/enable_guest_account_summary_off"
+          android:selectable="true" 
+          android:persistent="true"
+          android:defaultValue="false"
+     />
+
 </PreferenceScreen>
