@@ -257,5 +257,12 @@
     <string name="max_users_choice"> Maximum users on device (including owner) </string>
     <add-resource type="string" name="global_action_restart"/>
     <string name="global_action_restart">Restart</string>
+    <add-resource type="string" name="enable_guest_account_title"/>
+    <string name="enable_guest_account_title">Guest Account</string>
+    <add-resource type="string" name="enable_guest_account_summary_on"/>
+    <string name="enable_guest_account_summary_on">Tap to disable guest account</string>
+    <add-resource type="string" name="enable_guest_account_summary_off"/>
+    <string name="enable_guest_account_summary_off">Tap to enable guest account</string>
+
 
 </resources>
