@@ -27,7 +27,13 @@ BOARD_KERNEL_CMDLINE := "console=ttymxc0,115200 init=/init video=mxcfb0 video=mx
 endif
 
 TARGET_KERNEL_DEFCONF := ar6mx_android_defconfig
-TARGET_BOOTLOADER_CONFIG := 6q:mx6q_ar6mx_android_config 6solo:mx6solo_ar6mx_android_config
+ifeq ($(PDI_SOLO),T)
+   $(warning Setting target bootloader config to solo)
+   TARGET_BOOTLOADER_CONFIG := 6solo:mx6solo_ar6mx_android_config
+else
+   $(warning Setting target bootloader config to quad)
+   TARGET_BOOTLOADER_CONFIG := 6q:mx6q_ar6mx_android_config
+endif
 
 # Filesystem and partitioning
 BOARD_RECOVERY_PARTITION_SIZE 		:= 104900000
