@@ -29,10 +29,10 @@ endif
 TARGET_KERNEL_DEFCONF := ar6mx_android_defconfig
 ifeq ($(PDI_SOLO),T)
    $(warning Setting target bootloader config to solo)
-   TARGET_BOOTLOADER_CONFIG := 6solo:mx6solo_ar6mx_android_config
+   TARGET_BOOTLOADER_CONFIG := 6solomfg:mx6solo_ar6mx_mfg_config 6solo:mx6solo_ar6mx_android_config
 else
    $(warning Setting target bootloader config to quad)
-   TARGET_BOOTLOADER_CONFIG := 6q:mx6q_ar6mx_android_config
+   TARGET_BOOTLOADER_CONFIG := 6qmfg:mx6q_ar6mx_mfg_config 6q:mx6q_ar6mx_android_config
 endif
 
 # Filesystem and partitioning
