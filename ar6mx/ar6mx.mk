@@ -169,7 +169,6 @@ com.mobilepearls.sokoban                \
 com.mobilepearls.memory			\
 com.faddensoft.breakout                 \
 jackpal.androidterm_53                  \
-org.androidappdev.wifiwidget            \
 com.pdiarm.systembackupandrestore 	\
 BackupRestoreConfirmationPDi		\
 ethernet				\
@@ -275,9 +274,9 @@ endif
 
 # Check to add PDi Store or not
 $(warning $(filter T, $(TVRC_BUILD) $(TELEHEALTH_BUILD), $(SIMONETTO_BUILD)))
-ifneq (T,$(filter T, $(TVRC_BUILD) $(TELEHEALTH_BUILD), $(SIMONETTO_BUILD)))
+ifneq (T,$(filter T, $(TVRC_BUILD) $(TELEHEALTH_BUILD), $(SIMONETTO_BUILD) (MDM_BUILD)))
 $(warning Adding PDi Store agent to build)
-      PRODUCT_PACKAGES += org.wso2.emm.agent
+   PRODUCT_PACKAGES += org.wso2.emm.agent
 else 
 $(warning Not adding PDi Store agent to build)
 endif
@@ -309,6 +308,13 @@ $(warning Adding ARA packages and files)
        packages/apps/pdi_packages_apps/PDiCinchWidget/app/src/main/res/raw/pdi_cinch_widget_demo_pngs.config:/system/etc/pdi_cinch_widget_demo_pngs.config
 
 endif
+   
+ifneq ($(MDM_BUILD),T)
+$(warning adding Wifi Widget)
+    PRODUCT_PACKAGES += org.androidappdev.wifiwidget
+else
+$(warning NOT adding Wifi Widget)
+endif   
 
 PRODUCT_PROPERTY_OVERRIDES += hw.nobattery=true
 PRODUCT_PROPERTY_OVERRIDES += sys.device.type=tablet
