@@ -50,7 +50,7 @@ endif
 
 BOARD_FLASH_BLOCK_SIZE := 4096
 
-# Bootanomation optimizations
+# Boot animation optimizations
 TARGET_BOOTANIMATION_PRELOAD := true
 TARGET_BOOTANIMATION_TEXTURE_CACHE := true
 
@@ -69,7 +69,7 @@ TARGET_RECOVERY_FSTAB 			:= device/bcm/ar6mx/fstab.freescale
 TARGET_RECOVERY_UPDATER_LIBS		:= librecovery_updater_ar6mx
 TARGET_RECOVERY_PIXEL_FORMAT		:= "BGRA_8888"
 
-#Widevine options
+# Widevine options
 ifeq ($(WIDEVINE_SUPPORT),T)
    $(warning Setting widevine oem crypt to level 3)
    $(warning Telling system to build widvine oem crypto)
