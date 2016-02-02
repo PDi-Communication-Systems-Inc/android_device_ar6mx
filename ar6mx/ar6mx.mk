@@ -313,6 +313,10 @@ $(warning adding Wifi Widget and cci-test)
 			cci-test
 else
 $(warning NOT adding Wifi Widget and cci-test)
+$(warning adding journey apps and services)
+   PRODUCT_PACKAGES += com.ihealthsuite.android.journey \
+		       com.ihealth.suite.journey.CCIApplication \
+		       libjni-cci.so
 endif   
 
 PRODUCT_PROPERTY_OVERRIDES += hw.nobattery=true
