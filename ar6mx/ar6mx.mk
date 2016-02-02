@@ -172,7 +172,6 @@ com.pdiarm.systembackupandrestore 	\
 BackupRestoreConfirmationPDi		\
 ethernet				\
 ReplicaIsland				\
-cci-test 				\
 android-support-v4			\
 android-support-v7-appcompat		\
 android-support-v7-gridlayout		\
@@ -309,10 +308,11 @@ $(warning Adding ARA packages and files)
 endif
    
 ifneq ($(MDM_BUILD),T)
-$(warning adding Wifi Widget)
-    PRODUCT_PACKAGES += org.androidappdev.wifiwidget
+$(warning adding Wifi Widget and cci-test)
+    PRODUCT_PACKAGES += org.androidappdev.wifiwidget \
+			cci-test
 else
-$(warning NOT adding Wifi Widget)
+$(warning NOT adding Wifi Widget and cci-test)
 endif   
 
 PRODUCT_PROPERTY_OVERRIDES += hw.nobattery=true
