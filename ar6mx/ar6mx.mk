@@ -49,8 +49,8 @@ $(warning Setting PRODUCT_MODEL to PD403-012)
 endif
 
 ifeq ($(MDM_BUILD),T)
-$(warning Setting PRODUCT_MODEL to PD403-999 - needs a product number assigned)
-    PRODUCT_MODEL := PD403-999
+$(warning Setting PRODUCT_MODEL to PD403-019)
+    PRODUCT_MODEL := PD403-019
 endif
 
 # These values are not to be changed
