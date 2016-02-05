@@ -308,7 +308,7 @@ $(warning Adding ARA packages and files)
 endif
    
 ifneq ($(MDM_BUILD),T)
-$(warning adding Wifi Widget and cci-test)
+$(warning adding Wifi Widget)
     PRODUCT_PACKAGES += org.androidappdev.wifiwidget \
 			cci-test
 else
@@ -316,7 +316,8 @@ $(warning NOT adding Wifi Widget and cci-test)
 $(warning adding journey apps and services)
    PRODUCT_PACKAGES += com.ihealthsuite.android.journey \
 		       com.ihealth.suite.journey.CCIApplication \
-		       libjni-cci.so
+		       libjni-cci.so \
+		       cci-test
 endif   
 
 PRODUCT_PROPERTY_OVERRIDES += hw.nobattery=true
