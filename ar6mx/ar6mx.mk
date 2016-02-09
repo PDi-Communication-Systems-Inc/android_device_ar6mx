@@ -320,7 +320,7 @@ $(warning adding journey apps and services)
 		       cci-test
 endif   
 
-ifeq($(SOTI_SUPPORT),T)
+ifeq ($(SOTI_SUPPORT),T)
    PRODUCT_PACKAGES += net.mobicontrol.pdi.shared
 endif
 
