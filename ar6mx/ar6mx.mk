@@ -320,5 +320,9 @@ $(warning adding journey apps and services)
 		       cci-test
 endif   
 
+ifeq($(SOTI_SUPPORT),T)
+   PRODUCT_PACKAGES += net.mobicontrol.pdi.shared
+endif
+
 PRODUCT_PROPERTY_OVERRIDES += hw.nobattery=true
 PRODUCT_PROPERTY_OVERRIDES += sys.device.type=tablet
