@@ -289,8 +289,12 @@ ifeq ($(WIDEVINE_SUPPORT),T)
 $(warning Adding Widevine packages)
    PRODUCT_PACKAGES += com.google.widevine.software.drm.xml \
 		       com.google.widevine.software.drm     \
+		       libprotobuf-cpp-2.3.0-lite	    \
+		       libwvlevel3			    \
 		       libdrmwvmcommon			    \
 		       libdrmwvmplugin                      \
+		       libwvdrmengine			    \
+		       libcdm_protos			    \
 		       libwvm                               \
 	               libWVStreamControlAPI_L3             \
 		       libwvdrm_L3                          \
