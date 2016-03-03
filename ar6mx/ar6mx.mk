@@ -321,7 +321,8 @@ $(warning NOT adding Wifi Widget and cci-test)
 $(warning adding journey apps and services)
    PRODUCT_PACKAGES += com.ihealthsuite.android.journey \
 		       com.ihealth.suite.journey.CCIApplication \
-		       libjni-cci.so
+		       libjni-cci.so \
+                       com.Swank.SwankMediaPlayer
 endif   
 
 ifeq ($(SOTI_SUPPORT),T)
