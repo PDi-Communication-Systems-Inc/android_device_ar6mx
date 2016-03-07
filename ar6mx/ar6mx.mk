@@ -198,6 +198,11 @@ com.pdiarm.pdicinchwidgets.pdixplain	\
 com.example.puzzlegame			\
 org.wikipedia
 
+# Extra filesystem packages
+PRODUCT_PACKAGES += \
+		 e2fsck \
+		 setup_fs
+
 # Extra software based encoders
 PRODUCT_PACKAGES += \
 		 libstagefright_avcenc

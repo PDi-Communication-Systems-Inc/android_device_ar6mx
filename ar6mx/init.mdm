@@ -286,3 +286,6 @@ on post-fs-data
     chmod 0777 /data/data/com.thirdparty.superuser/databases/su.sqlite-journal
     chmod 0777 /data/data/com.thirdparty.superuser/databases/superuser.sqlite
     chmod 0777 /data/data/com.thirdparty.superuser/databases/superuser.sqlite-journal
+
+    # Change the permissions of the device partition
+    chmod 777 /device
