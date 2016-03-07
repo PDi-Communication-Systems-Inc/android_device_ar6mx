@@ -300,6 +300,7 @@ $(warning Adding Widevine packages)
 		       libwvdrm_L3                          \
 		       WidevineSamplePlayer                 \
 		       libdrmdecrypt			    \
+		       installkeybox			    \
 		       install-file-key-box
    PRODUCT_PROPERTY_OVERRIDES += drm.service.enabled=true
 endif 
