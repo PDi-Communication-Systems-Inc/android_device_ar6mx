@@ -154,7 +154,7 @@ service mxt-app /system/bin/mxt-app --load /system/etc/touchscreen.xcfg
     oneshot
 
 # mount the debugfs
-    mount debugfs debugfs /sys/kernel/debug
+    mount -t debugfs debugfs /sys/kernel/debug
 
 service bluetoothd /system/bin/bluetoothd -n
  class main
@@ -281,11 +281,5 @@ on post-fs-data
     class main
     oneshot
 
-    # Make sure super database has appropriate permissions
-    chmod 0777 /data/data/com.thirdparty.superuser/databases/su.sqlite
-    chmod 0777 /data/data/com.thirdparty.superuser/databases/su.sqlite-journal
-    chmod 0777 /data/data/com.thirdparty.superuser/databases/superuser.sqlite
-    chmod 0777 /data/data/com.thirdparty.superuser/databases/superuser.sqlite-journal
-
     # Change the permissions of the device partition
-    chmod 777 /device
+    chmod 0777 /device

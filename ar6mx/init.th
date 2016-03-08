@@ -146,7 +146,7 @@ service mxt-app /system/bin/mxt-app --load /system/etc/touchscreen.xcfg
     oneshot
 
 # mount the debugfs
-    mount debugfs debugfs /sys/kernel/debug
+    mount -t debugfs debugfs /sys/kernel/debug
 
 service bluetoothd /system/bin/bluetoothd -n
  class main
