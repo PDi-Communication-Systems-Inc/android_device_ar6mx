@@ -148,6 +148,7 @@ on boot
 
     # Change the permissions of the device partition
     chown system system /device
+    chown drm drm /device/.deviceid
 
 # Program the Atmel Touchscreen with configuration file
 service mxt-app /system/bin/mxt-app --load /system/etc/touchscreen.xcfg
