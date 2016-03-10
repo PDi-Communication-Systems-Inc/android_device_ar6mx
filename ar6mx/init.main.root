@@ -36,7 +36,7 @@ on boot
     chown root system /sys/class/gpio/gpio39/direction
 
    # Set permission for the usb
-   chmod 777 /dev/bus/usb/002/001 
+   chmod 777 /dev/bus/usb/002/001
    chmod 777 /dev/bus/usb/002/002
    chmod 777 /dev/bus/usb/002/003
    chmod 777 /dev/bus/usb/002/004
@@ -63,7 +63,7 @@ on boot
     #For landscape mode, orient is 0
     #For portrait mode, orient is 90
     #the android before honycomb are all in portrait mode
-    setprop front_camera_name ov5640_mipi 
+    setprop front_camera_name ov5640_mipi
     setprop front_camera_orient 0
     setprop back_camera_name uvc
     setprop back_camera_orient 0
@@ -120,7 +120,7 @@ on boot
     # Chmod/chown FSL specific sys entry
     chown system system /sys/class/backlight/pwm-backlight.0/brightness
     chmod 0660 /sys/class/backlight/pwm-backlight.0/brightness
-	
+
     # Set light sensor sysfs path and light sensor threshold lux value
     setprop ro.hardware.lightsensor "/sys/class/i2c-dev/i2c-2/device/2-0044/"
     setprop ro.lightsensor.threshold  20
@@ -138,6 +138,9 @@ on boot
     # chmod 0777 /sys/bus/i2c/drivers/atmel_mxt_ts/1-004a/pause_driver
     # chmod 0777 /sys/bus/i2c/drivers/atmel_mxt_ts/1-004a/mem_access
 
+    # Change the permissions of the device partition
+    chown system system /device
+
 # Program the Atmel Touchscreen with configuration file
 service mxt-app /system/bin/mxt-app --load /system/etc/touchscreen.xcfg
     class core
@@ -146,7 +149,7 @@ service mxt-app /system/bin/mxt-app --load /system/etc/touchscreen.xcfg
     oneshot
 
 # mount the debugfs
-    mount -t debugfs debugfs /sys/kernel/debug
+    mount debugfs /sys/kernel/debug /sys/kernel/debug
 
 service bluetoothd /system/bin/bluetoothd -n
  class main
@@ -173,7 +176,7 @@ service wpa_supplicant /system/bin/wpa_supplicant -dd -t \
    -Dnl80211 -iwlan0 -c/data/misc/wifi/wpa_supplicant.conf \
    socket wpa_wlan0 dgram 660 wifi wifi
    group system wifi inet
-   class main 
+   class main
    disabled
    oneshot
 
@@ -185,7 +188,7 @@ service pdi_ts_script /system/bin/logwrapper -k /system/etc/process_ts.sh
 
 service su_daemon /system/xbin/su --daemon
     oneshot
-	
+
 service test_cci /system/bin/cci-test
     user root
     group root
@@ -204,7 +207,7 @@ on property:persist.sys.root_access=1
 on property:persist.sys.root_access=3
     start su_daemon
 
-	
+
 on fs
 # mount ext4 partitions
     mount_all /fstab.freescale
@@ -236,7 +239,7 @@ on fs
 #insmod /system/lib/modules/hci_vhci.ko
 #insmod /system/lib/modules/btsdio.ko
 
-# intel specific wifi drivers 
+# intel specific wifi drivers
 # insmod /system/lib/modules/iwlwifi.ko
 # insmod /system/lib/modules/iwldvm.ko
 # insmod /system/lib/modules/iwlmvm.ko
@@ -251,28 +254,28 @@ on post-fs-data
     mkdir /data/system/wpa_supplicant 0770 wifi wifi
     chmod 0770 /data/system/wpa_supplicant
 
-    #wpa_supplicant control socket for android wifi.c (android private socket) 
+    #wpa_supplicant control socket for android wifi.c (android private socket)
     mkdir /data/misc/wifi 0770 system wifi
-    mkdir /data/misc/wifi/sockets 0770 system wifi 
+    mkdir /data/misc/wifi/sockets 0770 system wifi
     chmod 0770 /data/misc/wifi
-    chmod 0660 /data/misc/wifi/wpa_supplicant.conf 
+    chmod 0660 /data/misc/wifi/wpa_supplicant.conf
 
     #add to restore wifi data
-    chown wifi wifi /data/misc/wifi	
+    chown wifi wifi /data/misc/wifi
     chown wifi wifi /data/misc/wifi/wpa_supplicant.conf
 
     # For IFACE_DIR wifi_connect_on_socket in wifi_intel.c
     mkdir /data/misc/wifi/wlan0
     chmod 0660 /data/misc/wifi/wlan0
     chown system wifi /data/misc/wifi/wlan0
-   
+
     #copy the default admin policy file
     service copy_policy /system/bin/sh /system/etc/copy_device_policies.sh
     class core
     oneshot
-  
+
     # Make sure super database has appropriate permissions
     chmod 0777 /data/data/com.thirdparty.superuser/databases/su.sqlite
     chmod 0777 /data/data/com.thirdparty.superuser/databases/su.sqlite-journal
     chmod 0777 /data/data/com.thirdparty.superuser/databases/superuser.sqlite
-    chmod 0777 /data/data/com.thirdparty.superuser/databases/superuser.sqlite-journal 
+    chmod 0777 /data/data/com.thirdparty.superuser/databases/superuser.sqlite-journal
