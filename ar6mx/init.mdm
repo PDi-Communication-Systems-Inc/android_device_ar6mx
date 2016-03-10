@@ -189,19 +189,10 @@ service wpa_supplicant /system/bin/wpa_supplicant -dd -t \
    disabled
    oneshot
 
-service test_cci /system/bin/cci-test
-    user root
-    group root
-    class core
-    oneshot
-
 service pdi_ts_script /system/bin/logwrapper -k /system/etc/process_ts.sh
     user root
     group root
     class main
-    oneshot
-
-service su_daemon /system/xbin/su --daemon
     oneshot
 
 on property:persist.sys.root_access=0
