@@ -328,7 +328,8 @@ $(warning adding journey apps and services)
    PRODUCT_PACKAGES += com.ihealthsuite.android.journey \
 		       com.ihealth.suite.journey.CCIApplication \
 		       libjni-cci.so \
-                       com.Swank.SwankMediaPlayer
+                       com.Swank.SwankMediaPlayer \
+		       com.kmagic.solitaire_450
 endif   
 
 ifeq ($(SOTI_SUPPORT),T)
