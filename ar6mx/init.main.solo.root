@@ -41,7 +41,6 @@ on boot
    chmod 777 /dev/bus/usb/002/003
    chmod 777 /dev/bus/usb/002/004
 
-
     # Enable Tethering in the Settings
     setprop ro.tether.denied false
 
@@ -143,7 +142,7 @@ on boot
 
 # Program the Atmel Touchscreen with configuration file
 service mxt-app /system/bin/mxt-app --load /system/etc/touchscreen.xcfg
-    class core
+    class main
     user root
     group root
     oneshot
@@ -161,7 +160,7 @@ service bluetoothd /system/bin/bluetoothd -n
  disabled
 
 service eGTouchD /system/bin/eGTouchD
-    class core
+    class main
     user root
     group root
     oneshot
@@ -183,17 +182,17 @@ service wpa_supplicant /system/bin/wpa_supplicant -dd -t \
 service pdi_ts_script /system/bin/logwrapper -k /system/etc/process_ts.sh
     user root
     group root
-    class core
+    class main
     oneshot
 
 service su_daemon /system/xbin/su --daemon
-    oneshot
+        oneshot
 
-service test_cci /system/bin/cci-test
-    user root
-    group root
-    class core
-    oneshot
+# service test_cci /system/bin/cci-test
+#    user root
+#    group root
+#    class main
+#    oneshot
 
 on property:persist.sys.root_access=0
     stop su_daemon
@@ -270,7 +269,7 @@ on post-fs-data
 
     #copy the default admin policy file
     service copy_policy /system/bin/sh /system/etc/copy_device_policies.sh
-    class core
+    class main
     oneshot
 
     # Make sure super database has appropriate permissions
