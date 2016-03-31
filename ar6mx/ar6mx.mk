@@ -196,7 +196,12 @@ iperf					\
 pdicinchwidget.apps.android.pdiarm.com.pdicinchwidget \
 com.pdiarm.pdicinchwidgets.pdixplain	\
 com.example.puzzlegame			\
-org.wikipedia
+org.wikipedia				\
+v4l2-ctl				\
+v4l2-dbg				\
+v4l2-compliance				\
+libv4l2					\
+libv4l_convert
 
 # Extra filesystem packages
 PRODUCT_PACKAGES += \
