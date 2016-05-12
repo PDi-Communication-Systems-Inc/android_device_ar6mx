@@ -53,6 +53,11 @@ $(warning Setting PRODUCT_MODEL to PD403-019)
     PRODUCT_MODEL := PD403-019
 endif
 
+ifeq ($(AT_BUILD),T)
+$(warning Setting PRODUCT_MODEL to PD403-019)
+    PRODUCT_MODEL := PD403-PROTOTYPE
+endif
+
 # These values are not to be changed
 PRODUCT_NAME := ar6mx
 PRODUCT_DEVICE := ar6mx
@@ -162,7 +167,6 @@ com.pdiarm.cloneslave                   \
 com.davidgoemans.simpleClockWidget      \
 net.micode.fileexplorer                 \
 org.jfedor.frozenbubble_13              \
-com.pdiarm.newuserconfirmation          \
 org.moire.opensudoku.game		\
 com.mobilepearls.sokoban                \
 com.mobilepearls.memory			\
@@ -289,12 +293,14 @@ else
 $(warning Not adding PDi Store agent to build)
 endif
 
+# Root at your own risk
 ifeq ($(ROOTED_BUILD_NEEDED), T)
 $(warning Adding root package outside branch, do not publicly distribute)
    PRODUCT_PACKAGES += su \
                        Superuser
 endif
 
+# WIDEVINE support requires a number of dedicated libraries and apps to be added
 ifeq ($(WIDEVINE_SUPPORT),T)
 $(warning Adding Widevine packages)
    PRODUCT_PACKAGES += com.google.widevine.software.drm.xml \
@@ -315,6 +321,7 @@ $(warning Adding Widevine packages)
    PRODUCT_PROPERTY_OVERRIDES += drm.service.enabled=true
 endif 
 
+#ARA builds support cinch demo setup
 ifeq ($(ARA_BUILD),T)
 $(warning Adding ARA packages and files)
 
@@ -322,7 +329,10 @@ $(warning Adding ARA packages and files)
        packages/apps/pdi_packages_apps/PDiCinchWidget/app/src/main/res/raw/pdi_cinch_widget_demo_pngs.config:/system/etc/pdi_cinch_widget_demo_pngs.config
 
 endif
-   
+
+# MDM builds handle CCI on there own and do not contain wi-fi
+# MDM builds run there own launcher like environment, support WIDEVINE, 
+# and have an extra game   
 ifneq ($(MDM_BUILD),T)
 $(warning adding Wifi Widget)
     PRODUCT_PACKAGES += org.androidappdev.wifiwidget \
@@ -337,8 +347,15 @@ $(warning adding journey apps and services)
 		       com.kmagic.solitaire_450
 endif   
 
+# Builds needing SOTI support require an extra package
 ifeq ($(SOTI_SUPPORT),T)
    PRODUCT_PACKAGES += net.mobicontrol.pdi.shared
+endif
+
+# AT builds are single user
+ifneq ($(AT_BUILD),T)
+$(warning not an AT build, adding multiuser packages)
+   PRODUCT_PACKAGES += com.pdiarm.newuserconfirmation
 endif
 
 PRODUCT_PROPERTY_OVERRIDES += hw.nobattery=true

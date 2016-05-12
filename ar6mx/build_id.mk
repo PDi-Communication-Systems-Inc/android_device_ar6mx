@@ -43,12 +43,12 @@ ifeq (${ANDROID_BUILD_MODE},user)
          else
             ifeq (${TELEHEALTH_BUILD}, T)
                export BUILD_ID=TH${CORE_TYPE}U8-${BUILD_DATE_ONLY}
-            else  
+            else
 	       ifeq (${OPTIMAL_BUILD}, T)
                   export BUILD_ID=OS${CORE_TYPE}U8-${BUILD_DATE_ONLY}
                else
                   ifeq (${SIMONETTO_BUILD}, T)
-                     export BUILD_ID=SIM${CORE_TYPE}U8-${BUILD_DATE_ONLY}  
+                     export BUILD_ID=SIM${CORE_TYPE}U8-${BUILD_DATE_ONLY}
                   else
                      ifeq (${ARA_BUILD}, T)
                         export BUILD_ID=ARA${CORE_TYPE}U8-${BUILD_DATE_ONLY}
@@ -56,7 +56,11 @@ ifeq (${ANDROID_BUILD_MODE},user)
                         ifeq (${MDM_BUILD}, T)
                            export BUILD_ID=MDM${CORE_TYPE}U8-${BUILD_DATE_ONLY}
                         else
-                           export BUILD_ID=${CORE_TYPE}U8-${BUILD_DATE_ONLY}
+												    ifeq (${AT_BUILD}, T)
+														   export BUILD_ID=AT${CORE_TYPE}U8-${BUILD_DATE_ONLY}
+														else
+                               export BUILD_ID=${CORE_TYPE}U8-${BUILD_DATE_ONLY}
+														endif
                         endif
                      endif
                   endif
@@ -68,13 +72,13 @@ ifeq (${ANDROID_BUILD_MODE},user)
 else
    $(warning Generating enginnering build)
 
-   ifeq (${NIH_BUILD}, T) 
+   ifeq (${NIH_BUILD}, T)
       export BUILD_ID=NIH${CORE_TYPE}E8-${BUILD_DATE_ONLY}
    else
       ifeq (${DAVITA_BUILD}, T)
-         export BUILD_ID=DVT${CORE_TYPE}E8-${BUILD_DATE_ONLY}   
+         export BUILD_ID=DVT${CORE_TYPE}E8-${BUILD_DATE_ONLY}
       else
-         ifeq (${TVRC_BUILD}, T) 
+         ifeq (${TVRC_BUILD}, T)
             export BUILD_ID=TVRC${CORE_TYPE}E8-${BUILD_DATE_ONLY}
          else
             ifeq (${TELEHEALTH_BUILD}, T)
@@ -82,7 +86,7 @@ else
             else
                ifeq (${DAVITA_BUILD}, T)
                   export BUILD_ID=DVT${CORE_TYPE}E8-${BUILD_DATE_ONLY}
-               else 
+               else
                   ifeq (${OPTIMAL_BUILD}, T)
                      export BUILD_ID=OS${CORE_TYPE}E8-${BUILD_DATE_ONLY}
                   else
@@ -95,7 +99,11 @@ else
                            ifeq (${MDM_BUILD}, T)
                               export BUILD_ID=MDM${CORE_TYPE}E8-${BUILD_DATE_ONLY}
                            else
-                              export BUILD_ID=${CORE_TYPE}E8-${BUILD_DATE_ONLY}
+													    ifeq (${AT_BUILD}, T)
+														      export BUILD_ID=AT${CORE_TYPE}U8-${BUILD_DATE_ONLY}
+														  else
+                                  export BUILD_ID=${CORE_TYPE}E8-${BUILD_DATE_ONLY}
+														  endif
                            endif
                         endif
                      endif
@@ -104,7 +112,7 @@ else
 	    endif
          endif
       endif
-   endif 
+   endif
 endif
 $(warning the finalized build id is defined to be ${BUILD_ID})
 #export BUILD_ID=1.1.0-rc4

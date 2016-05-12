@@ -35,4 +35,7 @@
         practice defined at 
         https://www.hipaa.com/access-control-automatic-logoff-what-to-do-and-how-to-do-it/ -->
    <integer name="def_screen_off_timeout">600000</integer>
+
+   <!-- On -->
+   <bool name="def_lockscreen_disabled">true</bool>
 </resources>
