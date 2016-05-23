@@ -55,7 +55,7 @@ endif
 
 ifeq ($(AT_BUILD),T)
 $(warning Setting PRODUCT_MODEL to PD403-019)
-    PRODUCT_MODEL := PD403-PROTOTYPE
+    PRODUCT_MODEL := PD403-021
 endif
 
 # These values are not to be changed
