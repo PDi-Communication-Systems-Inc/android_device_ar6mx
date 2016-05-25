@@ -237,6 +237,7 @@ ifneq ($(DAVITA_BUILD),T)
 $(warning Not a Davita build, adding some other packages)
 	PRODUCT_PACKAGES += \
 		k9				\
+		org.tomdroid			\
 		caa-2.1.2-597-us_zeebox		\
 		com.ghostsq.commander		\
 		ghost-sftp-plugin               \
