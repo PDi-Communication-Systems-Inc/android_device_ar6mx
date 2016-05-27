@@ -170,7 +170,7 @@ org.moire.opensudoku.game		\
 com.mobilepearls.sokoban                \
 com.mobilepearls.memory			\
 com.faddensoft.breakout                 \
-jackpal.androidterm_53                  \
+jackpal.androidterm			\
 com.pdiarm.systembackupandrestore 	\
 BackupRestoreConfirmationPDi		\
 ethernet				\
