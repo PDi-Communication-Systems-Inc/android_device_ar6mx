@@ -172,6 +172,7 @@ com.mobilepearls.memory			\
 com.faddensoft.breakout                 \
 jackpal.androidterm			\
 libjackpal-termexec2			\
+libjackpal-androidterm5			\
 com.pdiarm.systembackupandrestore 	\
 BackupRestoreConfirmationPDi		\
 ethernet				\

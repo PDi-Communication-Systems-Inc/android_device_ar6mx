@@ -37,5 +37,5 @@
    <integer name="def_screen_off_timeout">600000</integer>
 
    <!-- On -->
-   <bool name="def_lockscreen_disabled">true</bool>
+   <bool name="def_lockscreen_disabled">false</bool>
 </resources>
