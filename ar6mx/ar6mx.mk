@@ -158,7 +158,7 @@ PRODUCT_COPY_FILES += \
 # Packages for all builds that add variety, fun, and spice to the PDi-Tab
 PRODUCT_PACKAGES += 		\
 AdobeReader                             \
-org.jtb.alogcat_43                      \
+alogcat					\
 org.petero.droidfish_54                 \
 com.pdiarm.clone                        \
 com.pdiarm.clonemaster                  \
