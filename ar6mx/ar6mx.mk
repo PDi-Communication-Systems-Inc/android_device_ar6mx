@@ -95,7 +95,7 @@ DEVICE_PACKAGE_OVERLAYS := device/bcm/ar6mx/overlay
 
 PRODUCT_CHARACTERISTICS := tablet
 
-PRODUCT_AAPT_CONFIG += xlarge large tvdpi hdpi
+PRODUCT_AAPT_CONFIG += xlarge large tvdpi hdpi xhdpi
 
 PRODUCT_COPY_FILES += \
 	frameworks/native/data/etc/android.hardware.wifi.xml:system/etc/permissions/android.hardware.wifi.xml \
