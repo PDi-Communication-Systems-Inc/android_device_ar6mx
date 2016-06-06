@@ -159,7 +159,10 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += 		\
 AdobeReader                             \
 alogcat					\
-org.petero.droidfish_54                 \
+droidfish				\
+libgtb					\
+libnativeutil				\
+librtb.so				\
 com.pdiarm.clone                        \
 com.pdiarm.clonemaster                  \
 com.pdiarm.cloneslave                   \
@@ -168,6 +171,7 @@ net.micode.fileexplorer                 \
 org.jfedor.frozenbubble_13              \
 org.moire.opensudoku.game		\
 com.mobilepearls.sokoban                \
+com.uberspot.a2048			\
 com.mobilepearls.memory			\
 com.faddensoft.breakout                 \
 jackpal.androidterm			\
