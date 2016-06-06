@@ -157,7 +157,6 @@ PRODUCT_COPY_FILES += \
 
 # Packages for all builds that add variety, fun, and spice to the PDi-Tab
 PRODUCT_PACKAGES += 		\
-AdobeReader                             \
 alogcat					\
 droidfish				\
 libgtb					\
@@ -228,7 +227,11 @@ ifeq ($(NIH_BUILD),T)
 		com.pdiarm.patientportal		\
 		com.pdiarm.nutrition			\
 		com.pdiarm.disclaimer			\
-		com.pdiarm.patientfeedback
+		com.pdiarm.patientfeedback		\
+		com.adobe.reader_10.6.1
+else
+	PRODUCT_PACKAGES += \
+		AdobeReader
 endif 
 
 # Packages to include if the build is Davita
