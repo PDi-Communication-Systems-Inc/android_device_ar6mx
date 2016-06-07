@@ -158,10 +158,6 @@ PRODUCT_COPY_FILES += \
 # Packages for all builds that add variety, fun, and spice to the PDi-Tab
 PRODUCT_PACKAGES += 		\
 alogcat					\
-droidfish				\
-libgtb					\
-libnativeutil				\
-librtb.so				\
 com.pdiarm.clone                        \
 com.pdiarm.clonemaster                  \
 com.pdiarm.cloneslave                   \
@@ -231,7 +227,8 @@ ifeq ($(NIH_BUILD),T)
 		com.adobe.reader_10.6.1
 else
 	PRODUCT_PACKAGES += \
-		AdobeReader
+		AdobeReader \
+		org.petero.droidfish-1.61-69
 endif 
 
 # Packages to include if the build is Davita
