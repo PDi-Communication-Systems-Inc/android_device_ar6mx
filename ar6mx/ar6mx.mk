@@ -163,7 +163,8 @@ com.pdiarm.clonemaster                  \
 com.pdiarm.cloneslave                   \
 com.davidgoemans.simpleClockWidget      \
 net.micode.fileexplorer                 \
-org.jfedor.frozenbubble_13              \
+frozenbubble				\
+libmodplug-1.0				\
 org.moire.opensudoku.game		\
 com.mobilepearls.sokoban                \
 com.uberspot.a2048			\
