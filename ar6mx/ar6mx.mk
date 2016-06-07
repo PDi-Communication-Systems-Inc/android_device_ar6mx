@@ -246,7 +246,7 @@ $(warning Not a Davita build, adding some other packages)
 		k9				\
 		org.tomdroid			\
 		caa-2.1.2-597-us_zeebox		\
-		com.ghostsq.commander		\
+		ghostcommander			\
 		ghost-sftp-plugin               \
 		ghost-dropbox-plugin            \
 		ghost-box-plugin                \
