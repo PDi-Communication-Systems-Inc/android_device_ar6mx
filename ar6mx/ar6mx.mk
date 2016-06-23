@@ -225,7 +225,8 @@ ifeq ($(NIH_BUILD),T)
 		com.pdiarm.nutrition			\
 		com.pdiarm.disclaimer			\
 		com.pdiarm.patientfeedback		\
-		com.adobe.reader_10.6.1
+		com.adobe.reader_10.6.1			\
+		com.kmagic.solitaire_450
 else
 	PRODUCT_PACKAGES += \
 		AdobeReader \
