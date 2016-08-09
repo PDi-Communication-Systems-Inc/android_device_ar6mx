@@ -206,7 +206,12 @@ v4l2-ctl				\
 v4l2-dbg				\
 v4l2-compliance				\
 libv4l2					\
-libv4l_convert
+libv4l_convert				\
+librank					\
+procmem					\
+procrank				\
+showmap					\
+latencytop
 
 # Extra filesystem packages
 PRODUCT_PACKAGES += \

@@ -263,6 +263,14 @@
     <string name="enable_guest_account_summary_on">Tap to disable guest account</string>
     <add-resource type="string" name="enable_guest_account_summary_off"/>
     <string name="enable_guest_account_summary_off">Tap to enable guest account</string>
+    <add-resource type="string" name="status_ethernet_dns_addresses"/>
+    <string name="status_ethernet_dns_addresses">Ethernet DNS Addresses</string>
+    <add-resource type="string" name="status_ethernet_dns_addresses_summary"/>
+    <string name="status_ethernet_dns_addresses_summary">Show up to four DNS addresses if available</string>  
+    <add-resource type="string" name="status_wifi_dns_addresses"/>
+    <string name="status_wifi_dns_addresses">Wi-fi DNS Addresses</string>         
+    <add-resource type="string" name="status_wifi_dns_addresses_summary"/>
+    <string name="status_wifi_dns_addresses_summary">Show up to four DNS addresses if available</string>
 
 
 </resources>
