@@ -288,8 +288,7 @@ endif
 # Packages to include if the build is Simonetto
 ifeq ($(SIMONETTO_BUILD),T)
 $(warning Adding packages for Simonetto Build)
-   PRODUCT_PACKAGES += videosan \
-		       psreader
+   PRODUCT_PACKAGES += psreader
 endif
 
 # Check to add PDi Store or not

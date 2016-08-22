@@ -4,6 +4,7 @@ overlay/packages/apps/Browser/res/values/bookmarks_icons.xml
 overlay/packages/apps/Browser/res/values/strings.xml
 overlay/packages/apps/Settings/res/xml/ota_settings.xml
 overlay/frameworks/base/core/res/res/layout/keyguard_pin_view.xml
+overlay/frameworks/base/core/res/res/layout/keyguard_password_view.xml
 overlay/frameworks/base/core/res/res/values/config.xml
 overlay/packages/apps/Launcher2/res/xml-sw600dp/default_workspace.xml
 overlay/packages/apps/Launcher2/res/xml-sw720dp/default_workspace.xml
