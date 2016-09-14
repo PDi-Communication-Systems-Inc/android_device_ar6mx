@@ -84,7 +84,8 @@ PRODUCT_COPY_FILES += \
 	kernel_imx/drivers/input/touchscreen/atmel_mxt_ts.ko:/system/lib/modules/atmel_mxt_ts.ko \
 	kernel_imx/drivers/watchdog/imx2_wdt.ko:/system/lib/modules/imx2_wdt.ko \
 	kernel_imx/drivers/watchdog/softdog.ko:/system/lib/modules/softdog.ko \
-	device/bcm/ar6mx/common/input/atmel_mxt_ts_T100_touchscreen.idc:system/usr/idc/atmel_mxt_ts_T100_touchscreen.idc
+	device/bcm/ar6mx/common/input/atmel_mxt_ts_T100_touchscreen.idc:system/usr/idc/atmel_mxt_ts_T100_touchscreen.idc \
+	device/bcm/ar6mx/devregs_imx6x.dat:/system/etc/devregs_imx6x.dat
 
 #Copy default device admin files
 PRODUCT_COPY_FILES += \
@@ -206,9 +207,14 @@ v4l2-ctl				\
 v4l2-dbg				\
 v4l2-compliance				\
 libv4l2					\
-libv4l_convert          \
-PicoTts                 \
+libv4l_convert          		\
+PicoTts                 		\
 PicoLangInstaller
+
+ifneq ($(ANDROID_BUILD_MODE),user) 
+PRODUCT_PACKAGES += devregs	\
+		    inputRead
+endif
 
 # Extra filesystem packages
 PRODUCT_PACKAGES += \
