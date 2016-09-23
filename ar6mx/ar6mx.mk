@@ -199,6 +199,7 @@ i2cset					\
 i2cdump					\
 raidl					\
 iperf					\
+iperf3					\
 pdicinchwidget.apps.android.pdiarm.com.pdicinchwidget \
 com.pdiarm.pdicinchwidgets.pdixplain	\
 com.example.puzzlegame			\
