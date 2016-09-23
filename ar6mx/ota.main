@@ -1,4 +1,4 @@
-server=pdiarm.com
+server=ota.pdiarm.com
 port=80
 ota=.ota.zip
 build=build.prop
