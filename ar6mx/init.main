@@ -181,6 +181,13 @@ service pdi_ts_script /system/bin/logwrapper -k /system/etc/process_ts.sh
     class core
     oneshot
 
+#main
+service Doge_GPIO39_init  /system/bin/internalSpeakers
+    user root
+    group root
+    class core
+    oneshot
+
 service test_cci /system/bin/cci-test
     user root
     group root

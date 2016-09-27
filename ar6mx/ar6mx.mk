@@ -349,7 +349,8 @@ endif
 ifneq ($(MDM_BUILD),T)
 $(warning adding Wifi Widget)
     PRODUCT_PACKAGES += org.androidappdev.wifiwidget \
-			cci-test
+			cci-test \
+			internalSpeakers
 else
 $(warning NOT adding Wifi Widget and cci-test)
 $(warning adding journey apps and services)
