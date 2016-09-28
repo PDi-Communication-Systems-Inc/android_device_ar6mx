@@ -182,6 +182,13 @@ service pdi_ts_script /system/bin/logwrapper -k /system/etc/process_ts.sh
     class main
     oneshot
 
+#simonetto
+service Doge_GPIO39_init  /system/bin/internalSpeakers
+    user root
+    group root
+    class core
+    oneshot
+
 service psreader /system/bin/psreader
     user root
     group root
