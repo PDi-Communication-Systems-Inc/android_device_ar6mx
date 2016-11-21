@@ -23,6 +23,14 @@ builddtonly := $(shell date +%Y%m%d)
 export BUILD_NUMBER=${buildnum}
 export BUILD_DATE_ONLY=${builddtonly}
 
+# EMMC size
+ifeq (${EMMC_SIZE},8)
+   export EMMC_MARKER=8
+else
+   export EMMC_MARKER=4
+endif
+
+# For legacy support of first generation TAB
 ifeq (${PDI_SOLO},T)
    export CORE_TYPE=S
 else
@@ -31,88 +39,52 @@ endif
 
 ifeq (${ANDROID_BUILD_MODE},user)
    $(warning Generating user build)
-
-   ifeq (${NIH_BUILD}, T)
-      export BUILD_ID=NIH${CORE_TYPE}U8-${BUILD_DATE_ONLY}
-   else
-      ifeq (${TVRC_BUILD}, T)
-         export BUILD_ID=TVRC${CORE_TYPE}U8-${BUILD_DATE_ONLY}
-      else
-         ifeq (${DAVITA_BUILD}, T)
-            export BUILD_ID=DVT${CORE_TYPE}U8-${BUILD_DATE_ONLY}
-         else
-            ifeq (${TELEHEALTH_BUILD}, T)
-               export BUILD_ID=TH${CORE_TYPE}U8-${BUILD_DATE_ONLY}
-            else
-	       ifeq (${OPTIMAL_BUILD}, T)
-                  export BUILD_ID=OS${CORE_TYPE}U8-${BUILD_DATE_ONLY}
-               else
-                  ifeq (${SIMONETTO_BUILD}, T)
-                     export BUILD_ID=SIM${CORE_TYPE}U8-${BUILD_DATE_ONLY}
-                  else
-                     ifeq (${ARA_BUILD}, T)
-                        export BUILD_ID=ARA${CORE_TYPE}U8-${BUILD_DATE_ONLY}
-                     else
-                        ifeq (${MDM_BUILD}, T)
-                           export BUILD_ID=MDM${CORE_TYPE}U8-${BUILD_DATE_ONLY}
-                        else
-												    ifeq (${AT_BUILD}, T)
-														   export BUILD_ID=AT${CORE_TYPE}U8-${BUILD_DATE_ONLY}
-														else
-                               export BUILD_ID=${CORE_TYPE}U8-${BUILD_DATE_ONLY}
-														endif
-                        endif
-                     endif
-                  endif
-               endif
-	    endif
-         endif
-      endif
-   endif
+   export MODE_MARKER=U
 else
-   $(warning Generating enginnering build)
+   $(warning Generating engineering build)
+   export MODE_MARKER=E
+endif
 
-   ifeq (${NIH_BUILD}, T)
-      export BUILD_ID=NIH${CORE_TYPE}E8-${BUILD_DATE_ONLY}
+ifeq (${NIH_BUILD}, T)
+   export BUILD_ID=NIH${CORE_TYPE}${MODE_MARKER}${EMMC_MARKER}-${BUILD_DATE_ONLY}
+else
+   ifeq (${TVRC_BUILD}, T)
+      export BUILD_ID=TVRC${CORE_TYPE}${MODE_MARKER}${EMMC_MARKER}-${BUILD_DATE_ONLY}
    else
       ifeq (${DAVITA_BUILD}, T)
-         export BUILD_ID=DVT${CORE_TYPE}E8-${BUILD_DATE_ONLY}
+         export BUILD_ID=DVT${CORE_TYPE}${MODE_MARKER}${EMMC_MARKER}-${BUILD_DATE_ONLY}
       else
-         ifeq (${TVRC_BUILD}, T)
-            export BUILD_ID=TVRC${CORE_TYPE}E8-${BUILD_DATE_ONLY}
+         ifeq (${TELEHEALTH_BUILD}, T)
+            export BUILD_ID=TH${CORE_TYPE}${MODE_MARKER}${EMMC_MARKER}-${BUILD_DATE_ONLY}
          else
-            ifeq (${TELEHEALTH_BUILD}, T)
-               export BUILD_ID=TH${CORE_TYPE}E8-${BUILD_DATE_ONLY}
+            ifeq (${OPTIMAL_BUILD}, T)
+               export BUILD_ID=OS${CORE_TYPE}${MODE_MARKER}${EMMC_MARKER}-${BUILD_DATE_ONLY}
             else
-               ifeq (${DAVITA_BUILD}, T)
-                  export BUILD_ID=DVT${CORE_TYPE}E8-${BUILD_DATE_ONLY}
+               ifeq (${SIMONETTO_BUILD}, T)
+                  export BUILD_ID=SIM${CORE_TYPE}${MODE_MARKER}${EMMC_MARKER}-${BUILD_DATE_ONLY}
                else
-                  ifeq (${OPTIMAL_BUILD}, T)
-                     export BUILD_ID=OS${CORE_TYPE}E8-${BUILD_DATE_ONLY}
+                  ifeq (${ARA_BUILD}, T)
+                     export BUILD_ID=ARA${CORE_TYPE}${MODE_MARKER}${EMMC_MARKER}-${BUILD_DATE_ONLY}
                   else
-                     ifeq (${SIMONETTO_BUILD}, T)
-                        export BUILD_ID=SIM${CORE_TYPE}E8-${BUILD_DATE_ONLY}
+                     ifeq (${MDM_BUILD}, T)
+                        export BUILD_ID=MDM${CORE_TYPE}${MODE_MARKER}${EMMC_MARKER}-${BUILD_DATE_ONLY}
                      else
-                        ifeq (${ARA_BUILD}, T)
-                           export BUILD_ID=ARA${CORE_TYPE}E8-${BUILD_DATE_ONLY}
+                        ifeq (${AT_BUILD}, T)
+                           export BUILD_ID=AT${CORE_TYPE}${MODE_MARKER}${EMMC_MARKER}-${BUILD_DATE_ONLY}
                         else
-                           ifeq (${MDM_BUILD}, T)
-                              export BUILD_ID=MDM${CORE_TYPE}E8-${BUILD_DATE_ONLY}
+                           ifeq (${SIM_TS_BUILD}, T)
+                              export BUILD_ID=SIMTS${CORE_TYPE}${MODE_MARKER}${EMMC_MARKER}-${BUILD_DATE_ONLY}
                            else
-													    ifeq (${AT_BUILD}, T)
-														      export BUILD_ID=AT${CORE_TYPE}U8-${BUILD_DATE_ONLY}
-														  else
-                                  export BUILD_ID=${CORE_TYPE}E8-${BUILD_DATE_ONLY}
-														  endif
+                              export BUILD_ID=${CORE_TYPE}${MODE_MARKER}${EMMC_MARKER}-${BUILD_DATE_ONLY}
                            endif
                         endif
                      endif
                   endif
-	       endif
-	    endif
+               endif
+            endif
          endif
       endif
    endif
 endif
-$(warning the finalized build id is defined to be ${BUILD_ID})
-#export BUILD_ID=1.1.0-rc4
+
+$(warning The finalized build id is defined to be ${BUILD_ID})

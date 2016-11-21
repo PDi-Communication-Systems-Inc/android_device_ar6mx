@@ -10,53 +10,49 @@ $(call inherit-product-if-exists,vendor/google/products/gms.mk)
 # if no BUILD defined PDI-PXT will be used
 PRODUCT_MODEL := PDI-PXT
 ifeq ($(STANDARD_BUILD),T)
-$(warning Setting PRODUCT_MODEL to PD403-008)
     PRODUCT_MODEL := PD403-008
 endif
+
 ifeq ($(NIH_BUILD),T)
-$(warning Setting PRODUCT_MODEL to PD403-009)
     PRODUCT_MODEL := PD403-009
 endif
 
 ifeq ($(TVRC_BUILD),T)
-$(warning Setting PRODUCT_MODEL to PD403-010)
     PRODUCT_MODEL := PD403-010
 endif
 
 ifeq ($(DAVITA_BUILD),T)
-$(warning Setting PRODUCT_MODEL to PD403-011)
     PRODUCT_MODEL := PD403-011
 endif
 
 ifeq ($(TELEHEALTH_BUILD),T)
-$(warning Setting PRODUCT_MODEL to PD403-015)
     PRODUCT_MODEL := PD403-015
 endif
 
 ifeq ($(OPTIMAL_SOLUTIONS),T)
-$(warning Setting PRODUCT_MODEL to PD403-016)
     PRODUCT_MODEL := PD403-016
 endif
 
 ifeq ($(SIMONETTO_BUILD),T)
-$(warning Setting PRODUCT_MODEL to PD403-017)
     PRODUCT_MODEL := PD403-017
 endif
 
+ifeq ($(SIM_TS_BUILD),T)
+    PRODUCT_MODEL := PD403-013
+endif
+
 ifeq ($(ARA_BUILD),T)
-$(warning Setting PRODUCT_MODEL to PD403-012)
     PRODUCT_MODEL := PD403-012
 endif
 
 ifeq ($(MDM_BUILD),T)
-$(warning Setting PRODUCT_MODEL to PD403-019)
     PRODUCT_MODEL := PD403-019
 endif
 
 ifeq ($(AT_BUILD),T)
-$(warning Setting PRODUCT_MODEL to PD403-019)
     PRODUCT_MODEL := PD403-021
 endif
+$(warning Setting PRODUCT_MODEL to $(PRODUCT_MODEL))
 
 # These values are not to be changed
 PRODUCT_NAME := ar6mx
@@ -246,11 +242,10 @@ endif
 ifeq ($(DAVITA_BUILD),T)
 	PRODUCT_PACKAGES += \
 		com.kmagic.solitaire_450			
-endif 
+else 
 
 # Packages to include if the build is not Davita
 # they do not want email packages for instance
-ifneq ($(DAVITA_BUILD),T)
 $(warning Not a Davita build, adding some other packages)
 	PRODUCT_PACKAGES += \
 		k9				\
