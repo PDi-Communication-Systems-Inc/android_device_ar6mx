@@ -220,7 +220,7 @@
     <add-resource type="string" name="status_ethernet_mac_address"/>
     <string name="status_ethernet_mac_address"> Ethernet MAC address </string>
     <add-resource type="string" name="ota_settings" />
-    <string name="ota_settings"> Over the Air (OTA) </string>
+    <string name="ota_settings"> Over the Air (OTA) Update </string>
     <add-resource type="string" name="ota_server_name" />
     <string name="ota_server_name"> Server </string>
     <add-resource type="string" name="ota_port_name" />
