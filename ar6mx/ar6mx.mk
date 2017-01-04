@@ -294,8 +294,8 @@ $(warning Adding packages for Simonetto Build)
 endif
 
 # Check to add PDi Store or not
-$(warning $(filter T, $(TVRC_BUILD) $(TELEHEALTH_BUILD) $(SIMONETTO_BUILD) $(MDM_BUILD)))
-ifneq (T,$(filter T, $(TVRC_BUILD) $(TELEHEALTH_BUILD) $(SIMONETTO_BUILD) $(MDM_BUILD)))
+$(warning $(filter T, $(TVRC_BUILD) $(TELEHEALTH_BUILD) $(MDM_BUILD)))
+ifneq (T,$(filter T, $(TVRC_BUILD) $(TELEHEALTH_BUILD) $(MDM_BUILD)))
 $(warning Adding PDi Store agent to build)
    PRODUCT_PACKAGES += org.wso2.emm.agent
 else 
