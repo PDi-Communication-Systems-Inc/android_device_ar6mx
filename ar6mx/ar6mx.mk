@@ -327,6 +327,7 @@ $(warning Adding Widevine packages)
 		       libdrmdecrypt			    \
 		       installkeybox			    \
 		       install-file-key-box
+
    PRODUCT_PROPERTY_OVERRIDES += drm.service.enabled=true
 endif 
 
@@ -363,9 +364,10 @@ ifeq ($(SOTI_SUPPORT),T)
 endif
 
 # AT builds are single user
-ifneq ($(AT_BUILD),T)
+ifeq ($(AT_BUILD),T)
 $(warning not an AT build, adding multiuser packages)
-   PRODUCT_PACKAGES += com.pdiarm.newuserconfirmation
+   PRODUCT_PACKAGES += com.pdiarm.newuserconfirmation \
+                       com.teslacoilsw.launcher
 endif
 
 PRODUCT_PROPERTY_OVERRIDES += hw.nobattery=true

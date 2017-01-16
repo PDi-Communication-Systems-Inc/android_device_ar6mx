@@ -104,6 +104,21 @@ s -->
     <!-- Title of dialog when user is selecting an application to add to homescreen -->
     <string name="title_select_application">Choose app</string>
 
+    <!-- Launcher Selection text -->
+    <string name="title_select_launcher">Please select one of the Launcher as your Home</string>
+
+    <string name="title_select_launcher">Please select one of the Launcher as your Home</string>
+    <!-- Default Launcher  -->
+    <string name="title_default_launcher"> Traditional Experience (Google Launcher)  </string>
+    <!-- Default Launcher  -->
+    <string name="title_default_launcher_txt"> This traditional Launcher is provided by Google and does have the access of launching android apps from home screen. User can also set up their own widgets. This launcher has access to settings app where you can modify the Account settings etc. </string>
+    <!-- Thirdparty  Launcher  -->
+    <string name="title_thirdparty_launcher"> Basic Launcher (Allan Tech Launcher) </string>
+    <!-- Thirdparty  Launcher  -->
+    <string name="title_thirdparty_launcher_txt"> This Basic launcher has a single screen to launch various apps like Games, Watching On Demand video\'s, playing music, browsing internet.
+Patient\'s can play various games, listen to music. This launcher is recommended for Patient\'s account.
+    </string>
+
     <!-- All applications label -->
     <string name="all_apps_button_label">Apps</string>
     <!-- Label for button in all applications label to go back home (to the workspace / desktop)
@@ -316,6 +331,7 @@ s -->
     <string name="cancel_setup">Skip</string>   
     <add-resource type="string" name="continue_setup"></add-resource>
     <string name="continue_setup">Continue</string>     
+    <string name="touch_here_space">     Continue      </string>
     <add-resource type="string" name="app_choice_view_name"></add-resource>
     <string name="app_choice_view_name">Restricted Profile App Permissions</string>
     <add-resource type="string" name="restricted_listview_header_prompt"></add-resource>
@@ -328,6 +344,15 @@ s -->
     <string name="pdi_media_folder_name">Media</string>
     <add-resource type="string" name="pdi_tools_folder_name"></add-resource>
     <string name="pdi_tools_folder_name">Tools</string>
+    <string name="usePin">Use PIN</string>
+    <string name="usePassword">Use Password</string>
+    <string name="choosePinPass">Please set your PIN or Passsword for your account</string>
+    <string name="setLauncherText">Please set Default launcher for Patient\'s Account</string>
+    <string name="pinText"> Using PIN option set the personal identifcation number. Please enter a password containing at least numeric characters.
+ Please remember this password to unlock the account when it is locked. </string>
+    <string name="passwordText"> Using Password option set the password for your account. Please enter  a password containing at least both> numeric and alphabetic (or other symbol) characters.
+ Please remember this password to unlock the account when it is locked. </string>
+
  
     <!-- End - PDi Additions -->
 
