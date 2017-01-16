@@ -370,7 +370,6 @@ $(warning not an AT build, adding multiuser packages)
                        com.allentek.abe \
                        org.mozilla.firefox \
                        com.android.chrome
-                       com.teslacoilsw.launcher
 
 endif
 
