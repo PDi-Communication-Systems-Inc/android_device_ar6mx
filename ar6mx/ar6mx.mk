@@ -367,7 +367,13 @@ endif
 ifeq ($(AT_BUILD),T)
 $(warning not an AT build, adding multiuser packages)
    PRODUCT_PACKAGES += com.pdiarm.newuserconfirmation \
+<<<<<<< HEAD
+                       com.allentek.abe \
+                       org.mozilla.firefox \
+                       com.android.chrome
+=======
                        com.teslacoilsw.launcher
+>>>>>>> 4eb897c5feb5df6f88ba1b64fd094d789c40f8eb
 endif
 
 PRODUCT_PROPERTY_OVERRIDES += hw.nobattery=true
