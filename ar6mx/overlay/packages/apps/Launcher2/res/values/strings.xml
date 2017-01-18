@@ -113,7 +113,7 @@ s -->
     <!-- Default Launcher  -->
     <string name="title_default_launcher_txt"> This traditional Launcher is provided by Google and does have the access of launching android apps from home screen. User can also set up their own widgets. This launcher has access to settings app where you can modify the Account settings etc. </string>
     <!-- Thirdparty  Launcher  -->
-    <string name="title_thirdparty_launcher"> Basic Launcher (Allan Tech Launcher) </string>
+    <string name="title_thirdparty_launcher"> PDI Basic Launcher (Recommended launcher)  </string>
     <!-- Thirdparty  Launcher  -->
     <string name="title_thirdparty_launcher_txt"> This Basic launcher has a single screen to launch various apps like Games, Watching On Demand video\'s, playing music, browsing internet.
 Patient\'s can play various games, listen to music. This launcher is recommended for Patient\'s account.
