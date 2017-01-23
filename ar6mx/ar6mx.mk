@@ -373,5 +373,15 @@ $(warning not an AT build, adding multiuser packages)
 
 endif
 
+# Standard builds are single user
+ifeq ($(STANDARD_BUILD),T)
+$(warning not an AT build, adding multiuser packages)
+   PRODUCT_PACKAGES += com.pdiarm.newuserconfirmation \
+                       com.allentek.abe \
+                       org.mozilla.firefox \
+                       com.android.chrome
+
+endif
+
 PRODUCT_PROPERTY_OVERRIDES += hw.nobattery=true
 PRODUCT_PROPERTY_OVERRIDES += sys.device.type=tablet
