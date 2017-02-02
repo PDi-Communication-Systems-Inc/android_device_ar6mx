@@ -206,7 +206,11 @@ v4l2-compliance				\
 libv4l2					\
 libv4l_convert          		\
 PicoTts                 		\
-PicoLangInstaller
+PicoLangInstaller                       \
+com.pdiarm.newuserconfirmation          \
+com.allentek.abe                        \
+org.mozilla.firefox                     \
+com.android.chrome
 
 ifneq ($(ANDROID_BUILD_MODE),user) 
 PRODUCT_PACKAGES += devregs	\
@@ -366,8 +370,7 @@ endif
 # AT builds are single user
 ifeq ($(AT_BUILD),T)
 $(warning not an AT build, adding multiuser packages)
-   PRODUCT_PACKAGES += com.pdiarm.newuserconfirmation \
-                       com.allentek.abe \
+   PRODUCT_PACKAGES += com.allentek.abe \
                        org.mozilla.firefox \
                        com.android.chrome
 
@@ -376,8 +379,7 @@ endif
 # Standard builds are single user
 ifeq ($(STANDARD_BUILD),T)
 $(warning not an AT build, adding multiuser packages)
-   PRODUCT_PACKAGES += com.pdiarm.newuserconfirmation \
-                       com.allentek.abe \
+   PRODUCT_PACKAGES += com.allentek.abe \
                        org.mozilla.firefox \
                        com.android.chrome
 
