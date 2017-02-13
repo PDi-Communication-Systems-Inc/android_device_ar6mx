@@ -367,5 +367,10 @@ ifeq ($(SOTI_SUPPORT),T)
    PRODUCT_PACKAGES += net.mobicontrol.pdi.shared
 endif
 
+# Add medTV on standard product medTV branch
+ifneq ($(or $(MDM_BUILD), $(ARA_BUILD), $(SIMONETTO_BUILD), $(TELEHEALTH_BUILD), $(OPTIMAL_BUILD), $(TVRC_BUILD) $(NIH_BUILD)),T)
+   PRODUCT_PACKAGES += com.allentek.abe
+endif
+
 PRODUCT_PROPERTY_OVERRIDES += hw.nobattery=true
 PRODUCT_PROPERTY_OVERRIDES += sys.device.type=tablet
