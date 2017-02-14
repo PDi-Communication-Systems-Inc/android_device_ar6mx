@@ -208,7 +208,6 @@ libv4l_convert          		\
 PicoTts                 		\
 PicoLangInstaller                       \
 com.pdiarm.newuserconfirmation          \
-com.allentek.abe                        \
 org.mozilla.firefox                     \
 com.android.chrome
 
