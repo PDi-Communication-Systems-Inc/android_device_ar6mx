@@ -367,7 +367,7 @@ ifeq ($(SOTI_SUPPORT),T)
 endif
 
 # Add medTV on standard product medTV branch
-ifneq ($(or $(MDM_BUILD), $(ARA_BUILD), $(SIMONETTO_BUILD), $(TELEHEALTH_BUILD), $(OPTIMAL_BUILD), $(TVRC_BUILD) $(NIH_BUILD)),T)
+ifneq ($(or $(MDM_BUILD), $(ARA_BUILD), $(SIMONETTO_BUILD), $(TELEHEALTH_BUILD), $(OPTIMAL_BUILD), $(TVRC_BUILD), $(NIH_BUILD), $(SIM_TS_BUILD)),T)
    PRODUCT_PACKAGES += com.allentek.abe
 endif
 
