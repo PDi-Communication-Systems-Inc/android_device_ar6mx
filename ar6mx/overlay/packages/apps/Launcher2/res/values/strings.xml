@@ -293,6 +293,8 @@ Patient\'s can play various games, listen to music. This launcher is recommended
 	<!-- Start - PDi Additions-->
     <add-resource type="string" name="welcome_head"></add-resource>
     <string name="welcome_head">WELCOME</string>
+    <string name="welcome_head_owner">WELCOME OWNER</string>
+    <string name="welcome_head_patient">WELCOME NEW PATIENT</string>
     <add-resource type="string" name="welcome_intro"></add-resource>
     <string name="welcome_intro">PDi-Tab can bring you more than just TV. A few steps before we start:</string>
     <add-resource type="string" name="permission_secure_device"></add-resource>
@@ -346,13 +348,12 @@ Patient\'s can play various games, listen to music. This launcher is recommended
     <string name="pdi_tools_folder_name">Tools</string>
     <string name="usePin">Use PIN</string>
     <string name="usePassword">Use Password</string>
-    <string name="choosePinPass">Please set your PIN or Passsword for your account</string>
+    <string name="choosePinPass">Please choose PIN or Passsword for the Patient\'s account</string>
     <string name="setLauncherText">Please set Default launcher for Patient\'s Account</string>
-    <string name="pinText"> Using PIN option set the personal identifcation number. Please enter a password containing at least numeric characters.
- Please remember this password to unlock the account when it is locked. </string>
-    <string name="passwordText"> Using Password option set the password for your account. Please enter  a password containing at least both> numeric and alphabetic (or other symbol) characters.
- Please remember this password to unlock the account when it is locked. </string>
-
+    <string name="pinText"> By selecting PIN option, Patient\'s have to set the personal identifcation number for their individual account. PIN is set as numeric value.
+   Patient\'s will use their PIN to unlock the individual account. </string>
+    <string name="passwordText"> By selecting password option, Patient\'s have to set the password for their individual account.
+   password is set as at least both> numeric and alphabetic (or other symbol) characters. Patient\'s will use their password to unlock the individual account. </string>
  
     <!-- End - PDi Additions -->
 
