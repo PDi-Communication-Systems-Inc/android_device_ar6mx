@@ -207,9 +207,7 @@ libv4l2					\
 libv4l_convert          		\
 PicoTts                 		\
 PicoLangInstaller                       \
-com.pdiarm.newuserconfirmation          \
-org.mozilla.firefox                     \
-com.android.chrome
+com.pdiarm.newuserconfirmation          
 
 ifneq ($(ANDROID_BUILD_MODE),user) 
 PRODUCT_PACKAGES += devregs	\
@@ -262,6 +260,7 @@ $(warning Not a Davita build, adding some other packages)
 		Email				\
 		Exchange2
 endif
+
 
 # Packages to include if the build is TVRC
 ifeq ($(TVRC_BUILD),T)
@@ -368,7 +367,7 @@ endif
 
 # Add medTV on standard product medTV branch
 ifneq ($(or $(MDM_BUILD), $(ARA_BUILD), $(SIMONETTO_BUILD), $(TELEHEALTH_BUILD), $(OPTIMAL_BUILD), $(TVRC_BUILD), $(NIH_BUILD), $(SIM_TS_BUILD)),T)
-   PRODUCT_PACKAGES += com.allentek.abe
+   PRODUCT_PACKAGES += com.allentek.webtv
 endif
 
 PRODUCT_PROPERTY_OVERRIDES += hw.nobattery=true
