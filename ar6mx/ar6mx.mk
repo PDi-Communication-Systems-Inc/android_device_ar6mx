@@ -52,6 +52,9 @@ endif
 ifeq ($(AT_BUILD),T)
     PRODUCT_MODEL := PD403-021
 endif
+ifeq ($(MEDTV_BUILD),T)
+    PRODUCT_MODEL := PD403-023
+endif
 $(warning Setting PRODUCT_MODEL to $(PRODUCT_MODEL))
 
 # These values are not to be changed
@@ -366,8 +369,8 @@ ifeq ($(SOTI_SUPPORT),T)
 endif
 
 # Add medTV on standard product medTV branch
-ifneq ($(or $(MDM_BUILD), $(ARA_BUILD), $(SIMONETTO_BUILD), $(TELEHEALTH_BUILD), $(OPTIMAL_BUILD), $(TVRC_BUILD), $(NIH_BUILD), $(SIM_TS_BUILD)),T)
-   PRODUCT_PACKAGES += com.allentek.webtv
+ifneq ($(or $(MDM_BUILD), $(AT_BUILD), $(STANDARD_BUIL), $(ARA_BUILD), $(SIMONETTO_BUILD), $(TELEHEALTH_BUILD), $(OPTIMAL_BUILD), $(TVRC_BUILD), $(NIH_BUILD), $(SIM_TS_BUILD)),T)
+   PRODUCT_PACKAGES += com.allentek.medtv
 endif
 
 PRODUCT_PROPERTY_OVERRIDES += hw.nobattery=true
