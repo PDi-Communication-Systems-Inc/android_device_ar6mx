@@ -75,7 +75,11 @@ else
                            ifeq (${SIM_TS_BUILD}, T)
                               export BUILD_ID=SIMTS${CORE_TYPE}${MODE_MARKER}${EMMC_MARKER}-${BUILD_DATE_ONLY}
                            else
-                              export BUILD_ID=${CORE_TYPE}${MODE_MARKER}${EMMC_MARKER}-${BUILD_DATE_ONLY}
+			      ifeq (${MEDTV_BUILD}, T)
+				 export BUILD_ID=MEDTV${CORE_TYPE}${MODE_MARKER}${EMMC_MARKER}-${BUILD_DATE_ONLY}
+			      else
+                                 export BUILD_ID=${CORE_TYPE}${MODE_MARKER}${EMMC_MARKER}-${BUILD_DATE_ONLY}
+			      endif
                            endif
                         endif
                      endif
