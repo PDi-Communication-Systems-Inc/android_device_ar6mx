@@ -1,0 +1,5 @@
+server=ota.pdiarm.com
+port=80
+ota=.medtv.ota.zip
+build=medtv.build.prop
+protocol=http
