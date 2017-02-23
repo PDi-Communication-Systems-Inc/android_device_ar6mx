@@ -19,8 +19,8 @@
 <resources>
     <!-- Default for Settings.Secure.USER_SETUP_COMPLETE -->
     <bool name="def_user_setup_complete">true</bool>
-    <bool name="def_auto_time">false</bool>
-    <bool name="def_auto_time_zone">false</bool>
+    <bool name="def_auto_time">true</bool>
+    <bool name="def_auto_time_zone">true</bool>
 
     <!-- no way to give user tactile feedback as no vibration component exists -->
     <bool name="def_haptic_feedback">false</bool>
@@ -37,5 +37,5 @@
    <integer name="def_screen_off_timeout">600000</integer>
 
    <!-- On -->
-   <bool name="def_lockscreen_disabled">false</bool>
+   <bool name="def_lockscreen_disabled">true</bool>
 </resources>

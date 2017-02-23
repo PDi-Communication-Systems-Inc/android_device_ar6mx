@@ -370,7 +370,18 @@ endif
 
 # Add medTV on standard product medTV branch
 ifneq ($(or $(MDM_BUILD), $(AT_BUILD), $(STANDARD_BUILD), $(ARA_BUILD), $(SIMONETTO_BUILD), $(TELEHEALTH_BUILD), $(OPTIMAL_BUILD), $(TVRC_BUILD), $(NIH_BUILD), $(SIM_TS_BUILD)),T)
-   PRODUCT_PACKAGES += com.allentek.medtv
+   PRODUCT_PACKAGES += com.allentek.medtv \
+                       com.marketjs.bingoworld \
+                       com.marketjs.carparkpuzzle \
+                       com.marketjs.millionairequizallentek \
+                       com.marketjs.monstermahjong \
+                       com.marketjs.spotthedifference \
+                       com.marketjs.sudokuvillage \
+                       com.marketjs.wordfinderallentek \
+                       com.marketjs.wordhunter \
+                       com.marketjs.zombiegemsallentek \
+                       libxwalkcore.so \
+                       libxwalkdummy.so 
 endif
 
 PRODUCT_PROPERTY_OVERRIDES += hw.nobattery=true
