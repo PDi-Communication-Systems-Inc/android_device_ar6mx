@@ -161,16 +161,8 @@ alogcat					\
 com.pdiarm.clone                        \
 com.pdiarm.clonemaster                  \
 com.pdiarm.cloneslave                   \
-com.davidgoemans.simpleClockWidget      \
 net.micode.fileexplorer                 \
-frozenbubble				\
 libmodplug-1.0				\
-org.moire.opensudoku.game		\
-com.mobilepearls.sokoban                \
-com.uberspot.a2048			\
-com.mobilepearls.memory			\
-com.faddensoft.breakout                 \
-jackpal.androidterm			\
 libjackpal-termexec2			\
 libjackpal-androidterm5			\
 com.pdiarm.systembackupandrestore 	\
@@ -184,11 +176,9 @@ android-support-v7-mediarouter		\
 android-support-v8-renderscript		\
 android-support-v13			\
 procstatlog				\
-fbreader				\
 com.pdiarm.showusermessage		\
 com.pdiarm.deleteme			\
 VLC					\
-todoTxtTouch				\
 hn-android				\
 usbreset				\
 i2c-tools				\
@@ -201,8 +191,6 @@ iperf					\
 iperf3					\
 pdicinchwidget.apps.android.pdiarm.com.pdicinchwidget \
 com.pdiarm.pdicinchwidgets.pdixplain	\
-com.example.puzzlegame			\
-org.wikipedia				\
 v4l2-ctl				\
 v4l2-dbg				\
 v4l2-compliance				\
@@ -211,6 +199,21 @@ libv4l_convert          		\
 PicoTts                 		\
 PicoLangInstaller                       \
 com.pdiarm.newuserconfirmation          
+
+ifneq ($(MEDTV_BUILD), T)
+	PRODUCT_PACKAGES += com.example.puzzlegame \
+                            org.wikipedia \
+                            org.moire.opensudoku.game \
+                            com.mobilepearls.sokoban \
+                            com.uberspot.a2048 \
+                            com.mobilepearls.memory \
+                            com.faddensoft.breakout  \
+                            jackpal.androidterm	\
+                            com.davidgoemans.simpleClockWidget \
+                            frozenbubble \
+                            fbreader \
+                            todoTxtTouch
+endif
 
 ifneq ($(ANDROID_BUILD_MODE),user) 
 PRODUCT_PACKAGES += devregs	\
@@ -369,7 +372,7 @@ ifeq ($(SOTI_SUPPORT),T)
 endif
 
 # Add medTV on standard product medTV branch
-ifneq ($(or $(MDM_BUILD), $(AT_BUILD), $(STANDARD_BUILD), $(ARA_BUILD), $(SIMONETTO_BUILD), $(TELEHEALTH_BUILD), $(OPTIMAL_BUILD), $(TVRC_BUILD), $(NIH_BUILD), $(SIM_TS_BUILD)),T)
+ifeq ($(MEDTV_BUILD), T)
    PRODUCT_PACKAGES += com.allentek.medtv \
                        com.marketjs.bingoworld \
                        com.marketjs.carparkpuzzle \
