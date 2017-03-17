@@ -198,7 +198,8 @@ libv4l2					\
 libv4l_convert          		\
 PicoTts                 		\
 PicoLangInstaller                       \
-com.pdiarm.newuserconfirmation          
+com.pdiarm.newuserconfirmation          \
+com.davidgoemans.simpleClockWidget
 
 ifneq ($(MEDTV_BUILD), T)
 	PRODUCT_PACKAGES += com.example.puzzlegame \
@@ -209,7 +210,6 @@ ifneq ($(MEDTV_BUILD), T)
                             com.mobilepearls.memory \
                             com.faddensoft.breakout  \
                             jackpal.androidterm	\
-                            com.davidgoemans.simpleClockWidget \
                             frozenbubble \
                             fbreader \
                             todoTxtTouch
