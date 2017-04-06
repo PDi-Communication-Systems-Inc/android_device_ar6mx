@@ -352,7 +352,7 @@ Patient\'s can play various games, listen to music. This launcher is recommended
     <string name="usePassword">Use Password</string>
     <add-resource type="string" name="choosePinPass"></add-resource>
     <string name="choosePinPass">Please choose PIN or Passsword for the Patient\'s account</string>
-    <add-resource type="string" name="setLancherText"></add-resource>
+    <add-resource type="string" name="setLauncherText"></add-resource>
     <string name="setLauncherText">Please set Default launcher for Patient\'s Account</string>
     <add-resource type="string" name="pinText"></add-resource>
     <string name="pinText"> By selecting PIN option, Patient\'s have to set the personal identifcation number for their individual account. PIN is set as numeric value.

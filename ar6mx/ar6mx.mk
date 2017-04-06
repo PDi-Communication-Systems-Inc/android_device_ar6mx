@@ -199,7 +199,8 @@ libv4l_convert          		\
 PicoTts                 		\
 PicoLangInstaller                       \
 com.pdiarm.newuserconfirmation          \
-com.davidgoemans.simpleClockWidget
+com.davidgoemans.simpleClockWidget		\
+de.fgerbig.spacepeng_1581
 
 ifneq ($(MEDTV_BUILD), T)
 	PRODUCT_PACKAGES += com.example.puzzlegame \
