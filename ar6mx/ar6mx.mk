@@ -374,18 +374,22 @@ endif
 
 # Add medTV on standard product medTV branch
 ifeq ($(MEDTV_BUILD), T)
-   PRODUCT_PACKAGES += com.allentek.medtv \
-                       com.marketjs.bingoworld \
-                       com.marketjs.carparkpuzzle \
-                       com.marketjs.millionairequizallentek \
-                       com.marketjs.monstermahjong \
-                       com.marketjs.spotthedifference \
-                       com.marketjs.sudokuvillage \
-                       com.marketjs.wordfinderallentek \
-                       com.marketjs.wordhunter \
-                       com.marketjs.zombiegemsallentek \
-                       libxwalkcore.so \
-                       libxwalkdummy.so 
+ PRODUCT_PACKAGES += com.allentek.medtv \
+                     com.allentek.medtvregister \
+                     com.marketjs.bingoworld \
+                     com.marketjs.carparkpuzzle \
+                     com.marketjs.millionairequizallentek \
+                     com.marketjs.monstermahjong \
+                     com.marketjs.spotthedifference \
+                     com.marketjs.sudokuvillage \
+                     com.marketjs.wordfinderallentek \
+                     com.marketjs.wordhunter \
+                     com.marketjs.zombiegemsallentek \
+                     de.fgerbig.spacepeng \
+                     com.Retouchable.Kwyzzislands \
+                     com.marketjs.klondikesolitaire \
+                     libxwalkcore.so \
+                     libxwalkdummy.so
 endif
 
 PRODUCT_PROPERTY_OVERRIDES += hw.nobattery=true
