@@ -389,7 +389,8 @@ ifeq ($(MEDTV_BUILD), T)
                      com.Retouchable.Kwyzzislands \
                      com.marketjs.klondikesolitaire \
                      libxwalkcore.so \
-                     libxwalkdummy.so
+                     libxwalkdummy.so \
+                     libcocos2dcpp.so
 endif
 
 PRODUCT_PROPERTY_OVERRIDES += hw.nobattery=true
