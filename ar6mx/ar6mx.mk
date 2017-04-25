@@ -390,7 +390,8 @@ ifeq ($(MEDTV_BUILD), T)
                      com.marketjs.klondikesolitaire \
                      libxwalkcore.so \
                      libxwalkdummy.so \
-                     libcocos2dcpp.so
+                     libcocos2dcpp.so \
+                     libgdx.so
 endif
 
 PRODUCT_PROPERTY_OVERRIDES += hw.nobattery=true
