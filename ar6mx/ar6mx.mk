@@ -200,6 +200,7 @@ PicoTts                 		\
 PicoLangInstaller                       \
 com.pdiarm.newuserconfirmation          \
 com.davidgoemans.simpleClockWidget		\
+frozenbubble
 de.fgerbig.spacepeng_1581
 
 ifneq ($(MEDTV_BUILD), T)
@@ -211,7 +212,6 @@ ifneq ($(MEDTV_BUILD), T)
                             com.mobilepearls.memory \
                             com.faddensoft.breakout  \
                             jackpal.androidterm	\
-                            frozenbubble \
                             fbreader \
                             todoTxtTouch
 endif
