@@ -200,7 +200,7 @@ PicoTts                 		\
 PicoLangInstaller                       \
 com.pdiarm.newuserconfirmation          \
 com.davidgoemans.simpleClockWidget		\
-frozenbubble
+frozenbubble							\
 de.fgerbig.spacepeng_1581
 
 ifneq ($(MEDTV_BUILD), T)
