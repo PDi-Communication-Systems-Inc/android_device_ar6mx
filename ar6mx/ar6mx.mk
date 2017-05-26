@@ -375,7 +375,6 @@ endif
 # Add medTV on standard product medTV branch
 ifeq ($(MEDTV_BUILD), T)
  PRODUCT_PACKAGES += com.allentek.medtv \
-                     com.allentek.medtvregister \
                      com.marketjs.bingoworld \
                      com.marketjs.carparkpuzzle \
                      com.marketjs.millionairequizallentek \
