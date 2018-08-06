@@ -234,6 +234,10 @@ PRODUCT_PACKAGES += \
 ifeq ($(NIH_BUILD),T)
 	PRODUCT_PACKAGES += \
 		com.pdiarm.nihwebsite			\
+		com.pdiarm.evereveron			\
+		com.pdiarm.fallentree			\
+		com.pdiarm.flowerwater			\
+		com.pdiarm.latenightguitar		\
 		com.pdiarm.patientportal		\
 		com.pdiarm.nutrition			\
 		com.pdiarm.disclaimer			\
