@@ -244,8 +244,7 @@ ifeq ($(NIH_BUILD),T)
 		com.pdiarm.patientfeedback		\
 		com.adobe.reader_10.6.1			\
 		com.kmagic.solitaire_450                \
-                firefox_63                              \
-                chrome
+                firefox_63                              
 else
 	PRODUCT_PACKAGES += \
 		AdobeReader \
